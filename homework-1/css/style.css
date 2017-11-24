@@ -1,0 +1,75 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.chanel {
+    width: 20%;
+    border: 1px solid #000000;
+    padding: 10px;
+    border-radius: 5px;
+    background: #dcdcdc;
+    margin: 5px;
+    text-align: left;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+form label,
+form input {
+    cursor: pointer;
+}
+
+form input:checked + label {
+    color: darkred;
+    font-weight: 700;
+}
+
+.news-block {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid darkslategray;
+    background: lightgray;
+}
+
+h2 {
+    color: darkslateblue;
+}
+
+h3 {
+    color: darkgreen;
+    margin-bottom: 0;
+}
+
+p {
+    border-bottom: 1px dashed purple;
+    padding-bottom: 10px;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    color: dodgerblue;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: steelblue;
+}
+
+span {
+    font-size: 15px;
+    font-weight: 600;
+}
