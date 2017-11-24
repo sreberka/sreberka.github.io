@@ -23,7 +23,7 @@ window.onload = function () {
             const form = document.createElement('form');
             container.appendChild(form);
 
-            makeRequest('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe');
+            makeRequest('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', createChanel);
             checked = [];
             button.innerHTML = 'Get the NEWS';
         }

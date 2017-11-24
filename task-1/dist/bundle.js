@@ -183,7 +183,7 @@ window.onload = function () {
             const form = document.createElement('form');
             container.appendChild(form);
 
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__request__["a" /* default */])('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe');
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__request__["a" /* default */])('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', __WEBPACK_IMPORTED_MODULE_1__create_chanel__["a" /* default */]);
             checked = [];
             button.innerHTML = 'Get the NEWS';
         } else {
