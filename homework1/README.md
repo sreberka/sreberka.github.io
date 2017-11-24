@@ -1,3 +1,3 @@
-# sreberka-front-end-course
+# Front end Camp task
 
-Vitaliya
+Vitaliya Serabro
