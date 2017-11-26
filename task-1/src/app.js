@@ -8,10 +8,10 @@ window.onload = function () {
     const button = document.querySelector('button');
     const form = document.createElement('form');
     container.appendChild(form);
-
     makeRequest('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', createChanel);
 
     let checked = [];
+
     button.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -20,17 +20,14 @@ window.onload = function () {
             e.target.classList.remove('clicked');
             mainHeader.innerHTML = "Choose your favorite chanels to see the news:";
             container.innerHTML = '';
-            const form = document.createElement('form');
+            form.innerHTML = '';
             container.appendChild(form);
-
             makeRequest('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', createChanel);
             checked = [];
             button.innerHTML = 'Get the NEWS';
         }
-
         else {
             e.target.classList.add('clicked');
-
             let arr = document.getElementsByTagName('input');
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i].checked === true) {

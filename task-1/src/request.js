@@ -1,5 +1,5 @@
-const makeRequest = function (URL, func) {
-    let obj = fetch(URL, {mode: 'cors'})
+const makeRequest = (URL, func) => {
+    fetch(URL, {mode: 'cors'})
         .then((res) => {
             return res.json();
         })
@@ -9,7 +9,6 @@ const makeRequest = function (URL, func) {
         .catch((error) => {
             throw new Error('Error with fetch');
         });
-    return obj;
 };
 
 export default makeRequest;

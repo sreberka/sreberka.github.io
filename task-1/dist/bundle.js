@@ -64,7 +64,7 @@ var myLibrary =
 /******/ 	__webpack_require__.p = "dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -72,18 +72,18 @@ var myLibrary =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const createChanel = function (chanel) {
+const createChanel = chanel => {
     for (let i = 0; i < chanel.sources.length; i++) {
-        let inputContainer = document.createElement('div');
+        const inputContainer = document.createElement('div');
         inputContainer.classList.add('chanel');
         document.querySelector('form').appendChild(inputContainer);
 
-        let input = document.createElement('input');
+        const input = document.createElement('input');
         input.id = chanel.sources[i].id;
         input.type = 'checkbox';
         inputContainer.appendChild(input);
 
-        let label = document.createElement('label');
+        const label = document.createElement('label');
         label.innerHTML = chanel.sources[i].name;
         label.setAttribute('for', chanel.sources[i].id);
         input.after(label);
@@ -97,36 +97,21 @@ const createChanel = function (chanel) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const createNews = function (articles) {
-    let newsBlock = document.createElement('div');
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__NewsItem__ = __webpack_require__(3);
+
+
+const createNews = chanel => {
+    const newsBlock = document.createElement('div');
     newsBlock.classList.add('news-block');
     document.querySelector('.container').appendChild(newsBlock);
 
-    let chanelName = document.createElement('h2');
-    chanelName.innerHTML = articles.articles[0].source.name;
+    const articles = chanel.articles;
+    const chanelName = document.createElement('h2');
+    chanelName.innerHTML = articles[0].source.name;
     newsBlock.appendChild(chanelName);
 
-    for (let i = 0; i < articles.articles.length; i++) {
-        let articleHead = document.createElement('h3');
-        articleHead.innerHTML = articles.articles[i].title;
-        articleHead.classList.add(`article-${i}`);
-        chanelName.after(articleHead);
-
-        let date = document.createElement('span');
-        date.innerHTML = articles.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
-        articleHead.after(date);
-
-        let articleText = document.createElement('p');
-        articleText.innerHTML = articles.articles[i].description;
-        date.after(articleText);
-
-        let link = document.createElement('a');
-        link.innerHTML = 'read more';
-        link.setAttribute('href', articles.articles[i].url);
-        link.setAttribute('target', '_blank');
-
-        articleText.appendChild(link);
-    }
+    const newsItem = new __WEBPACK_IMPORTED_MODULE_0__NewsItem__["a" /* default */](articles, chanelName);
+    newsItem.createItem();
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (createNews);
@@ -136,21 +121,57 @@ const createNews = function (articles) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const makeRequest = function (URL, func) {
-    let obj = fetch(URL, { mode: 'cors' }).then(res => {
+const makeRequest = (URL, func) => {
+    fetch(URL, { mode: 'cors' }).then(res => {
         return res.json();
     }).then(res => {
         func(res);
     }).catch(error => {
         throw new Error('Error with fetch');
     });
-    return obj;
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (makeRequest);
 
 /***/ }),
 /* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class NewsItem {
+    constructor(articles, chanelName) {
+        this.articles = articles;
+        this.chanelName = chanelName;
+    }
+
+    createItem() {
+        for (let i = 0; i < this.articles.length; i++) {
+            this.articleHead = document.createElement('h3');
+            this.articleHead.innerHTML = this.articles[i].title;
+            this.articleHead.classList.add(`article-${i}`);
+            this.chanelName.after(this.articleHead);
+
+            this.date = document.createElement('span');
+            this.date.innerHTML = this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
+            this.articleHead.after(this.date);
+
+            this.articleText = document.createElement('p');
+            this.articleText.innerHTML = this.articles[i].description;
+            this.date.after(this.articleText);
+
+            this.link = document.createElement('a');
+            this.link.innerHTML = 'read more...';
+            this.link.setAttribute('href', this.articles[i].url);
+            this.link.setAttribute('target', '_blank');
+            this.articleText.appendChild(this.link);
+        }
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (NewsItem);
+
+/***/ }),
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -168,10 +189,10 @@ window.onload = function () {
     const button = document.querySelector('button');
     const form = document.createElement('form');
     container.appendChild(form);
-
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__request__["a" /* default */])('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', __WEBPACK_IMPORTED_MODULE_1__create_chanel__["a" /* default */]);
 
     let checked = [];
+
     button.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -180,15 +201,13 @@ window.onload = function () {
             e.target.classList.remove('clicked');
             mainHeader.innerHTML = "Choose your favorite chanels to see the news:";
             container.innerHTML = '';
-            const form = document.createElement('form');
+            form.innerHTML = '';
             container.appendChild(form);
-
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__request__["a" /* default */])('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', __WEBPACK_IMPORTED_MODULE_1__create_chanel__["a" /* default */]);
             checked = [];
             button.innerHTML = 'Get the NEWS';
         } else {
             e.target.classList.add('clicked');
-
             let arr = document.getElementsByTagName('input');
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i].checked === true) {
