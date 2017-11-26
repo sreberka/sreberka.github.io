@@ -1,0 +1,176 @@
+/************************ general *************************/
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  position: relative;
+  font-size: 10px;
+  min-height: 100%; }
+
+body {
+  min-height: 100%;
+  padding-bottom: 80px;
+  font-family: 'Cuprum', sans-serif;
+  font-weight: 400;
+  color: #333;
+  background: #ebebeb; }
+
+a {
+  color: #1e88e5;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+section {
+  padding: 2rem 0; }
+
+h1 {
+  margin-top: 3rem;
+  text-align: right;
+  font-size: 4rem;
+  border-bottom: 4px double #333; }
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto; }
+
+/************************ header *************************/
+header {
+  height: 50px;
+  background: #141414; }
+
+.logo img {
+  height: 8rem;
+  margin-top: 1rem; }
+
+/************************* calendar *****************************/
+.calendar {
+  padding: 2rem 0; }
+  .calendar h2 {
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 400; }
+    .calendar h2 span {
+      font-weight: 700; }
+
+.week {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: stretch; }
+  .week:last-of-type {
+    justify-content: flex-start; }
+
+.item {
+  position: relative;
+  width: 13.65rem;
+  background: #fff;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 1rem; }
+
+.day {
+  text-align: center;
+  font-size: 3rem; }
+
+.day-name {
+  font-size: 1.5rem;
+  text-align: center; }
+
+.week-header .item {
+  background: #585858;
+  color: #cccccc; }
+
+.lecture, .deadline {
+  padding: .5rem 0;
+  margin: 5px 0;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.lecture {
+  background: #00c853; }
+  .lecture:hover {
+    background: #006229; }
+
+.deadline {
+  background: #f44336; }
+  .deadline:hover {
+    background: #ba160a; }
+
+.lecture-info, .deadline-info {
+  position: absolute;
+  left: calc(100% + 5px);
+  bottom: 0;
+  z-index: 2;
+  width: 600px;
+  display: none;
+  min-height: 300px;
+  max-height: 80%;
+  padding: 10px;
+  font-size: 1.8rem;
+  background: #fff;
+  border: 1px solid #252525;
+  border-radius: 5px;
+  overflow: auto;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .lecture-info h3, .deadline-info h3 {
+    text-align: center;
+    margin-bottom: 10px; }
+
+.show {
+  display: block; }
+
+.info {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px; }
+  .info i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    text-align: center; }
+  .info ol {
+    padding-left: 15px; }
+
+.place a {
+  font-style: italic;
+  font-size: 1.6rem; }
+
+/************************* footer ******************************/
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  background: #252525;
+  color: #666; }
+
+.footer-logo {
+  display: inline-block; }
+  .footer-logo img {
+    height: 80px;
+    vertical-align: middle;
+    opacity: .7; }
+
+/*# sourceMappingURL=style.css.map */

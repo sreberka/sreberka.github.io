@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  position: relative;
+  font-size: 10px;
+  min-height: 100%; }
+
+body {
+  min-height: 100%;
+  padding-bottom: 100px;
+  font-family: 'Cuprum', sans-serif;
+  font-weight: 400;
+  color: #333;
+  background: #ebebeb; }
+
+a {
+  color: #1e88e5;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+section {
+  padding: 2rem 0; }
+
+h1 {
+  margin-top: 3rem;
+  text-align: right;
+  font-size: 4rem;
+  border-bottom: 4px double #333; }
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto; }
+
+.week .item {
+  color: #cccccc;
+  text-align: center; }
+
+.calendar-container {
+  min-height: 450px; }
+
+.month button {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.events-colors {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  margin-top: 2rem; }
+  .events-colors p {
+    margin-right: 2rem;
+    font-size: 2em; }
+    .events-colors p:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 100%; }
+  .events-colors .lecture:before {
+    background: #00c853; }
+  .events-colors .webinar:before {
+    background: #29b6f6; }
+  .events-colors .rs-event:before {
+    background: #ffa726; }
+  .events-colors .deadline:before {
+    background: #f44336; }
+  .events-colors .workshop:before {
+    background: #9575cd; }
+
+/************************ header *************************/
+header {
+  height: 50px;
+  background: #141414; }
+
+.logo img {
+  height: 8rem;
+  margin-top: 1rem; }
+
+/************************* footer ******************************/
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  background: #252525;
+  color: #666; }
+
+.footer-logo {
+  display: inline-block; }
+  .footer-logo img {
+    height: 8rem;
+    vertical-align: middle;
+    opacity: .7; }
+
+/*************************** media-queries ****************************/
+@media screen and (max-width: 1065px) {
+  html {
+    font-size: 9px; }
+
+  .wrapper {
+    width: 90%; } }
+@media screen and (max-width: 675px) {
+  html {
+    font-size: 7px; }
+
+  h1 {
+    text-align: center; } }
+@media screen and (max-width: 500px) {
+  .events-colors {
+    flex-direction: column; } }
+
+/*# sourceMappingURL=style.css.map */
