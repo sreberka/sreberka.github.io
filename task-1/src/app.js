@@ -1,6 +1,5 @@
-import makeRequest from './request';
-import createChanel from './create-chanel';
-import createNews from './create-news';
+import makeRequest from './Request';
+import { createNews, createChanel } from './helpers';
 
 window.onload = function () {
     const mainHeader = document.querySelector('h2');
