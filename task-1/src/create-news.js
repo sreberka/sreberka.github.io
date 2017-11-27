@@ -1,4 +1,4 @@
-import NewsItem from './NewsItem';
+import NewsList from './NewsList';
 
 const createNews = (chanel) => {
     const newsBlock = document.createElement('div');
@@ -10,8 +10,8 @@ const createNews = (chanel) => {
     chanelName.innerHTML = articles[0].source.name;
     newsBlock.appendChild(chanelName);
 
-    const newsItem = new NewsItem(articles, chanelName);
-    newsItem.createItem();
+    const newsList = new NewsList(articles, chanelName);
+    newsList.createItems();
 };
 
 export default createNews;

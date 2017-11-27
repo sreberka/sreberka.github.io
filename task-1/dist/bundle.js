@@ -97,7 +97,7 @@ const createChanel = chanel => {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__NewsItem__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__NewsList__ = __webpack_require__(3);
 
 
 const createNews = chanel => {
@@ -110,8 +110,8 @@ const createNews = chanel => {
     chanelName.innerHTML = articles[0].source.name;
     newsBlock.appendChild(chanelName);
 
-    const newsItem = new __WEBPACK_IMPORTED_MODULE_0__NewsItem__["a" /* default */](articles, chanelName);
-    newsItem.createItem();
+    const newsList = new __WEBPACK_IMPORTED_MODULE_0__NewsList__["a" /* default */](articles, chanelName);
+    newsList.createItems();
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (createNews);
@@ -138,37 +138,37 @@ const makeRequest = (URL, func) => {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-class NewsItem {
+class NewsList {
     constructor(articles, chanelName) {
         this.articles = articles;
         this.chanelName = chanelName;
     }
 
-    createItem() {
+    createItems() {
         for (let i = 0; i < this.articles.length; i++) {
-            this.articleHead = document.createElement('h3');
-            this.articleHead.innerHTML = this.articles[i].title;
-            this.articleHead.classList.add(`article-${i}`);
-            this.chanelName.after(this.articleHead);
+            let articleHead = document.createElement('h3');
+            articleHead.innerHTML = this.articles[i].title;
+            articleHead.classList.add(`article-${i}`);
+            this.chanelName.after(articleHead);
 
-            this.date = document.createElement('span');
-            this.date.innerHTML = this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
-            this.articleHead.after(this.date);
+            let date = document.createElement('span');
+            date.innerHTML = this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
+            articleHead.after(date);
 
-            this.articleText = document.createElement('p');
-            this.articleText.innerHTML = this.articles[i].description;
-            this.date.after(this.articleText);
+            let articleText = document.createElement('p');
+            articleText.innerHTML = this.articles[i].description;
+            date.after(articleText);
 
-            this.link = document.createElement('a');
-            this.link.innerHTML = 'read more...';
-            this.link.setAttribute('href', this.articles[i].url);
-            this.link.setAttribute('target', '_blank');
-            this.articleText.appendChild(this.link);
+            let link = document.createElement('a');
+            link.innerHTML = 'read more...';
+            link.setAttribute('href', this.articles[i].url);
+            link.setAttribute('target', '_blank');
+            articleText.appendChild(link);
         }
     }
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (NewsItem);
+/* harmony default export */ __webpack_exports__["a"] = (NewsList);
 
 /***/ }),
 /* 4 */
@@ -207,7 +207,6 @@ window.onload = function () {
             checked = [];
             button.innerHTML = 'Get the NEWS';
         } else {
-            e.target.classList.add('clicked');
             let arr = document.getElementsByTagName('input');
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i].checked === true) {
@@ -215,17 +214,21 @@ window.onload = function () {
                 }
             }
 
-            Promise.all(checked).then(values => {
-                return values;
-            }).then(values => {
-                for (let i = 0; i < values.length; i++) {
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__request__["a" /* default */])(`https://newsapi.org/v2/top-headlines?sources=${values[i]}&apiKey=9ff31ef0306944baa7b15c739cb34dbe`, __WEBPACK_IMPORTED_MODULE_2__create_news__["a" /* default */]);
-                }
-            });
+            if (checked.length !== 0) {
+                e.target.classList.add('clicked');
 
-            container.innerHTML = '';
-            mainHeader.innerHTML = "Here are some news for you:";
-            button.innerHTML = 'Back to all chanels';
+                Promise.all(checked).then(values => {
+                    return values;
+                }).then(values => {
+                    for (let i = 0; i < values.length; i++) {
+                        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__request__["a" /* default */])(`https://newsapi.org/v2/top-headlines?sources=${values[i]}&apiKey=9ff31ef0306944baa7b15c739cb34dbe`, __WEBPACK_IMPORTED_MODULE_2__create_news__["a" /* default */]);
+                    }
+                });
+
+                container.innerHTML = '';
+                mainHeader.innerHTML = "Here are some news for you:";
+                button.innerHTML = 'Back to all chanels';
+            }
         }
     });
 };
