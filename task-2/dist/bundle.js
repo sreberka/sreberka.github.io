@@ -77,14 +77,34 @@ var myLibrary =
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var makeRequest = function makeRequest(URL, func) {
-    fetch(URL, { mode: 'cors' }).then(function (res) {
-        return res.json();
-    }).then(function (res) {
-        func(res);
-    }).catch(function (error) {
-        throw new Error('Error with fetch');
-    });
+// const makeRequest = (URL, func) => {
+//     fetch(URL, {mode: 'cors'})
+//         .then((res) => {
+//             return res.json();
+//         })
+//         .then((res) => {
+//             func(res);
+//         })
+//         .catch((error) => {
+//             throw new Error('Error with fetch');
+//         });
+// };
+//
+// export default makeRequest;
+
+
+var makeRequest = function response(query, func) {
+    var XHR = "onload" in new XMLHttpRequest() ? XMLHttpRequest : XDomainRequest;
+    var xhr = new XHR();
+    xhr.open('GET', query, true);
+    xhr.onload = function () {
+        var obj = JSON.parse(this.responseText);
+        func(obj);
+    };
+    xhr.onerror = function () {
+        throw new Error('Error with request!!!');
+    };
+    xhr.send();
 };
 
 exports.default = makeRequest;
@@ -121,7 +141,7 @@ var createChanel = function createChanel(chanel) {
         var label = document.createElement('label');
         label.innerHTML = chanel.sources[i].name;
         label.setAttribute('for', chanel.sources[i].id);
-        input.after(label);
+        inputContainer.appendChild(label);
     }
 };
 
@@ -169,18 +189,21 @@ var NewsList = function () {
         key: 'createItems',
         value: function createItems() {
             for (var i = 0; i < this.articles.length; i++) {
+                var newsBlock = document.querySelector('.news-block');
+
                 var articleHead = document.createElement('h3');
                 articleHead.innerHTML = this.articles[i].title;
                 articleHead.classList.add('article-' + i);
-                this.chanelName.after(articleHead);
+                newsBlock.appendChild(articleHead);
+                //this.chanelName.after(articleHead);
 
                 var date = document.createElement('span');
                 date.innerHTML = this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
-                articleHead.after(date);
+                newsBlock.appendChild(date);
 
                 var articleText = document.createElement('p');
                 articleText.innerHTML = this.articles[i].description;
-                date.after(articleText);
+                newsBlock.appendChild(articleText);
 
                 var link = document.createElement('a');
                 link.innerHTML = 'read more...';
@@ -245,13 +268,19 @@ window.onload = function () {
             if (checked.length !== 0) {
                 e.target.classList.add('clicked');
 
-                Promise.all(checked).then(function (values) {
-                    return values;
-                }).then(function (values) {
-                    for (var _i = 0; _i < values.length; _i++) {
-                        (0, _Request2.default)('https://newsapi.org/v2/top-headlines?sources=' + values[_i] + '&apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createNews);
-                    }
-                });
+                for (var _i = 0; _i < checked.length; _i++) {
+                    (0, _Request2.default)('https://newsapi.org/v2/top-headlines?sources=' + checked[_i] + '&apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createNews);
+                }
+
+                // Promise.all(checked).then(values => {
+                //     return values;
+                // })
+                //     .then(values => {
+                //             for (let i = 0; i < values.length; i++) {
+                //                 makeRequest(`https://newsapi.org/v2/top-headlines?sources=${values[i]}&apiKey=9ff31ef0306944baa7b15c739cb34dbe`, createNews);
+                //             }
+                //         }
+                //     );
 
                 container.innerHTML = '';
                 mainHeader.innerHTML = "Here are some news for you:";

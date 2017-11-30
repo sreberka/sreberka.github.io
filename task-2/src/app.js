@@ -36,15 +36,19 @@ window.onload = function () {
             if(checked.length !== 0) {
                 e.target.classList.add('clicked');
 
-                Promise.all(checked).then(values => {
-                    return values;
-                })
-                    .then(values => {
-                            for (let i = 0; i < values.length; i++) {
-                                makeRequest(`https://newsapi.org/v2/top-headlines?sources=${values[i]}&apiKey=9ff31ef0306944baa7b15c739cb34dbe`, createNews);
-                            }
-                        }
-                    );
+                for (let i = 0; i < checked.length; i++) {
+                    makeRequest(`https://newsapi.org/v2/top-headlines?sources=${checked[i]}&apiKey=9ff31ef0306944baa7b15c739cb34dbe`, createNews);
+                }
+
+                // Promise.all(checked).then(values => {
+                //     return values;
+                // })
+                //     .then(values => {
+                //             for (let i = 0; i < values.length; i++) {
+                //                 makeRequest(`https://newsapi.org/v2/top-headlines?sources=${values[i]}&apiKey=9ff31ef0306944baa7b15c739cb34dbe`, createNews);
+                //             }
+                //         }
+                //     );
 
                 container.innerHTML = '';
                 mainHeader.innerHTML = "Here are some news for you:";
