@@ -189,18 +189,21 @@ var NewsList = function () {
         key: 'createItems',
         value: function createItems() {
             for (var i = 0; i < this.articles.length; i++) {
+                var newsBlock = document.querySelector('.news-block');
+
                 var articleHead = document.createElement('h3');
                 articleHead.innerHTML = this.articles[i].title;
                 articleHead.classList.add('article-' + i);
-                this.chanelName.after(articleHead);
+                newsBlock.appendChild(articleHead);
+                //this.chanelName.after(articleHead);
 
                 var date = document.createElement('span');
                 date.innerHTML = this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
-                articleHead.after(date);
+                newsBlock.appendChild(date);
 
                 var articleText = document.createElement('p');
                 articleText.innerHTML = this.articles[i].description;
-                date.after(articleText);
+                newsBlock.appendChild(articleText);
 
                 var link = document.createElement('a');
                 link.innerHTML = 'read more...';
