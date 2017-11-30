@@ -77,34 +77,20 @@ var myLibrary =
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-// const makeRequest = (URL, func) => {
-//     fetch(URL, {mode: 'cors'})
-//         .then((res) => {
-//             return res.json();
-//         })
-//         .then((res) => {
-//             func(res);
-//         })
-//         .catch((error) => {
-//             throw new Error('Error with fetch');
-//         });
-// };
-//
-// export default makeRequest;
-
-
 var makeRequest = function response(query, func) {
-    var XHR = "onload" in new XMLHttpRequest() ? XMLHttpRequest : XDomainRequest;
-    var xhr = new XHR();
-    xhr.open('GET', query, true);
-    xhr.onload = function () {
-        var obj = JSON.parse(this.responseText);
-        func(obj);
-    };
-    xhr.onerror = function () {
-        throw new Error('Error with request!!!');
-    };
-    xhr.send();
+    return new Promise(function () {
+        var XHR = "onload" in new XMLHttpRequest() ? XMLHttpRequest : XDomainRequest;
+        var xhr = new XHR();
+        xhr.open('GET', query, true);
+        xhr.onload = function () {
+            var obj = JSON.parse(this.responseText);
+            func(obj);
+        };
+        xhr.onerror = function () {
+            throw new Error('Error with request!!!');
+        };
+        xhr.send();
+    });
 };
 
 exports.default = makeRequest;
