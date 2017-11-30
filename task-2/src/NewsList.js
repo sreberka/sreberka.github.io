@@ -1,25 +1,23 @@
 class NewsList {
-    constructor(articles, chanelName) {
+    constructor(articles, container) {
         this.articles = articles;
-        this.chanelName = chanelName;
+        this.container = container;
     }
 
     createItems() {
         for(let i = 0; i < this.articles.length; i++) {
-            let newsBlock = document.querySelector('.news-block');
-
             let articleHead = document.createElement('h3');
             articleHead.innerHTML = this.articles[i].title;
             articleHead.classList.add(`article-${i}`);
-            newsBlock.appendChild(articleHead);
+            this.container.appendChild(articleHead);
 
             let date = document.createElement('span');
             date.innerHTML = this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
-            newsBlock.appendChild(date);
+            this.container.appendChild(date);
 
             let articleText = document.createElement('p');
             articleText.innerHTML = this.articles[i].description;
-            newsBlock.appendChild(articleText);
+            this.container.appendChild(articleText);
 
             let link = document.createElement('a');
             link.innerHTML = 'read more...';

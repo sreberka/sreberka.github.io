@@ -155,7 +155,7 @@ var createNews = function createNews(chanel) {
     chanelName.innerHTML = articles[0].source.name;
     newsBlock.appendChild(chanelName);
 
-    var newsList = new _NewsList2.default(articles, chanelName);
+    var newsList = new _NewsList2.default(articles, newsBlock);
     newsList.createItems();
 };
 
@@ -178,32 +178,29 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var NewsList = function () {
-    function NewsList(articles, chanelName) {
+    function NewsList(articles, container) {
         _classCallCheck(this, NewsList);
 
         this.articles = articles;
-        this.chanelName = chanelName;
+        this.container = container;
     }
 
     _createClass(NewsList, [{
         key: 'createItems',
         value: function createItems() {
             for (var i = 0; i < this.articles.length; i++) {
-                var newsBlock = document.querySelector('.news-block');
-
                 var articleHead = document.createElement('h3');
                 articleHead.innerHTML = this.articles[i].title;
                 articleHead.classList.add('article-' + i);
-                newsBlock.appendChild(articleHead);
-                //this.chanelName.after(articleHead);
+                this.container.appendChild(articleHead);
 
                 var date = document.createElement('span');
                 date.innerHTML = this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
-                newsBlock.appendChild(date);
+                this.container.appendChild(date);
 
                 var articleText = document.createElement('p');
                 articleText.innerHTML = this.articles[i].description;
-                newsBlock.appendChild(articleText);
+                this.container.appendChild(articleText);
 
                 var link = document.createElement('a');
                 link.innerHTML = 'read more...';

@@ -28,7 +28,7 @@ const createNews = (chanel) => {
     chanelName.innerHTML = articles[0].source.name;
     newsBlock.appendChild(chanelName);
 
-    const newsList = new NewsList(articles, chanelName);
+    const newsList = new NewsList(articles, newsBlock);
     newsList.createItems();
 };
 
