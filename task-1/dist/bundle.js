@@ -64,134 +64,182 @@ var myLibrary =
 /******/ 	__webpack_require__.p = "dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const createChanel = chanel => {
-    for (let i = 0; i < chanel.sources.length; i++) {
-        const inputContainer = document.createElement('div');
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+// const makeRequest = (URL, func) => {
+//     fetch(URL, {mode: 'cors'})
+//         .then((res) => {
+//             return res.json();
+//         })
+//         .then((res) => {
+//             func(res);
+//         })
+//         .catch((error) => {
+//             throw new Error('Error with fetch');
+//         });
+// };
+//
+// export default makeRequest;
+
+
+var makeRequest = function response(query, func) {
+    var XHR = "onload" in new XMLHttpRequest() ? XMLHttpRequest : XDomainRequest;
+    var xhr = new XHR();
+    xhr.open('GET', query, true);
+    xhr.onload = function () {
+        var obj = JSON.parse(this.responseText);
+        func(obj);
+    };
+    xhr.onerror = function () {
+        throw new Error('Error with request!!!');
+    };
+    xhr.send();
+};
+
+exports.default = makeRequest;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.createChanel = exports.createNews = undefined;
+
+var _NewsList = __webpack_require__(2);
+
+var _NewsList2 = _interopRequireDefault(_NewsList);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var createChanel = function createChanel(chanel) {
+    for (var i = 0; i < chanel.sources.length; i++) {
+        var inputContainer = document.createElement('div');
         inputContainer.classList.add('chanel');
         document.querySelector('form').appendChild(inputContainer);
 
-        const input = document.createElement('input');
+        var input = document.createElement('input');
         input.id = chanel.sources[i].id;
         input.type = 'checkbox';
         inputContainer.appendChild(input);
 
-        const label = document.createElement('label');
+        var label = document.createElement('label');
         label.innerHTML = chanel.sources[i].name;
         label.setAttribute('for', chanel.sources[i].id);
-        input.after(label);
+        inputContainer.appendChild(label);
     }
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (createChanel);
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__NewsList__ = __webpack_require__(3);
-
-
-const createNews = chanel => {
-    const newsBlock = document.createElement('div');
+var createNews = function createNews(chanel) {
+    var newsBlock = document.createElement('div');
     newsBlock.classList.add('news-block');
     document.querySelector('.container').appendChild(newsBlock);
 
-    const articles = chanel.articles;
-    const chanelName = document.createElement('h2');
+    var articles = chanel.articles;
+    var chanelName = document.createElement('h2');
     chanelName.innerHTML = articles[0].source.name;
     newsBlock.appendChild(chanelName);
 
-    const newsList = new __WEBPACK_IMPORTED_MODULE_0__NewsList__["a" /* default */](articles, chanelName);
+    var newsList = new _NewsList2.default(articles, chanelName);
     newsList.createItems();
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (createNews);
+exports.createNews = createNews;
+exports.createChanel = createChanel;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const makeRequest = (URL, func) => {
-    fetch(URL, { mode: 'cors' }).then(res => {
-        return res.json();
-    }).then(res => {
-        func(res);
-    }).catch(error => {
-        throw new Error('Error with fetch');
-    });
-};
 
-/* harmony default export */ __webpack_exports__["a"] = (makeRequest);
 
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-"use strict";
-class NewsList {
-    constructor(articles, chanelName) {
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var NewsList = function () {
+    function NewsList(articles, chanelName) {
+        _classCallCheck(this, NewsList);
+
         this.articles = articles;
         this.chanelName = chanelName;
     }
 
-    createItems() {
-        for (let i = 0; i < this.articles.length; i++) {
-            let articleHead = document.createElement('h3');
-            articleHead.innerHTML = this.articles[i].title;
-            articleHead.classList.add(`article-${i}`);
-            this.chanelName.after(articleHead);
+    _createClass(NewsList, [{
+        key: 'createItems',
+        value: function createItems() {
+            for (var i = 0; i < this.articles.length; i++) {
+                var articleHead = document.createElement('h3');
+                articleHead.innerHTML = this.articles[i].title;
+                articleHead.classList.add('article-' + i);
+                this.chanelName.after(articleHead);
 
-            let date = document.createElement('span');
-            date.innerHTML = this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
-            articleHead.after(date);
+                var date = document.createElement('span');
+                date.innerHTML = this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.');
+                articleHead.after(date);
 
-            let articleText = document.createElement('p');
-            articleText.innerHTML = this.articles[i].description;
-            date.after(articleText);
+                var articleText = document.createElement('p');
+                articleText.innerHTML = this.articles[i].description;
+                date.after(articleText);
 
-            let link = document.createElement('a');
-            link.innerHTML = 'read more...';
-            link.setAttribute('href', this.articles[i].url);
-            link.setAttribute('target', '_blank');
-            articleText.appendChild(link);
+                var link = document.createElement('a');
+                link.innerHTML = 'read more...';
+                link.setAttribute('href', this.articles[i].url);
+                link.setAttribute('target', '_blank');
+                articleText.appendChild(link);
+            }
         }
-    }
-}
+    }]);
 
-/* harmony default export */ __webpack_exports__["a"] = (NewsList);
+    return NewsList;
+}();
+
+exports.default = NewsList;
 
 /***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__request__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_chanel__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_news__ = __webpack_require__(1);
 
 
+var _Request = __webpack_require__(0);
 
+var _Request2 = _interopRequireDefault(_Request);
+
+var _helpers = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.onload = function () {
-    const mainHeader = document.querySelector('h2');
-    const container = document.querySelector('.container');
-    const button = document.querySelector('button');
-    const form = document.createElement('form');
+    var mainHeader = document.querySelector('h2');
+    var container = document.querySelector('.container');
+    var button = document.querySelector('button');
+    var form = document.createElement('form');
     container.appendChild(form);
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__request__["a" /* default */])('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', __WEBPACK_IMPORTED_MODULE_1__create_chanel__["a" /* default */]);
+    (0, _Request2.default)('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createChanel);
 
-    let checked = [];
+    var checked = [];
 
     button.addEventListener('click', function (e) {
         e.preventDefault();
@@ -203,12 +251,12 @@ window.onload = function () {
             container.innerHTML = '';
             form.innerHTML = '';
             container.appendChild(form);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__request__["a" /* default */])('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', __WEBPACK_IMPORTED_MODULE_1__create_chanel__["a" /* default */]);
+            (0, _Request2.default)('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createChanel);
             checked = [];
             button.innerHTML = 'Get the NEWS';
         } else {
-            let arr = document.getElementsByTagName('input');
-            for (let i = 0; i < arr.length; i++) {
+            var arr = document.getElementsByTagName('input');
+            for (var i = 0; i < arr.length; i++) {
                 if (arr[i].checked === true) {
                     checked.push(arr[i].id);
                 }
@@ -217,13 +265,19 @@ window.onload = function () {
             if (checked.length !== 0) {
                 e.target.classList.add('clicked');
 
-                Promise.all(checked).then(values => {
-                    return values;
-                }).then(values => {
-                    for (let i = 0; i < values.length; i++) {
-                        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__request__["a" /* default */])(`https://newsapi.org/v2/top-headlines?sources=${values[i]}&apiKey=9ff31ef0306944baa7b15c739cb34dbe`, __WEBPACK_IMPORTED_MODULE_2__create_news__["a" /* default */]);
-                    }
-                });
+                for (var _i = 0; _i < checked.length; _i++) {
+                    (0, _Request2.default)('https://newsapi.org/v2/top-headlines?sources=' + checked[_i] + '&apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createNews);
+                }
+
+                // Promise.all(checked).then(values => {
+                //     return values;
+                // })
+                //     .then(values => {
+                //             for (let i = 0; i < values.length; i++) {
+                //                 makeRequest(`https://newsapi.org/v2/top-headlines?sources=${values[i]}&apiKey=9ff31ef0306944baa7b15c739cb34dbe`, createNews);
+                //             }
+                //         }
+                //     );
 
                 container.innerHTML = '';
                 mainHeader.innerHTML = "Here are some news for you:";
