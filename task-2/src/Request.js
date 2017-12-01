@@ -1,5 +1,5 @@
 let makeRequest = function response(query, func) {
-    return new Promise(function() {
+    //return new Promise(function() {
         let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
         let xhr = new XHR();
         xhr.open('GET', query, true);
@@ -11,7 +11,7 @@ let makeRequest = function response(query, func) {
             throw new Error('Error with request!!!');
         };
         xhr.send();
-    });
+    //});
 
 };
 
