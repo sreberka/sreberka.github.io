@@ -1,18 +1,14 @@
-let makeRequest = function response(query, func) {
-    //return new Promise(function() {
-        let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
-        let xhr = new XHR();
-        xhr.open('GET', query, true);
-        xhr.onload = function () {
-            let obj = JSON.parse(this.responseText);
-            func(obj);
-        };
-        xhr.onerror = function () {
-            throw new Error('Error with request!!!');
-        };
-        xhr.send();
-    //});
-
+const makeRequest = (URL, func) => {
+    axios.get(URL, {mode: 'cors'})
+        .then((res) => {
+            return res.json();
+        })
+        .then((res) => {
+            func(res);
+        })
+        .catch((error) => {
+            throw new Error('Error with fetch');
+        });
 };
 
 export default makeRequest;
