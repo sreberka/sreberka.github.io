@@ -6,7 +6,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 window.onload = function () {
     var makeRequest = function response(query, func) {
-        //return new Promise(function() {
         var XHR = "onload" in new XMLHttpRequest() ? XMLHttpRequest : XDomainRequest;
         var xhr = new XHR();
         xhr.open('GET', query, true);
@@ -18,7 +17,6 @@ window.onload = function () {
             throw new Error('Error with request!!!');
         };
         xhr.send();
-        //});
     };
 
     var NewsList = function () {
