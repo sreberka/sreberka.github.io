@@ -5,18 +5,14 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 window.onload = function () {
-    var makeRequest = function response(query, func) {
-        var XHR = "onload" in new XMLHttpRequest() ? XMLHttpRequest : XDomainRequest;
-        var xhr = new XHR();
-        xhr.open('GET', query, true);
-        xhr.onload = function () {
-            var obj = JSON.parse(this.responseText);
-            func(obj);
-        };
-        xhr.onerror = function () {
-            throw new Error('Error with request!!!');
-        };
-        xhr.send();
+    var makeRequest = function makeRequest(URL, func) {
+        fetch(URL, { mode: 'cors' }).then(function (res) {
+            return res.json();
+        }).then(function (res) {
+            func(res);
+        }).catch(function (error) {
+            throw new Error('Error with fetch');
+        });
     };
 
     var NewsList = function () {
