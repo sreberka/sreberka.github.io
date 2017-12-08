@@ -1,13 +1,12 @@
 module.exports = {
     entry: {
-        app: './src/app.js'
+        app: './src/app.js',
+        another: './src/NewsList.js'
     },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: __dirname + '/dist',
-        publicPath: 'dist/',
-        library: 'myLibrary',
-        libraryTarget: 'var'
+        publicPath: 'dist/'
     },
     module: {
         loaders: [{
@@ -18,3 +17,4 @@ module.exports = {
     },
     devtool: 'source-map',
 }
+

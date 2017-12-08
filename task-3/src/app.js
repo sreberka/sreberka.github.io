@@ -36,6 +36,13 @@ window.onload = function () {
             if(checked.length !== 0) {
                 e.target.classList.add('clicked');
 
+
+                import(/* webpackChunkName: "NewsList" */
+                    /* webpackMode: "lazy" */
+                    './NewsList').then(module => {
+                    const list = module.default;
+                });
+
                 Promise.all(checked).then(values => {
                     return values;
                 })

@@ -12,6 +12,7 @@
   "main": "webpack.config.js",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-dynamic-import-webpack": "^1.0.2",
     "babel-preset-env": "^1.6.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",

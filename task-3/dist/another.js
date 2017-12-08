@@ -1,4 +1,3 @@
-var myLibrary =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -64,86 +63,11 @@ var myLibrary =
 /******/ 	__webpack_require__.p = "dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var makeRequest = function makeRequest(URL, func) {
-    fetch(URL, { mode: 'cors' }).then(function (res) {
-        return res.json();
-    }).then(function (res) {
-        func(res);
-    }).catch(function (error) {
-        throw new Error('Error with fetch');
-    });
-};
-
-exports.default = makeRequest;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.createChanel = exports.createNews = undefined;
-
-var _NewsList = __webpack_require__(2);
-
-var _NewsList2 = _interopRequireDefault(_NewsList);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var createChanel = function createChanel(chanel) {
-    for (var i = 0; i < chanel.sources.length; i++) {
-        var inputContainer = document.createElement('div');
-        inputContainer.classList.add('chanel');
-        document.querySelector('form').appendChild(inputContainer);
-
-        var input = document.createElement('input');
-        input.id = chanel.sources[i].id;
-        input.type = 'checkbox';
-        inputContainer.appendChild(input);
-
-        var label = document.createElement('label');
-        label.innerHTML = chanel.sources[i].name;
-        label.setAttribute('for', chanel.sources[i].id);
-        input.after(label);
-    }
-};
-
-var createNews = function createNews(chanel) {
-    var newsBlock = document.createElement('div');
-    newsBlock.classList.add('news-block');
-    document.querySelector('.container').appendChild(newsBlock);
-
-    var articles = chanel.articles;
-    var chanelName = document.createElement('h2');
-    chanelName.innerHTML = articles[0].source.name;
-    newsBlock.appendChild(chanelName);
-
-    var newsList = new _NewsList2.default(articles, chanelName);
-    newsList.createItems();
-};
-
-exports.createNews = createNews;
-exports.createChanel = createChanel;
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -196,71 +120,6 @@ var NewsList = function () {
 
 exports.default = NewsList;
 
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _Request = __webpack_require__(0);
-
-var _Request2 = _interopRequireDefault(_Request);
-
-var _helpers = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-window.onload = function () {
-    var mainHeader = document.querySelector('h2');
-    var container = document.querySelector('.container');
-    var button = document.querySelector('button');
-    var form = document.createElement('form');
-    container.appendChild(form);
-    (0, _Request2.default)('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createChanel);
-
-    var checked = [];
-
-    button.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (e.target.classList.contains('clicked')) {
-            e.target.classList.remove('clicked');
-            mainHeader.innerHTML = "Choose your favorite chanels to see the news:";
-            container.innerHTML = '';
-            form.innerHTML = '';
-            container.appendChild(form);
-            (0, _Request2.default)('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createChanel);
-            checked = [];
-            button.innerHTML = 'Get the NEWS';
-        } else {
-            var arr = document.getElementsByTagName('input');
-            for (var i = 0; i < arr.length; i++) {
-                if (arr[i].checked === true) {
-                    checked.push(arr[i].id);
-                }
-            }
-
-            if (checked.length !== 0) {
-                e.target.classList.add('clicked');
-
-                Promise.all(checked).then(function (values) {
-                    return values;
-                }).then(function (values) {
-                    for (var _i = 0; _i < values.length; _i++) {
-                        (0, _Request2.default)('https://newsapi.org/v2/top-headlines?sources=' + values[_i] + '&apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createNews);
-                    }
-                });
-
-                container.innerHTML = '';
-                mainHeader.innerHTML = "Here are some news for you:";
-                button.innerHTML = 'Back to all chanels';
-            }
-        }
-    });
-};
-
 /***/ })
 /******/ ]);
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=another.js.map
