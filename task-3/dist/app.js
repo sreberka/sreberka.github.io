@@ -202,17 +202,40 @@ var createChanel = function createChanel(chanel) {
 };
 
 var createNews = function createNews(chanel) {
-    var newsBlock = document.createElement('div');
-    newsBlock.classList.add('news-block');
-    document.querySelector('.container').appendChild(newsBlock);
+    new Promise(function (resolve) {
+        __webpack_require__.e/* require.ensure */(0).then((function (require) {
+            resolve(__webpack_require__( /* webpackChunkName: "NewsList" */
+            /* webpackMode: "lazy" */
+            0));
+        }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+    }).then(function (module) {
+        var list = module.default;
+        console.log(list);
 
-    var articles = chanel.articles;
-    var chanelName = document.createElement('h2');
-    chanelName.innerHTML = articles[0].source.name;
-    newsBlock.appendChild(chanelName);
+        var newsBlock = document.createElement('div');
+        newsBlock.classList.add('news-block');
+        document.querySelector('.container').appendChild(newsBlock);
 
-    var newsList = new NewsList(articles, chanelName);
-    newsList.createItems();
+        var articles = chanel.articles;
+        var chanelName = document.createElement('h2');
+        chanelName.innerHTML = articles[0].source.name;
+        newsBlock.appendChild(chanelName);
+
+        var newsList = new list(articles, chanelName);
+        newsList.createItems();
+    });
+
+    // const newsBlock = document.createElement('div');
+    // newsBlock.classList.add('news-block');
+    // document.querySelector('.container').appendChild(newsBlock);
+    //
+    // const articles = chanel.articles;
+    // const chanelName = document.createElement('h2');
+    // chanelName.innerHTML = articles[0].source.name;
+    // newsBlock.appendChild(chanelName);
+    //
+    // const newsList = new NewsList(articles, chanelName);
+    // newsList.createItems();
 };
 
 exports.createNews = createNews;
@@ -257,15 +280,6 @@ window.onload = function () {
             checked = [];
             button.innerHTML = 'Get the NEWS';
         } else {
-            new Promise(function (resolve) {
-                __webpack_require__.e/* require.ensure */(0).then((function (require) {
-                    resolve(__webpack_require__( /* webpackChunkName: "NewsList" */0));
-                }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
-            }).then(function (module) {
-                var print = module.default;
-                print();
-            });
-
             var arr = document.getElementsByTagName('input');
             for (var i = 0; i < arr.length; i++) {
                 if (arr[i].checked === true) {
