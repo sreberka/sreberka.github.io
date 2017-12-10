@@ -1,5 +1,6 @@
-webpackJsonp([0,2],[
-/* 0 */
+webpackJsonp([0],{
+
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53,5 +54,6 @@ var NewsList = function () {
 exports.default = NewsList;
 
 /***/ })
-]);
+
+});
 //# sourceMappingURL=0.js.map

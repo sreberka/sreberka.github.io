@@ -145,12 +145,11 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -172,7 +171,7 @@ var makeRequest = function makeRequest(URL, func) {
 exports.default = makeRequest;
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -206,7 +205,7 @@ var createNews = function createNews(chanel) {
         __webpack_require__.e/* require.ensure */(0).then((function (require) {
             resolve(__webpack_require__( /* webpackChunkName: "NewsList" */
             /* webpackMode: "lazy" */
-            0));
+            3));
         }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
     }).then(function (module) {
         var list = module.default;
@@ -242,17 +241,17 @@ exports.createNews = createNews;
 exports.createChanel = createChanel;
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _Request = __webpack_require__(1);
+var _Request = __webpack_require__(0);
 
 var _Request2 = _interopRequireDefault(_Request);
 
-var _helpers = __webpack_require__(2);
+var _helpers = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
