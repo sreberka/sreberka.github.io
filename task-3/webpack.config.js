@@ -1,7 +1,6 @@
 module.exports = {
     entry: {
         app: './src/app.js'
-        //another: './src/NewsList.js'
     },
     output: {
         filename: '[name].js',
