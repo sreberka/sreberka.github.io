@@ -180,8 +180,6 @@ exports.default = makeRequest;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//import NewsList from './NewsList';
-
 var createChanel = function createChanel(chanel) {
     for (var i = 0; i < chanel.sources.length; i++) {
         var inputContainer = document.createElement('div');
