@@ -1,3 +1,5 @@
+import '../css/lazy.css'
+
 class NewsList {
     constructor(articles, chanelName) {
         this.articles = articles;

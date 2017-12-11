@@ -1,5 +1,3 @@
-//import NewsList from './NewsList';
-
 const createChanel = (chanel) => {
     for(let i = 0; i < chanel.sources.length; i++) {
         const inputContainer = document.createElement('div');
