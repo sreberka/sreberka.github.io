@@ -1,4 +1,4 @@
-import '../css/lazy.css'
+import './lazy.scss';
 
 class NewsList {
     constructor(articles, chanelName) {

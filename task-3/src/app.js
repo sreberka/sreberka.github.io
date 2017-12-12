@@ -1,5 +1,6 @@
 import makeRequest from './Request';
 import { createNews, createChanel } from './helpers';
+import './style.scss';
 
 window.onload = function () {
     const mainHeader = document.querySelector('h2');

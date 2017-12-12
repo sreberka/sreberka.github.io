@@ -1,0 +1,52 @@
+span {
+	font-size: 15px;
+	font-weight: 600;
+	color: darkred;
+}
+
+.news-block {
+	padding: 1em 2em;
+	margin: 10px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+	background: rgba(255, 255, 255, 0.8);
+}
+
+.news-block h2 {
+	color: darkred;
+	border-bottom: 4px double darkred;
+	padding-bottom: 10px;
+}
+
+h3 {
+	color: #000;
+	margin-bottom: 0;
+	font-size: 2rem;
+}
+
+p {
+	border-bottom: 1px dashed darkred;
+	padding-bottom: 10px;
+	font-size: 1.6rem;
+}
+
+p:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+a {
+	display: block;
+	margin-top: 10px;
+	color: #4682b4;
+	text-decoration: none;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+a:hover {
+	color: #191970;
+	text-decoration: underline;
+}
