@@ -55,11 +55,5 @@ module.exports = {
     devtool: 'source-map',
     plugins: [
         extractSass
-    ],
-    devServer : {
-        stats: 'errors-only',
-        contentBase: './',
-        host: 'localhost',
-        port: 3000
-    }
+    ]
 }
