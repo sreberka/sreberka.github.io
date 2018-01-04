@@ -9,17 +9,13 @@ class NewsList {
 
     createItems() {
         for(let i = 0; i < this.articles.length; i++) {
-            let header = new Factory('h3', this.articles[i].title, `article-${i}`, this.container);
-            header.createElement();
+            let newElement = new Factory();
+            newElement.createElement('h3', this.articles[i].title, `article-${i}`, this.container);
+            newElement.createElement('span', this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.'), 'date', this.container);
+            newElement.createElement('p', this.articles[i].description, 'article-text', this.container);
 
-            let date = new Factory('span', this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.'), 'date', this.container)
-            date.createElement();
-
-            let articleText = new Factory('p', this.articles[i].description, 'article-text', this.container);
-            articleText.createElement();
-
-            let link = new Factory('a', 'read more...', 'link', this.container);
-            link.createElement();
+            let link = new Factory();
+            link.createElement('a', 'read more...', 'link', this.container);
             link.setAttribute('href', this.articles[i].url);
             link.setAttribute('target', '_blank');
         }

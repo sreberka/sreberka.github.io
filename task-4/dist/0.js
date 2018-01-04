@@ -42,17 +42,13 @@ var NewsList = function () {
         key: 'createItems',
         value: function createItems() {
             for (var i = 0; i < this.articles.length; i++) {
-                var header = new _Patterns2.default('h3', this.articles[i].title, 'article-' + i, this.container);
-                header.createElement();
+                var newElement = new _Patterns2.default();
+                newElement.createElement('h3', this.articles[i].title, 'article-' + i, this.container);
+                newElement.createElement('span', this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.'), 'date', this.container);
+                newElement.createElement('p', this.articles[i].description, 'article-text', this.container);
 
-                var date = new _Patterns2.default('span', this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.'), 'date', this.container);
-                date.createElement();
-
-                var articleText = new _Patterns2.default('p', this.articles[i].description, 'article-text', this.container);
-                articleText.createElement();
-
-                var link = new _Patterns2.default('a', 'read more...', 'link', this.container);
-                link.createElement();
+                var link = new _Patterns2.default();
+                link.createElement('a', 'read more...', 'link', this.container);
                 link.setAttribute('href', this.articles[i].url);
                 link.setAttribute('target', '_blank');
             }
@@ -80,18 +76,17 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Factory = function () {
-    function Factory(tag, inner, className, place) {
+    function Factory() {
         _classCallCheck(this, Factory);
-
-        this.tag = tag;
-        this.inner = inner;
-        this.className = className;
-        this.place = place;
     }
 
     _createClass(Factory, [{
         key: "createElement",
-        value: function createElement() {
+        value: function createElement(tag, inner, className, place) {
+            this.tag = tag;
+            this.inner = inner;
+            this.className = className;
+            this.place = place;
             this.elementTag = document.createElement(this.tag);
             this.elementTag.innerHTML = this.inner;
             this.elementTag.classList.add(this.className);

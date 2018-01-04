@@ -194,7 +194,7 @@ var createChanel = function createChanel(chanel) {
         var label = document.createElement('label');
         label.innerHTML = chanel.sources[i].name;
         label.setAttribute('for', chanel.sources[i].id);
-        input.after(label);
+        inputContainer.appendChild(label);
     }
 };
 
