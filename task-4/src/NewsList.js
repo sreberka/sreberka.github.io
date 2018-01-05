@@ -1,5 +1,5 @@
 import './lazy.scss';
-import Factory from './Patterns';
+import Factory from './Factory';
 
 class NewsList {
     constructor(articles, container) {

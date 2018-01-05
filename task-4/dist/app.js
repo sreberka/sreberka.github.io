@@ -159,7 +159,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var makeRequest = function makeRequest(URL, func) {
-    fetch(URL, { mode: 'cors' }).then(function (res) {
+    return fetch(URL, { mode: 'cors' }).then(function (res) {
         return res.json();
     }).then(function (res) {
         func(res);
@@ -180,6 +180,14 @@ exports.default = makeRequest;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.observer = exports.createChanel = undefined;
+
+var _Request = __webpack_require__(0);
+
+var _Request2 = _interopRequireDefault(_Request);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var createChanel = function createChanel(chanel) {
     for (var i = 0; i < chanel.sources.length; i++) {
         var inputContainer = document.createElement('div');
@@ -223,8 +231,59 @@ var createNews = function createNews(chanel) {
     });
 };
 
-exports.createNews = createNews;
+// Facade.
+var stopEvent = function stopEvent(event) {
+    event.preventDefault();
+    event.stopPropagation();
+};
+
+// Observer.
+var observer = function observer(e) {
+    stopEvent(e);
+
+    var mainHeader = document.querySelector('h2');
+    var container = document.querySelector('.container');
+    var button = document.querySelector('button');
+    var form = document.createElement('form');
+
+    var checked = [];
+    if (e.target.classList.contains('clicked')) {
+        e.target.classList.remove('clicked');
+        mainHeader.innerHTML = "Choose your favorite chanels to see the news:";
+        container.innerHTML = '';
+        form.innerHTML = '';
+        container.appendChild(form);
+        (0, _Request2.default)('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', createChanel);
+        checked = [];
+        button.innerHTML = 'Get the NEWS';
+    } else {
+        var arr = document.getElementsByTagName('input');
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i].checked === true) {
+                checked.push(arr[i].id);
+            }
+        }
+
+        if (checked.length !== 0) {
+            e.target.classList.add('clicked');
+
+            Promise.all(checked).then(function (values) {
+                return values;
+            }).then(function (values) {
+                for (var _i = 0; _i < values.length; _i++) {
+                    (0, _Request2.default)('https://newsapi.org/v2/top-headlines?sources=' + values[_i] + '&apiKey=9ff31ef0306944baa7b15c739cb34dbe', createNews);
+                }
+            });
+
+            container.innerHTML = '';
+            mainHeader.innerHTML = "Here are some news for you:";
+            button.innerHTML = 'Back to all chanels';
+        }
+    }
+};
+
 exports.createChanel = createChanel;
+exports.observer = observer;
 
 /***/ }),
 /* 2 */
@@ -734,47 +793,11 @@ window.onload = function () {
     var button = document.querySelector('button');
     var form = document.createElement('form');
     container.appendChild(form);
+
     (0, _Request2.default)('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createChanel);
 
-    var checked = [];
-
     button.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (e.target.classList.contains('clicked')) {
-            e.target.classList.remove('clicked');
-            mainHeader.innerHTML = "Choose your favorite chanels to see the news:";
-            container.innerHTML = '';
-            form.innerHTML = '';
-            container.appendChild(form);
-            (0, _Request2.default)('https://newsapi.org/v2/sources?apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createChanel);
-            checked = [];
-            button.innerHTML = 'Get the NEWS';
-        } else {
-            var arr = document.getElementsByTagName('input');
-            for (var i = 0; i < arr.length; i++) {
-                if (arr[i].checked === true) {
-                    checked.push(arr[i].id);
-                }
-            }
-
-            if (checked.length !== 0) {
-                e.target.classList.add('clicked');
-
-                Promise.all(checked).then(function (values) {
-                    return values;
-                }).then(function (values) {
-                    for (var _i = 0; _i < values.length; _i++) {
-                        (0, _Request2.default)('https://newsapi.org/v2/top-headlines?sources=' + values[_i] + '&apiKey=9ff31ef0306944baa7b15c739cb34dbe', _helpers.createNews);
-                    }
-                });
-
-                container.innerHTML = '';
-                mainHeader.innerHTML = "Here are some news for you:";
-                button.innerHTML = 'Back to all chanels';
-            }
-        }
+        (0, _helpers.observer)(e);
     });
 };
 

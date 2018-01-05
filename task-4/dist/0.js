@@ -22,9 +22,9 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 __webpack_require__(12);
 
-var _Patterns = __webpack_require__(10);
+var _Factory = __webpack_require__(10);
 
-var _Patterns2 = _interopRequireDefault(_Patterns);
+var _Factory2 = _interopRequireDefault(_Factory);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42,12 +42,12 @@ var NewsList = function () {
         key: 'createItems',
         value: function createItems() {
             for (var i = 0; i < this.articles.length; i++) {
-                var newElement = new _Patterns2.default();
+                var newElement = new _Factory2.default();
                 newElement.createElement('h3', this.articles[i].title, 'article-' + i, this.container);
                 newElement.createElement('span', this.articles[i].publishedAt.slice(0, 10).split('-').reverse().join('.'), 'date', this.container);
                 newElement.createElement('p', this.articles[i].description, 'article-text', this.container);
 
-                var link = new _Patterns2.default();
+                var link = new _Factory2.default();
                 link.createElement('a', 'read more...', 'link', this.container);
                 link.setAttribute('href', this.articles[i].url);
                 link.setAttribute('target', '_blank');
@@ -83,14 +83,10 @@ var Factory = function () {
     _createClass(Factory, [{
         key: "createElement",
         value: function createElement(tag, inner, className, place) {
-            this.tag = tag;
-            this.inner = inner;
-            this.className = className;
-            this.place = place;
-            this.elementTag = document.createElement(this.tag);
-            this.elementTag.innerHTML = this.inner;
-            this.elementTag.classList.add(this.className);
-            this.place.appendChild(this.elementTag);
+            this.elementTag = document.createElement(tag);
+            this.elementTag.innerHTML = inner;
+            this.elementTag.classList.add(className);
+            place.appendChild(this.elementTag);
         }
     }, {
         key: "setAttribute",

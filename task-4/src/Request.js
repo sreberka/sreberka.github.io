@@ -1,5 +1,5 @@
 const makeRequest = (URL, func) => {
-    fetch(URL, {mode: 'cors'})
+    return fetch(URL, {mode: 'cors'})
         .then((res) => {
             return res.json();
         })
