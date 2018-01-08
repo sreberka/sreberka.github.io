@@ -241,12 +241,15 @@ var stopEvent = function stopEvent(event) {
 // Observer.
 var observer = function observer(e) {
     stopEvent(e);
+    strategy(e);
+};
 
+// Strategy.
+var strategy = function strategy(e) {
     var mainHeader = document.querySelector('h2');
     var container = document.querySelector('.container');
     var button = document.querySelector('button');
     var form = document.createElement('form');
-
     var checked = [];
     if (e.target.classList.contains('clicked')) {
         e.target.classList.remove('clicked');

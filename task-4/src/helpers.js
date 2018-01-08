@@ -48,12 +48,15 @@ const stopEvent = (event) => {
 // Observer.
 const observer = (e) => {
     stopEvent(e);
+    strategy(e);
+};
 
+// Strategy.
+const strategy = (e) => {
     const mainHeader = document.querySelector('h2');
     const container = document.querySelector('.container');
     const button = document.querySelector('button');
     const form = document.createElement('form');
-
     let checked = [];
     if(e.target.classList.contains('clicked')) {
         e.target.classList.remove('clicked');
