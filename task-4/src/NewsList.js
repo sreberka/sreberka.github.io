@@ -1,7 +1,8 @@
 import './lazy.scss';
 import Factory from './Factory';
 
-class NewsList {
+// Prototype.
+class PrototypeList {
     constructor(articles, container) {
         this.articles = articles;
         this.container = container;
@@ -19,6 +20,12 @@ class NewsList {
             link.setAttribute('href', this.articles[i].url);
             link.setAttribute('target', '_blank');
         }
+    }
+}
+
+class NewsList extends PrototypeList {
+    constructor(articles, container) {
+        super(articles, container);
     }
 }
 

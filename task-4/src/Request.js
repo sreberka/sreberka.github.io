@@ -1,3 +1,4 @@
+// Decorator.
 const makeRequest = (URL, func) => {
     return fetch(URL, {mode: 'cors'})
         .then((res) => {

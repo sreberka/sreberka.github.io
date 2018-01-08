@@ -75,8 +75,6 @@ const observer = (e) => {
 
         if(checked.length !== 0) {
             e.target.classList.add('clicked');
-
-
             Promise.all(checked).then(values => {
                 return values;
             })

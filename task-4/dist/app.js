@@ -158,6 +158,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+// Decorator.
 var makeRequest = function makeRequest(URL, func) {
     return fetch(URL, { mode: 'cors' }).then(function (res) {
         return res.json();
@@ -266,7 +267,6 @@ var observer = function observer(e) {
 
         if (checked.length !== 0) {
             e.target.classList.add('clicked');
-
             Promise.all(checked).then(function (values) {
                 return values;
             }).then(function (values) {
