@@ -16,3 +16,16 @@
   Result:<br />
   { "_id" : ObjectId("5a5759ae4e35d1925ff54fa4"), "borough" : "Bronx" }<br />
   { "_id" : ObjectId("5a5759ae4e35d1925ff5521f"), "borough" : "Manhattan" }
+
+
+# Task 3
+
+1.db.restaurants.createIndex({ 'name': 1 })
+
+2.db.restaurants.dropIndex('name_1')
+
+3.db.restaurants.createIndex({ restaurant_id:1,borough:1 })
+
+4.db.restaurants.createIndex({ cuisine: 1 }, { partialFilterExpression: { borough: 'Staten Island' }})
+
+5.db.restaurants.createIndex({ name: 1 }, { partialFilterExpression: { 'grades.8.score': {$lt : 7}}})
