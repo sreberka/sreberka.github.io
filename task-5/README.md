@@ -18,7 +18,7 @@
   { "_id" : ObjectId("5a5759ae4e35d1925ff5521f"), "borough" : "Manhattan" }
 
 
-# Task 3
+# Task 4
 
 1.db.restaurants.createIndex({ 'name': 1 })
 
