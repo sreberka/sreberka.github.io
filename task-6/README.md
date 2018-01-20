@@ -23,5 +23,22 @@
   ])<br />
   Result: { "_id" : "Latvia", "carriers" : [ "Uzbekistan Airways", "Blue Jet SP Z o o", "JetClub AG" ] }
 
+4. db.airlines.aggregate([<br />
+       {$match: { originCountry: "United States", destCountry: {$in: ["Greece", "Italy", "Spain"]}}},<br />
+       {$group: {_id: "$carrier", total: {$sum: "$passengers"}}},<br />
+       {$sort: {total: -1}},<br />
+       {$limit: 10},<br />
+       {$skip: 3}<br />
+   ])<br />
+   Result: { "_id" : "Compagnia Aerea Italiana", "total" : 280256 }<br />
+           { "_id" : "United Air Lines Inc.", "total" : 229936 }<br />
+           { "_id" : "Emirates", "total" : 100903 }<br />
+           { "_id" : "Air Europa", "total" : 94968 }<br />
+           { "_id" : "Meridiana S.p.A", "total" : 20308 }<br />
+           { "_id" : "Norwegian Air Shuttle ASA", "total" : 13344 }<br />
+           { "_id" : "VistaJet Limited", "total" : 183 }<br />
+
+
+
 
 
