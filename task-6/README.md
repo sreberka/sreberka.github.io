@@ -21,7 +21,7 @@
       {$match: { destCountry: "Latvia"}},<br />
       {$group: {_id: "$destCountry", carriers: {$addToSet: "$carrier"}}}<br />
   ])<br />
-  Result: { "_id" : "Latvia", "carriers" : [ "Uzbekistan Airways", "Blue Jet SP Z o o", "JetClub AG" ] }
+  Result: { "_id" : "Latvia", "carriers" : [ "Uzbekistan Airways", "Blue Jet SP Z o o", "JetClub AG" ] }<br />
 
 4. db.airlines.aggregate([<br />
        {$match: { originCountry: "United States", destCountry: {$in: ["Greece", "Italy", "Spain"]}}},<br />
