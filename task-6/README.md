@@ -48,7 +48,7 @@
         {$sort: {_id: 1}},<br />
         {$limit: 5},<br />
         {$project: { _id: 0, totalPassengers: 1, location: { state: "$_id", city: "$originCity"}}}<br />
-     ])
+     ])<br />
   Result:<br />
         { "totalPassengers" : 760120, "location" : { "state" : "Alabama", "city" : "Birmingham, AL" } }<br />
         { "totalPassengers" : 1472404, "location" : { "state" : "Alaska", "city" : "Anchorage, AK" } }<br />
