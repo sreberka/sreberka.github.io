@@ -41,19 +41,20 @@
        { "_id" : "VistaJet Limited", "total" : 183 }<br />
 
 5.db.airlines.aggregate([<br />
-      {$match: { originCountry: "United States"}},<br />
-      {$group: {_id: {state: "$destState", city: "$destCity"}, passengers: {$sum: "$passengers"}}},<br />
-      {$sort: {passengers: -1}},<br />
-      {$limit: 5},<br />
-      {$sort: {_id: 1}},<br />
-      {$project: {_id:0, totalPassengers: "$passengers", location: "$_id"}}<br />
-    ])<br />
-  Result: <br />
-       { "totalPassengers" : 16682161, "location" : { "state" : "California", "city" : "Los Angeles, CA" } }<br />
-       { "totalPassengers" : 16393166, "location" : { "state" : "Colorado", "city" : "Denver, CO" } }<br />
-       { "totalPassengers" : 25929030, "location" : { "state" : "Georgia", "city" : "Atlanta, GA" } }<br />
-       { "totalPassengers" : 24259929, "location" : { "state" : "Illinois", "city" : "Chicago, IL" } }<br />
-       { "totalPassengers" : 15928987, "location" : { "state" : "Texas", "city" : "Dallas/Fort Worth, TX" } }<br />
+        {$match: { originCountry: "United States"}},<br />
+        {$group: { _id: {state: "$originState", city: "$originCity"}, passengers: {$sum: "$passengers"}}},<br />
+        {$sort: {passengers: -1}},<br />
+        {$group: { _id: "$_id.state", totalPassengers: {$first: "$passengers"}, originCity: {$first: "$_id.city"}}},<br />
+        {$sort: {_id: 1}},<br />
+        {$limit: 5},<br />
+        {$project: { _id: 0, totalPassengers: 1, location: { state: "$_id", city: "$originCity"}}}<br />
+     ])
+  Result:<br />
+        { "totalPassengers" : 760120, "location" : { "state" : "Alabama", "city" : "Birmingham, AL" } }<br />
+        { "totalPassengers" : 1472404, "location" : { "state" : "Alaska", "city" : "Anchorage, AK" } }<br />
+        { "totalPassengers" : 13152753, "location" : { "state" : "Arizona", "city" : "Phoenix, AZ" } }<br />
+        { "totalPassengers" : 571452, "location" : { "state" : "Arkansas", "city" : "Little Rock, AR" } }<br />
+        { "totalPassengers" : 23701556, "location" : { "state" : "California", "city" : "Los Angeles, CA" } }<br />
 
 
 
