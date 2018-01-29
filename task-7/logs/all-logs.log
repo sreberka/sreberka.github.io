@@ -1,0 +1,4 @@
+{"level":"info","message":"localhost:8000","timestamp":"2018-01-29T12:57:56.649Z"}
+{"level":"info","message":"localhost:8000/blogs","timestamp":"2018-01-29T12:58:02.363Z"}
+{"level":"info","message":"localhost:8000/blogs/56","timestamp":"2018-01-29T12:58:08.279Z"}
+{"level":"info","message":"localhost:8000/404","timestamp":"2018-01-29T12:58:15.869Z"}
