@@ -2,30 +2,30 @@ const express = require('express');
 const app = express();
 const port = 8000;
 const Handlebars = require('handlebars');
+const logger = require("./utils/logger");
 app.use(express.static('public'));
 
 let data = [
     {
-        "blogId": "1",
-        "author": "Mary L"
+        "blogId": "1"
     },
     {
-        "blogId": "2",
-        "author": "Kate D"
+        "blogId": "2"
     },
     {
-        "blogId": "3",
-        "author": "Sam H"
+        "blogId": "3"
     }
 ];
 
 app.all('/', function (req, res) {
     res.json(data);
+    logger.info(req.headers.host);
 });
 
 app.route('/blogs')
     .get(function(req, res) {
         res.json(data);
+        logger.info(req.headers.host + req.url);
     })
     .post(function(req, res) {
         res.json(data);
@@ -34,6 +34,7 @@ app.route('/blogs')
 app.route('/blogs/:blogId')
     .get(function(req, res) {
         res.json(data);
+        logger.info(req.headers.host + req.url);
     })
     .put(function(req, res) {
         let obj = {};
@@ -64,7 +65,7 @@ app.route('/*')
             "<img src='./ManShrug.png'>";
         const template = Handlebars.compile(source);
         res.send(template());
-
+        logger.info(req.headers.host + req.url);
     });
 
 app.listen(port, () => {
