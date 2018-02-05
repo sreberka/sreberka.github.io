@@ -56,10 +56,11 @@ db.once('open', function() {
             showAll(req, res);
         });
 
+
     app.engine('handlebars', exphbs({defaultLayout: 'main'}));
     app.route('/*')
         .get(function(req, res) {
-            res.render('home');
+            res.render('error');
         });
 });
 
