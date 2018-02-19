@@ -7,8 +7,10 @@ class Blog extends React.Component {
     super(props);
     this.deleteItem = this.deleteItem.bind(this);
     this.addItem = this.addItem.bind(this);
+    this.filterAuthor = this.filterAuthor.bind(this);
     this.state = {
-      items: [{name: 'Kate', text: 'text'}, {name: 'Vita', text: 'text'}]
+      items: [{name: 'Kate', text: 'text'}, {name: 'Vita', text: 'text'}],
+      authorName: ''
     };
   }
 
@@ -26,10 +28,29 @@ class Blog extends React.Component {
     console.log(this.state.items)
   }
 
+  filterAuthor(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    this.setState({
+      authorName: e.target.value
+    });
+  }
+
+  filterItems() {
+    let itemsForFilter = this.state.items;
+    return itemsForFilter.filter(item => item.name.match(this.state.authorName));
+  }
+
   render() {
     let blogItems = this.state.items;
     return (
       <div className="blog">
+        <select onChange={this.filterAuthor}>
+          <option>Choose the author</option>
+          {blogItems.map((index) => (
+            <option>{index.name}</option>
+          ))}
+        </select>
         {blogItems.map((index) => (
           <BlogItem key={blogItems.indexOf(index)} id={blogItems.indexOf(index)} name={index.name} text={index.text} delete={this.deleteItem} />
         ))}
@@ -38,6 +59,15 @@ class Blog extends React.Component {
           .blog {
             background: #ccc;
             padding: 30px;
+            max-width: 1280px;
+            margin: 0 auto;
+          }
+
+          select {
+            margin-bottom: 20px;
+            border: none;
+            padding: 5px;
+            font-family: 'Nunito', sans-serif;
           }
         `}
         </style>
@@ -47,7 +77,3 @@ class Blog extends React.Component {
 }
 
 export default Blog;
-
-
-
-

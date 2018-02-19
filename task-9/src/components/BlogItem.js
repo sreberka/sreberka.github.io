@@ -15,15 +15,17 @@ class BlogItem extends React.Component {
   render() {
     return (
       <div className="item" id={this.props.id}>
-        <p>{this.props.name}</p>
-        <p>{this.props.text}</p>
+        <p className="author">{this.props.name}</p>
+        <p className="author-text">{this.props.text}</p>
         <button className="fa fa-times" onClick={this.deleteItem}></button>
         <style jsx>{`
           .item {
             position: relative;
             height: 100px;
-            background: yellow;
+            background: rgba(255, 255, 255, 0.5);
             margin-bottom: 20px;
+            padding: 20px;
+            font-family: 'Nunito', sans-serif;
           }
 
           .item button {
@@ -34,6 +36,17 @@ class BlogItem extends React.Component {
             background: transparent;
             border: none;
             cursor: pointer;
+          }
+
+          .author {
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #000;
+          }
+
+          .author-text {
+            padding: 5px;
+            background: #fff;
           }
         `}
         </style>
