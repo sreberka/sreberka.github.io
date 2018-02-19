@@ -25,20 +25,16 @@ class Blog extends React.Component {
     this.setState({
       items: [...this.state.items, arr]
     });
-    console.log(this.state.items)
   }
 
   filterAuthor(e) {
     e.stopPropagation();
     e.preventDefault();
-    this.setState({
-      authorName: e.target.value
-    });
-  }
-
-  filterItems() {
     let itemsForFilter = this.state.items;
-    return itemsForFilter.filter(item => item.name.match(this.state.authorName));
+    let filtered = itemsForFilter.filter(item => item.name === e.target.value);
+    this.setState({
+      items: filtered
+    });
   }
 
   render() {
