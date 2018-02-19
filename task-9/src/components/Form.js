@@ -23,8 +23,10 @@ class Form extends React.Component {
   addItem(e) {
     e.stopPropagation();
     e.preventDefault();
-    this.props.add(this.state.name, this.state.text);
-    this.setState({name: '', text: ''})
+    if(this.state.name && this.state.text){
+      this.props.add(this.state.name, this.state.text);
+      this.setState({name: '', text: ''})
+    }
   }
 
   render() {

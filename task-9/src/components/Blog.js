@@ -8,6 +8,7 @@ class Blog extends React.Component {
     this.deleteItem = this.deleteItem.bind(this);
     this.addItem = this.addItem.bind(this);
     this.filterAuthor = this.filterAuthor.bind(this);
+    this.showAll = this.showAll.bind(this);
     this.state = {
       items: [{name: 'Kate', text: 'text'}, {name: 'Vita', text: 'text'}],
       authorName: ''
@@ -30,10 +31,14 @@ class Blog extends React.Component {
   filterAuthor(e) {
     e.stopPropagation();
     e.preventDefault();
-    let itemsForFilter = this.state.items;
-    let filtered = itemsForFilter.filter(item => item.name === e.target.value);
     this.setState({
-      items: filtered
+      authorName: e.target.value
+    });
+  }
+
+  showAll() {
+    this.setState({
+      authorName: ''
     });
   }
 
@@ -42,14 +47,16 @@ class Blog extends React.Component {
     return (
       <div className="blog">
         <select onChange={this.filterAuthor}>
-          <option>Choose the author</option>
+          <option disabled>Choose the author</option>
           {blogItems.map((index) => (
             <option>{index.name}</option>
           ))}
         </select>
-        {blogItems.map((index) => (
-          <BlogItem key={blogItems.indexOf(index)} id={blogItems.indexOf(index)} name={index.name} text={index.text} delete={this.deleteItem} />
-        ))}
+        <button onClick={this.showAll}>Show all</button>
+        {blogItems.filter(item => item.name.match(this.state.authorName))
+          .map((index, i) => (
+            <BlogItem key={i} id={i} name={index.name} text={index.text} delete={this.deleteItem} />
+          ))}
         <Form add={this.addItem} />
         <style jsx>{`
           .blog {
@@ -64,6 +71,28 @@ class Blog extends React.Component {
             border: none;
             padding: 5px;
             font-family: 'Nunito', sans-serif;
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          button {
+            display: inline-block;
+            vertical-align: middle;
+            border: 2px solid #000;
+            color: #fff;
+            background: #000;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 5px 10px;
+            margin-left: 5px;
+            margin-bottom: 20px;
+            cursor: pointer;
+          }
+
+          button:hover {
+            color: #000;
+            background: #fff;
           }
         `}
         </style>
