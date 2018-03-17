@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todolist">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular todo list</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="src/js/index.js"></script>
+    <script src="src/js/controllers/DemoCtrl.js"></script>
+</head>
+<body>
+
+    <div ng-controller="TodoCtrl">
+        <div>
+            <form ng-submit="addTodo()">
+                <label>Add Todo:</label>
+                <input type="text" ng-model="todoName">
+            </form>
+            <ul>
+                <li ng-repeat="item in items" ng-click="changeStatus(item)" ng-class="{'done-todo': item.complited,'new-todo': !item.complited}">
+                    {{item.name}} <button> edit</button>
+                </li>
+            </ul>
+        </div>
+
+        <hr>
+        <p>{{today | date:'dd/MM/yyyy'}}</p>
+    </div>
+</body>
+</html>
