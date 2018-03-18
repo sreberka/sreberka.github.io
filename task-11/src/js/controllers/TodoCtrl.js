@@ -20,7 +20,7 @@ angular.module('todolist')
                 item.status = 'new';
             }
         };
-        $scope.selectedPeriod = { id: 0, name: 'today' };
+        $scope.selectedPeriod = { date: 0, name: 'today' };
 
         $scope.statusFilter = function (item) {
             if(item.status.match(itemStatus)){
@@ -29,7 +29,7 @@ angular.module('todolist')
         };
 
         $scope.filterDate = function (item) {
-            if(item.date >= $scope.selectedPeriod.id){
+            if(item.date >= $scope.selectedPeriod.date){
                 return item
             }
         };
@@ -50,9 +50,9 @@ angular.module('todolist')
         };
 
         $scope.options = [
-            { id: Date.now() - 5*86400000, name: '5 days' },
-            { id: Date.now() - 10*86400000, name: '10 days' },
-            { id: Date.now() - 15*86400000, name: '15 days' },
-            { id: Date.now() - 20*86400000, name: '20 days'}
+            { date: Date.now() - 5*86400000, name: '5 days' },
+            { date: Date.now() - 10*86400000, name: '10 days' },
+            { date: Date.now() - 15*86400000, name: '15 days' },
+            { date: Date.now() - 20*86400000, name: '20 days'}
         ];
     });

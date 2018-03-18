@@ -20,7 +20,9 @@
             </form>
             <button ng-click="orderByQuery('date')">Order by Date</button>
             <button ng-click="orderByQuery('name')">Order by Name</button>
-            <select ng-model="selectedPeriod" ng-options="option as option.name for option in options"></select>
+            <select ng-model="selectedPeriod" ng-options="option.name for option in options">
+                <option value="" selected="selected">No older than...</option>
+            </select>
             <ul class="todo-items">
                 <li ng-repeat="item in items | filter:statusFilter | filter:filterDate | orderBy:sortField:reverse" >
                     <p ng-click="changeStatus(item)" ng-class="{'done-todo': item.complited,'new-todo': !item.complited}">{{item.name}}</p> <i class="edit-icon fas fa-pencil-alt"></i>

@@ -4,6 +4,7 @@ body {
 
 .todo-items {
     list-style-type: circle;
+    min-height: 160px;
 }
 
 .todo-items li p {
@@ -49,10 +50,14 @@ body {
     padding: 5px;
     border: 1px solid black;
     background: lightcyan;
+    text-decoration: none;
+    outline: none;
+    color: black;
 }
 
 .filter-buttons li a:hover,
 .filter-buttons li a:active,
 .filter-buttons li a:focus {
     background: lightseagreen;
+    color: #fff;
 }
