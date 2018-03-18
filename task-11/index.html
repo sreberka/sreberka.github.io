@@ -17,14 +17,18 @@
                 <input type="text" ng-model="todoName">
             </form>
             <ul>
-                <li ng-repeat="item in items" ng-click="changeStatus(item)" ng-class="{'done-todo': item.complited,'new-todo': !item.complited}">
+                <li ng-repeat="item in items | filter:statusFilter" ng-click="changeStatus(item)" ng-class="{'done-todo': item.complited,'new-todo': !item.complited}">
                     {{item.name}} <button> edit</button>
+                    <p>{{item.date | date:'dd/MM/yyyy/hh/mm/ss'}}</p>
                 </li>
             </ul>
         </div>
+        <ul class="filter-buttons">
+            <li><a ng-click="changeFilter('')" href="#/">All</a></li>
+            <li><a ng-click="changeFilter('new')" href="#/new">New</a></li>
+            <li><a ng-click="changeFilter('complited')" href="#/complited">Complited</a></li>
+        </ul>
 
-        <hr>
-        <p>{{today | date:'dd/MM/yyyy'}}</p>
     </div>
 </body>
 </html>
