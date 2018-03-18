@@ -1,0 +1,19 @@
+{
+  "todos":
+    [{
+      "name": "clean the flat",
+      "complited": false,
+      "date": 1520524980624,
+      "status": "new"
+    },{
+      "name": "go to shop",
+      "complited": false,
+      "date": 1519938000000,
+      "status": "new"
+    },{
+      "name": "buy gifts",
+      "complited": false,
+      "date": 1520197200000,
+      "status": "new"
+    }]
+}

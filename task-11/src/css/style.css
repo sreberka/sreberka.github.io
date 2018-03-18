@@ -1,3 +1,31 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.todo-items {
+    list-style-type: circle;
+}
+
+.todo-items li p {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.todo-items li span {
+    font-size: 10px;
+    color: darkgray;
+}
+
+.todo-items li:hover .edit-icon {
+    display: inline-block;
+}
+
+.edit-icon {
+    color: darkcyan;
+    font-size: 12px;
+    display: none;
+}
+
 .done-todo {
     text-decoration: line-through;
     color: darkcyan;
@@ -6,7 +34,6 @@
 .new-todo {
     text-decoration: none;
     color: #000;
-    cursor: pointer;
 }
 
 .filter-buttons {
