@@ -1,15 +1,19 @@
-angular.module('todolist')
-    .controller('TodoCtrl', function ($scope, $http) {
-        $http({method: 'GET', url: 'src/todos/todos.json'}).
-        then(function success(response) {
-            $scope.items=response.data.todos;
-        });
-
+const todoContr = angular.module('todolist');
+todoContr.controller('TodoCtrl', function ($scope, Todos, $routeParams) {
+        $scope.items = Todos.query();
         let itemStatus = '';
+        $routeParams.status = itemStatus;
+        $scope.validInput = true;
         $scope.addTodo = function () {
-            let newItem = {name: $scope.todoName, complited: false, date: Date.now(), status: 'new'};
-            $scope.items.push(newItem);
-            $scope.todoName = '';
+            if($scope.todoName.length > 20){
+                let newItem = {name: $scope.todoName, complited: false, date: Date.now(), status: 'new', editing: false};
+                $scope.items.push(newItem);
+                $scope.todoName = '';
+                $scope.validInput = true;
+            }
+            else{
+                $scope.validInput = false;
+            }
         };
 
         $scope.changeStatus = function (item) {
@@ -55,4 +59,17 @@ angular.module('todolist')
             { date: Date.now() - 15*86400000, name: '15 days' },
             { date: Date.now() - 20*86400000, name: '20 days'}
         ];
+        
+        $scope.editName = function (item) {
+            item.editing = !item.editing;
+        }
+
     });
+
+todoContr.controller('TodoCtrlNew', function ($scope, Todos, $route, $routeParams, $location){
+
+});
+
+todoContr.controller('TodoCtrlComplited', function ($scope, Todos, $route, $routeParams, $location){
+
+});

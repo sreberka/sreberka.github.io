@@ -1,15 +1,27 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.error {
+    display: block;
+    color: red;
+    font-size: 10px;
+}
+
+.valid {
+    display: none;
 }
 
 .todo-items {
     list-style-type: circle;
-    min-height: 160px;
+    min-height: 120px;
 }
 
 .todo-items li p {
     display: inline-block;
     cursor: pointer;
+    margin: 10px 0;
 }
 
 .todo-items li span {
@@ -21,10 +33,35 @@ body {
     display: inline-block;
 }
 
-.edit-icon {
+.edit-icon.fa {
     color: darkcyan;
     font-size: 12px;
+    /*display: none;*/
+    cursor: pointer;
+}
+
+.edit-icon:hover {
+    color: darkblue;
+}
+
+.todo-items li .not-visible,
+.not-visible {
     display: none;
+}
+
+.visible {
+    display: inline-block;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.fa-check {
+    display: inline-block;
 }
 
 .done-todo {
@@ -45,7 +82,8 @@ body {
     display: inline-block;
 }
 
-.filter-buttons li a {
+.filter-buttons li a,
+button {
     display: inline-block;
     padding: 5px;
     border: 1px solid black;
@@ -55,6 +93,20 @@ body {
     color: black;
 }
 
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+select {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+button:hover,
+button:active,
+button:focus,
 .filter-buttons li a:hover,
 .filter-buttons li a:active,
 .filter-buttons li a:focus {
