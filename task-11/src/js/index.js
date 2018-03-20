@@ -12,11 +12,17 @@ todoApp.config(function ($routeProvider, $locationProvider) {
         requireBase: false
     });
     $routeProvider.when('/', {
-        templateUrl: 'src/templates/main.html'
+        templateUrl: 'src/templates/main.html',
+        controller : 'TodoCtrl',
+        reloadOnSearch: false
     }).when('/add', {
-        templateUrl: 'src/templates/add.html'
+        templateUrl: 'src/templates/add.html',
+        controller : 'TodoCtrl',
+        reloadOnSearch: false
     }).when('/edit/:id', {
-        templateUrl: 'src/templates/edit.html'
+        templateUrl: 'src/templates/edit.html',
+        controller : 'TodoCtrl',
+        reloadOnSearch: false
     }).otherwise({
         redirectTo: '/'
     });

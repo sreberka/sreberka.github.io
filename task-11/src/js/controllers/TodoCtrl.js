@@ -17,6 +17,7 @@ todoApp.controller('TodoCtrl', function ($scope, Todos, $location, $routeParams)
                 this.todoName = '';
                 $scope.validInput = true;
                 $location.path('/');
+                console.log($scope.items)
             }
             else{
                 $scope.validInput = false;
