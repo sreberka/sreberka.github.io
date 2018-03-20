@@ -1,16 +1,19 @@
   [{
+    "id": 123,
     "name": "clean the flat",
     "complited": false,
     "date": 1520524980624,
     "status": "new",
     "editing": false
   },{
+    "id": 456,
     "name": "go to shop",
     "complited": false,
     "date": 1519938000000,
     "status": "new",
     "editing": false
   },{
+    "id": 789,
     "name": "buy gifts",
     "complited": false,
     "date": 1520197200000,

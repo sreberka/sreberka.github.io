@@ -6,16 +6,16 @@ todoApp.factory('Todos', [
     }
 ]);
 
-todoApp.config(function ($routeProvider) {
-    const routeConfig = {
-        controller: 'TodoCtrl',
-        templateUrl: 'index.html'
-    };
-
-    $routeProvider
-        .when('/', routeConfig)
-        .when('/:status', routeConfig)
-        .otherwise({
-            redirectTo: '/'
-        });
+todoApp.config(function ($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+    $routeProvider.when('/add', {
+        templateUrl: 'src/templates/add.html'
+    }).when('/edit/:id', {
+        templateUrl: 'src/templates/edit.html'
+    }).otherwise({
+        templateUrl: 'src/templates/main.html'
+    });
 });

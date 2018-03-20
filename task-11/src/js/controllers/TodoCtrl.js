@@ -1,15 +1,14 @@
-const todoContr = angular.module('todolist');
-todoContr.controller('TodoCtrl', function ($scope, Todos, $routeParams) {
+todoApp.controller('TodoCtrl', function ($scope, Todos, $location, $routeParams) {
         $scope.items = Todos.query();
         let itemStatus = '';
-        $routeParams.status = itemStatus;
         $scope.validInput = true;
         $scope.addTodo = function () {
-            if($scope.todoName.length > 20){
-                let newItem = {name: $scope.todoName, complited: false, date: Date.now(), status: 'new', editing: false};
+            if(this.todoName.length > 20){
+                let newItem = {id: Date.now(),name: this.todoName, complited: false, date: Date.now(), status: 'new', editing: false};
                 $scope.items.push(newItem);
-                $scope.todoName = '';
+                this.todoName = '';
                 $scope.validInput = true;
+                $location.path('/');
             }
             else{
                 $scope.validInput = false;
@@ -34,7 +33,7 @@ todoContr.controller('TodoCtrl', function ($scope, Todos, $routeParams) {
 
         $scope.filterDate = function (item) {
             if(item.date >= $scope.selectedPeriod.date){
-                return item
+                return item;
             }
         };
 
@@ -61,15 +60,7 @@ todoContr.controller('TodoCtrl', function ($scope, Todos, $routeParams) {
         ];
         
         $scope.editName = function (item) {
-            item.editing = !item.editing;
+           item.editing = !item.editing;
         }
 
     });
-
-todoContr.controller('TodoCtrlNew', function ($scope, Todos, $route, $routeParams, $location){
-
-});
-
-todoContr.controller('TodoCtrlComplited', function ($scope, Todos, $route, $routeParams, $location){
-
-});

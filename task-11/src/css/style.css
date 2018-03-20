@@ -38,6 +38,7 @@ body {
     font-size: 12px;
     /*display: none;*/
     cursor: pointer;
+    text-decoration: none;
 }
 
 .edit-icon:hover {
@@ -84,13 +85,22 @@ input {
 
 .filter-buttons li a,
 button {
+    background: lightcyan;
+}
+
+.filter-buttons li a,
+button,
+.add-todo-btn {
     display: inline-block;
     padding: 5px;
     border: 1px solid black;
-    background: lightcyan;
     text-decoration: none;
     outline: none;
     color: black;
+}
+
+.add-todo-btn {
+    background: lightyellow;
 }
 
 button {
@@ -106,10 +116,14 @@ select {
 
 button:hover,
 button:active,
-button:focus,
-.filter-buttons li a:hover,
-.filter-buttons li a:active,
-.filter-buttons li a:focus {
+button:focus {
     background: lightseagreen;
+    color: #fff;
+}
+
+.add-todo-btn:hover,
+.add-todo-btn:active,
+.add-todo-btn:focus {
+    background: yellowgreen;
     color: #fff;
 }
