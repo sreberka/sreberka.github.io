@@ -1,6 +1,6 @@
 <ul class="todo-items-edit">
     <li ng-repeat="item in items | filter:editingTodo | orderBy:sortField:reverse" >
-        <p ng-click="changeStatus(item)" ng-class="{'done-todo': item.complited,'new-todo': !item.complited, 'not-visible': item.editing, 'visible': !item.editing}">{{item.name}}</p>
+        <p ng-click="changeStatus(item)" ng-class="{'done-todo': item.completed,'new-todo': !item.completed, 'not-visible': item.editing, 'visible': !item.editing}">{{item.name}}</p>
         <input ng-class="{'not-visible': !item.editing, 'visible': item.editing}" ng-model="item.name">
         <a ng-click="editName(item)" ng-href="/" class="edit-icon fa" ng-class="{'fa-pencil': !item.editing, 'fa-check-circle': item.editing}"></a>
     </li>

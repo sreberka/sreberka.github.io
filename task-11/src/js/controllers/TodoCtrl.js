@@ -5,7 +5,14 @@ todoApp.controller('TodoCtrl', function ($scope, Todos, $location, $routeParams)
         $scope.validInput = true;
         $scope.addTodo = function () {
             if(this.todoName.length > 20){
-                let newItem = {id: Date.now(),name: this.todoName, complited: false, date: Date.now(), status: 'new', editing: false};
+                let newItem = {
+                    id: Date.now(),
+                    name: this.todoName,
+                    completed: false,
+                    date: Date.now(),
+                    status: 'new',
+                    editing: false
+                };
                 $scope.items.push(newItem);
                 this.todoName = '';
                 $scope.validInput = true;
@@ -29,9 +36,9 @@ todoApp.controller('TodoCtrl', function ($scope, Todos, $location, $routeParams)
 
         // Todo status
         $scope.changeStatus = function (item) {
-            item.complited = !item.complited;
-            if(item.complited){
-                item.status = 'complited';
+            item.completed = !item.completed;
+            if(item.completed){
+                item.status = 'completed';
             } else {
                 item.status = 'new';
             }
