@@ -3,6 +3,7 @@
 <head>
     <base href="/">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1"/>
     <title>Angular todo list</title>
     <link rel="stylesheet" href="src/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -14,7 +15,7 @@
     <script src="src/js/controllers/TodoCtrl.js"></script>
 </head>
 <body>
-    <div ng-controller="TodoCtrl">
+    <div class="todo-container" ng-controller="TodoCtrl">
         <ng-view></ng-view>
     </div>
 </body>

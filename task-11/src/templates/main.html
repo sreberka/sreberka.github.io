@@ -1,11 +1,10 @@
+<a class="add-todo-btn" ng-href="/add">Add Todo</a>
+<button ng-click="orderByQuery('date')">Order by Date</button>
+<button ng-click="orderByQuery('name')">Order by Name</button>
+<select ng-model="selectedPeriod" ng-options="option.name for option in options">
+    <option value="" selected="selected">No older than...</option>
+</select>
 <div>
-    <a class="add-todo-btn" ng-href="/add">Add Todo</a>
-    <button ng-click="orderByQuery('date')">Order by Date</button>
-    <button ng-click="orderByQuery('name')">Order by Name</button>
-    <select ng-model="selectedPeriod" ng-options="option.name for option in options">
-        <option value="" selected="selected">No older than...</option>
-    </select>
-
     <ul class="todo-items">
         <li ng-repeat="item in items | filter:statusFilter | filter:filterDate | orderBy:sortField:reverse" >
             <p ng-click="changeStatus(item)" ng-class="{'done-todo': item.complited,'new-todo': !item.complited, 'not-visible': item.editing, 'visible': !item.editing}">{{item.name}}</p>

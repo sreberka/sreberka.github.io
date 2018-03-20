@@ -1,6 +1,24 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    background: #FAFAFA;
+}
+
+.todo-container {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    margin-top: 5%;
+    border: 1px solid #BDBDBD;
+    border-radius: 10px;
+    background: #fff;
 }
 
 .error {
@@ -15,7 +33,14 @@ body {
 
 .todo-items {
     list-style-type: circle;
-    min-height: 120px;
+    min-height: 50px;
+    display: inline-block;
+    text-align: left;
+}
+
+.todo-items-edit {
+    list-style-type: none;
+    padding: 0;
 }
 
 .todo-items li p {
@@ -39,6 +64,15 @@ body {
     /*display: none;*/
     cursor: pointer;
     text-decoration: none;
+}
+
+input {
+    vertical-align: middle;
+}
+
+.edit-icon.fa.fa-check-circle {
+    font-size: 25px;
+    vertical-align: middle;
 }
 
 .edit-icon:hover {
@@ -100,7 +134,7 @@ button,
 }
 
 .add-todo-btn {
-    background: lightyellow;
+    background: #FDFB8B;
 }
 
 button {
@@ -112,6 +146,8 @@ button {
 select {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    padding: 4px;
+    border-color: #000;
 }
 
 button:hover,
@@ -126,4 +162,18 @@ button:focus {
 .add-todo-btn:focus {
     background: yellowgreen;
     color: #fff;
+}
+
+@media screen and (max-width: 670px) {
+    button,
+    select,
+    input,
+    .add-todo-btn{
+        width: 100%;
+        margin-bottom: 2px;
+    }
+
+    .edit-icon.fa.fa-check-circle {
+        margin-top: 20px;
+    }
 }

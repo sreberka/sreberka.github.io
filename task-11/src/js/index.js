@@ -11,11 +11,13 @@ todoApp.config(function ($routeProvider, $locationProvider) {
         enabled: true,
         requireBase: false
     });
-    $routeProvider.when('/add', {
+    $routeProvider.when('/', {
+        templateUrl: 'src/templates/main.html'
+    }).when('/add', {
         templateUrl: 'src/templates/add.html'
     }).when('/edit/:id', {
         templateUrl: 'src/templates/edit.html'
     }).otherwise({
-        templateUrl: 'src/templates/main.html'
+        redirectTo: '/'
     });
 });
