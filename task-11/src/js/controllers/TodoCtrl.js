@@ -1,6 +1,4 @@
-todoApp.controller('TodoCtrl', function ($scope, Todos, $location, $routeParams) {
-        $scope.items = Todos.query();
-
+todoApp.controller('TodoCtrl', function ($scope, $rootScope, $location, $routeParams) {
         let itemStatus = '';
         $scope.validInput = true;
         $scope.addTodo = function () {
@@ -13,11 +11,10 @@ todoApp.controller('TodoCtrl', function ($scope, Todos, $location, $routeParams)
                     status: 'new',
                     editing: false
                 };
-                $scope.items.push(newItem);
+                $rootScope.items.push(newItem);
                 this.todoName = '';
                 $scope.validInput = true;
                 $location.path('/');
-                console.log($scope.items)
             }
             else{
                 $scope.validInput = false;
