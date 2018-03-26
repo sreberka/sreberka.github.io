@@ -1,0 +1,55 @@
+articleApp.controller('ArticleCtrl', function ($scope) {
+        let itemStatus = '';
+        $scope.editName = function (item) {
+            item.editing = !item.editing;
+        };
+
+        // Todo status
+        $scope.changeStatus = function (item) {
+            item.completed = !item.completed;
+            if(item.completed){
+                item.status = 'completed';
+            } else {
+                item.status = 'new';
+            }
+        };
+
+        $scope.statusFilter = function (item) {
+            if(item.status.match(itemStatus)){
+                return item;
+            }
+        };
+
+        $scope.changeFilter = function (query) {
+            itemStatus = query;
+        };
+
+        // Filter by selected date
+        $scope.selectedPeriod = { date: 0, name: 'today' };
+
+        $scope.filterDate = function (item) {
+            if(item.date >= $scope.selectedPeriod.date){
+                return item;
+            }
+        };
+
+        $scope.options = [
+            { date: Date.now() - 5*86400000, name: '5 days' },
+            { date: Date.now() - 10*86400000, name: '10 days' },
+            { date: Date.now() - 15*86400000, name: '15 days' },
+            { date: Date.now() - 20*86400000, name: '20 days'}
+        ];
+
+
+        //Sorting by name and date
+        $scope.sortField = undefined;
+        $scope.reverse = false;
+        $scope.orderByQuery = function (query) {
+            if($scope.sortField === query){
+                $scope.reverse = !$scope.reverse;
+            } else {
+                $scope.sortField = query;
+                $scope.reverse = false;
+            }
+        };
+    });

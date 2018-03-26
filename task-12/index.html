@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="articlelist">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1"/>
+    <title>Angular todo list</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-resource.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="src/js/index.js"></script>
+    <script src="src/js/controllers/ArticleCtrl.js"></script>
+    <script src="src/js/controllers/AddArticleCtrl.js"></script>
+    <script src="src/js/controllers/EditArticleCtrl.js"></script>
+</head>
+<body>
+    <div class="article-container" ng-controller="ArticleCtrl">
+        <ng-view></ng-view>
+    </div>
+</body>
+</html>

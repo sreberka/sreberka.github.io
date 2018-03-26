@@ -1,0 +1,19 @@
+{
+  "name": "angular-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  },
+  "dependencies": {
+    "angular": "^1.6.9",
+    "express": "^4.16.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
