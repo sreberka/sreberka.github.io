@@ -11,7 +11,7 @@ articleApp.controller('AddArticleCtrl', function ($scope, $rootScope, $location)
                 status: 'new',
                 editing: false
             };
-            $rootScope.items.push(newItem);
+            $rootScope.items.unshift(newItem);
             this.todoName = '';
             this.todoContent = '';
             $scope.validInput = true;
