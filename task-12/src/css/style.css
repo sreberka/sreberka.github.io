@@ -41,7 +41,8 @@ body {
 
 .add-article-btn,
 .article-edit a,
-input[type="submit"] {
+input[type="submit"],
+button {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
@@ -54,11 +55,13 @@ input[type="submit"] {
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .article-edit a:hover,
 .add-article-btn:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+button:hover {
     color: #fff;
     background: #FF7043;
     border-color: #FF7043;
