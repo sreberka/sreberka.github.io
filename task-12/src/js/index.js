@@ -23,7 +23,7 @@ articleApp.config(function ($routeProvider, $locationProvider) {
         templateUrl: 'src/templates/add.html',
         controller : 'AddArticleCtrl',
         reloadOnSearch: false
-    }).when('/edit/:id', {
+    }).when('/:id/edit', {
         templateUrl: 'src/templates/edit.html',
         controller : 'EditArticleCtrl',
         reloadOnSearch: false

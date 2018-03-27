@@ -1,5 +1,5 @@
 <div class="articles-block">
-    <div class="article" ng-repeat="item in items | filter:editingTodo" >
+    <div class="article-edit" ng-repeat="item in items | filter:editingTodo" >
         <form>
             <input ng-class="{'not-visible': !item.editing, 'visible': item.editing}" ng-model="item.name">
             <textarea ng-class="{'not-visible': !item.editing, 'visible': item.editing}" ng-model="item.content"></textarea>

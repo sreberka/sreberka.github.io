@@ -1,7 +1,8 @@
 <div>
     <form ng-submit="addTodo()">
-        <label>Add an Article:</label>
+        <label>Article Title:</label>
         <input type="text" ng-model="todoName" required>
+        <label>Article text:</label>
         <textarea ng-model="todoContent" required></textarea>
         <input type="submit">
         <p class="message" ng-class="{'error': !validInput, 'valid': validInput}">Should be more than 20 symbols</p>
