@@ -1,17 +1,11 @@
-<a class="add-todo-btn" ng-href="/add">Add New Article</a>
-<button ng-click="orderByQuery('date')">Order by Date</button>
-<button ng-click="orderByQuery('name')">Order by Name</button>
-<select ng-model="selectedPeriod" ng-options="option.name for option in options">
-    <option value="" selected="selected">No older than...</option>
-</select>
 <div class="articles-block">
-    <div class="article" ng-repeat="item in items | filter:statusFilter | filter:filterDate | orderBy:sortField:reverse" >
-        <p ng-click="editName(item)" ng-class="{'done-todo': item.completed,'new-todo': !item.completed, 'not-visible': item.editing, 'visible': !item.editing}">{{item.name}}</p>
-        <input ng-class="{'not-visible': !item.editing, 'visible': item.editing}" ng-model="item.name">
-        <a ng-click="editName(item)" ng-href="/edit/{{item.id}}" class="edit-icon fa" ng-class="{'fa-pencil': !item.editing, 'fa-check': item.editing}"></a>
-        <span>{{item.date | date:'dd/MM/yyyy'}}</span>
+    <div class="article" ng-repeat="item in items" >
+        <form ng-class="{'not-visible': !item.editing, 'visible': item.editing}">
+            <input ng-class="{'not-visible': !item.editing, 'visible': item.editing}" ng-model="item.name">
+        </form>
+        <a ng-click="editName(item)" ng-href="/edit/{{item.id}}" ng-class="{'done-todo': item.completed,'new-todo': !item.completed, 'not-visible': item.editing, 'visible': !item.editing}">{{item.name}}</a>
+        <span class="date">{{item.date | date:'dd/MM/yyyy'}}</span>
     </div>
 </div>
-<button ng-click="changeFilter('')">All</button>
-<button ng-click="changeFilter('new')">New</button>
-<button ng-click="changeFilter('completed')">Completed</button>
+<a class="add-todo-btn" ng-href="/add">Add New Article</a>
+<p class="sum">The sum is: {{sumOfArticles}}</p>

@@ -21,6 +21,13 @@ body {
     background: #fff;
 }
 
+.article a{
+    display: inline-block;
+    margin: 5px 0;
+}
+
+
+
 .error {
     display: block;
     color: red;
@@ -53,7 +60,7 @@ body {
     margin: 10px 0;
 }
 
-.todo-items li span {
+.date {
     font-size: 10px;
     color: darkgray;
 }
