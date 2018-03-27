@@ -10,11 +10,8 @@
 <a class="add-article-btn" ng-href="/add">Add New Article</a>
 <p class="sum">Amount is: <span>{{sumOfArticles}}</span></p>
 
-
-<!--<div ng-controller="paginationCtrl">-->
-        <div class="pagination">
-            <button ng-disabled="firstPage()" ng-click="pageBack()">Prev</button>
-            <span>{{currentPage+1}} out of {{numberOfPages()}}</span>
-            <button ng-disabled="lastPage()" ng-click="pageForward()">Next</button>
-        </div>
-<!--</div>-->
+<div class="pagination">
+    <button ng-disabled="firstPage()" ng-click="pageBack()">Prev</button>
+    <span>{{currentPage+1}} out of {{numberOfPages()}}</span>
+    <button ng-disabled="lastPage()" ng-click="pageForward()">Next</button>
+</div>
