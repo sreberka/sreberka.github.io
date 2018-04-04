@@ -17,11 +17,11 @@ const getBlogs = function(req, res) {
 };
 
 const postBlogs = function(req, res) {
-    showAll(req, res);
+    res.send({message: 'Post works!'});
 };
 
 const getId = function(req, res) {
-    showAll(req, res);
+    res.send(req.params);
 };
 
 const putId = function(req, res) {
@@ -37,6 +37,7 @@ const putId = function(req, res) {
 
 const deleteId = function(req, res) {
     Blog.remove({blogId: req.params.blogId}, function (err) {});
+    res.send({message: 'deleted ' + req.params.blogId});
     showAll(req, res);
 };
 

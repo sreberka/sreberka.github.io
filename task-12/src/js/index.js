@@ -18,15 +18,15 @@ articleApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
         templateUrl: 'src/templates/main.html',
         controller : 'ArticleCtrl',
-        reloadOnSearch: false
+        reloadOnSearch: true
     }).when('/add', {
         templateUrl: 'src/templates/add.html',
         controller : 'AddArticleCtrl',
-        reloadOnSearch: false
+        reloadOnSearch: true
     }).when('/:id/edit', {
         templateUrl: 'src/templates/edit.html',
         controller : 'EditArticleCtrl',
-        reloadOnSearch: false
+        reloadOnSearch: true
     }).otherwise({
         redirectTo: '/'
     });
