@@ -11,7 +11,7 @@ class Hello extends React.Component {
   <p >Hello, world!!!</p>
     <style jsx>{`
           .hello {
-            color: red;
+            color: blue;
           }
         `}
   </style>

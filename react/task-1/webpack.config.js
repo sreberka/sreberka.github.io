@@ -8,11 +8,14 @@ module.exports = {
         publicPath: 'dist/'
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
             loader: 'babel-loader',
             exclude: /node_modules/
         }],
+    },
+    resolve: {
+      extensions: [ '.js', '.jsx']
     },
     devtool: 'source-map',
 }
