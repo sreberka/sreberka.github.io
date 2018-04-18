@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
-import Hello from './components/Hello';
+import App from './components/App';
 
 // Component
 
 ReactDOM.render(
-  <Hello />,
+  <App />,
   document.getElementById('root')
 );
 
