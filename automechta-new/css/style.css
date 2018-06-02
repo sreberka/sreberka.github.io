@@ -281,6 +281,7 @@ button {
     position: relative;
     background: #eae7e7;
     padding: 10px;
+    overflow: hidden;
 }
 
 .mobile-button-add {
@@ -389,7 +390,8 @@ button {
     left: 0;
 }
 
-.fixed-body {
+.fixed-body,
+.fixed-body body {
     overflow: hidden;
 }
 /**************************** Banner *************************/
