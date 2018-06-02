@@ -336,7 +336,11 @@ button {
 
 .mobile-menu i {
     color: #db4544;
-    width: 30px;
+    width: 25px;
+}
+
+.mobile-menu a {
+    font-size: 14px;
 }
 
 .mobile-menu .dropdown i {
@@ -345,7 +349,7 @@ button {
 }
 
 .social-mobile {
-    padding: 15px;
+    padding: 0 15px;
 }
 
 .social-mobile .fab {
