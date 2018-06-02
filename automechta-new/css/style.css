@@ -394,6 +394,11 @@ button {
 .fixed-body body {
     overflow: hidden;
 }
+
+.fixed-body body .wrapper {
+    position: relative;
+    overflow: hidden;
+}
 /**************************** Banner *************************/
 .banner {
     /*padding: 50px 50px 100px 50px;*/
