@@ -392,6 +392,7 @@ button {
 
 .fixed-body,
 .fixed-body body {
+    position: relative;
     overflow: hidden;
     height: 100%;
 }
