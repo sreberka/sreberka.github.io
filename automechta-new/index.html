@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name = "format-detection" content = "telephone=no" />
     <title>Automechta</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="http://kenwheeler.github.io/slick/slick/slick-theme.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
-    <div class="info-header">
+    <div class="info-header hidden-mobile">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 social-m">
@@ -24,13 +26,13 @@
                         <div class="col-lg-3"><a href="#"><i class="fas fa-phone"></i>+375(33)321-55-55</a></div>
                         <div class="col-lg-3"><a href="#"><i class="fas fa-map-marker-alt"></i>г.Минск, ул.Суражская 8а</a></div>
                         <div class="col-lg-3 h-100"><button><i class="fas fa-plus"></i>Подать объявление</button></div>
-                        <div class="col-lg-3"><a href="#" class="mr-2"><i class="far fa-user"></i>Войти</a>|<a href="#" class="ml-2"><i class="fas fa-edit"></i>Регистрация</a></div>
+                        <div class="col-lg-3ъ"><a href="#" class="mr-2"><i class="far fa-user"></i>Войти</a>|<a href="#" class="ml-2"><i class="fas fa-edit"></i>Регистрация</a></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <nav class="main-menu">
+    <nav class="main-menu hidden-mobile">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -81,20 +83,102 @@
             </div>
         </div>
     </nav>
+
+    <!--mobile header-->
+    <div class="mobile-header hidden-desktop">
+        <div class="row">
+            <div class="col-6">
+                <a href="#" class="logo-mobile"><img src="images/logo-mobile.png"></a>
+            </div>
+            <div class="col-6">
+                <button class="custom-button mobile-button-add"><i class="fas fa-plus"></i></button>
+                <div id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
+<div class="mobile-menu">
+    <nav>
+        <ul>
+            <li><i class="far fa-user"></i><a href="#">Войти</a></li>
+            <li class="mb-4"><i class="fas fa-edit"></i><a href="#">Регистрация</a></li>
+            <li><i class="fas fa-car"></i><a href="#">Мои объявления</a></li>
+            <li><i class="far fa-star"></i>Избранное</li>
+            <li><i class="far fa-envelope"></i>Сообщение</li>
+        </ul>
+        <ul class="">
+            <li class="dropdown">
+                <a href="#" id="dropdownMenu4" data-toggle="dropdown">
+                    Авто
+                    <i class="fas fa-chevron-down ml-1"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                    <li class="dropdown-item"><a href="#">Автомобили компании</a></li>
+                    <li class="dropdown-item"><a href="#">Частные объявления</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="dropdownMenu5" data-toggle="dropdown">
+                    Мото
+                    <i class="fas fa-chevron-down ml-1"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
+                    <li class="dropdown-item"><a href="#">Мотоциклы</a></li>
+                    <li class="dropdown-item"><a href="#">Скутеры</a></li>
+                    <li class="dropdown-item"><a href="#">Квадроциклы</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="dropdownMenu6" data-toggle="dropdown">
+                    Услуги
+                    <i class="fas fa-chevron-down ml-1"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu6">
+                    <li class="dropdown-item"><a href="#">Авто в кредит</a></li>
+                    <li class="dropdown-item"><a href="#">Счет-справка </a></li>
+                    <li class="dropdown-item"><a href="#">Срочный выкуп авто</a></li>
+                    <li class="dropdown-item"><a href="#">Приём авто на комиссию</a></li>
+                    <li class="dropdown-item"><a href="#">Trade-In(Обмен авто)</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Энциклопедия</a></li>
+            <li><a href="#">Автоновости</a></li>
+            <li><a href="#">Вопрос-ответ</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Кредитный калькулятор</a></li>
+            <li><a href="#">Заказать обратный звонок</a></li>
+            <li><a href="#">Как работает портал</a></li>
+        </ul>
+        <div class="social-mobile">
+            <a href="#" class="mr-3"><i class="fab fa-vk"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <button class="custom-button mt-4"><i class="fas fa-plus"></i>Подать объявление</button>
+
+            <a class="full-version" href="#">Полная версия</a>
+            <p>© 2013-2018 Автомобильный портал «АвтоМечта»</p>
+        </div>
+    </nav>
+</div>
+
 
 <main>
-    <div class="container">
-        <div class="banner">
+    <div class="container p-0">
+        <div class="banner text-center text-md-left">
             <div class="row align-items-center">
-                <div class="col-lg-5">
+                <div class="col-12 col-lg-5">
                     <h2>Помогаем выбрать авто в кредит в Беларуси</h2>
-                    <a href="#">Читать <i class="fas fa-chevron-right"></i></a>
+                    <a href="#" class="hidden-mobile">Читать <i class="fas fa-chevron-right"></i></a>
                 </div>
-                <div class="col-lg-4 offset-3">
+                <div class="col-12 col-lg-4 offset-md-3">
                     <form class="search-form">
                         <div class="form-block">
-                            <div class="row mb-3">
+                            <div class="row mb-2">
                                 <div class="col-lg-12">
                                     <div class="select-search-block">
                                         <select>
@@ -109,8 +193,8 @@
                             </div>
                         </div>
                         <div class="form-block">
-                            <div class="row mb-3">
-                                <div class="col-lg-6 pr-1">
+                            <div class="row">
+                                <div class="col-12 col-lg-6 pr-lg-1 mb-2">
                                     <div class="select-search-block">
                                         <select>
                                             <option value="1">Автомобиль</option>
@@ -121,7 +205,7 @@
                                         <i class="fas fa-chevron-down"></i>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 pl-1">
+                                <div class="col-12 col-lg-6 pl-lg-1 mb-2">
                                     <div class="select-search-block">
                                         <select>
                                             <option value="1">Автомобиль</option>
@@ -135,8 +219,8 @@
                             </div>
                         </div>
                         <div class="form-block">
-                            <div class="row mb-3">
-                                <div class="col-lg-6 pr-1">
+                            <div class="row">
+                                <div class="col-12 col-lg-6 pr-lg-1 mb-2">
                                     <div class="select-search-block">
                                         <select>
                                             <option value="1">Автомобиль</option>
@@ -147,7 +231,7 @@
                                         <i class="fas fa-chevron-down"></i>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 pl-1">
+                                <div class="col-12 col-lg-6 pl-lg-1 mb-2">
                                     <div class="select-search-block">
                                         <select>
                                             <option value="1">Автомобиль</option>
@@ -162,7 +246,7 @@
                         </div>
                         <p class="count-search text-center">10247 обявлений</p>
                         <div class="search-submit text-center">
-                            <button class="custom-button" type="submit"><i class="fas fa-search mr-2"></i>Найти</button>
+                            <button class="custom-button w-100" type="submit"><i class="fas fa-search mr-2"></i>Найти</button>
                         </div>
                     </form>
                 </div>
@@ -170,7 +254,7 @@
         </div>
         <div class="categories">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
+                <div class="col-12 col-lg-10 offset-lg-1">
                     <nav class="category-menu">
                         <ul>
                             <li>
@@ -211,7 +295,7 @@
 
         <div class="all-brands">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-9 order-2 order-md-1">
                     <div class="brands">
                         <div class="brand-item">
                             <a href="#">
@@ -363,7 +447,7 @@
                     </div>
                     <a class="show-all" href="#">Показать все <i class="fas fa-chevron-right ml-2"></i></a>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 order-1 order-md-2">
                     <div class="adv"></div>
                 </div>
             </div>
@@ -390,73 +474,59 @@
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="company-cars" role="tabpanel" aria-labelledby="company-cars-tab">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                        </ol>
+                    <div class="carousel slide" data-ride="carousel" data-interval="false">
                         <div class="carousel-inner">
-                            <div class="row">
-                                <div class="col-12 col-lg-3">
-                                    <div class="carousel-item active">
-                                        <div class="carousel-image">
-                                            <img src="images/car-img.jpg">
-                                        </div>
-                                        <div class="car-description">
-                                            <h5><a href="#">Ford Ka (2002)</a></h5>
-                                            <p>Компактный городской автомобиль, построенный на базе Ford Fiesta четвертого поколения...</p>
-                                            <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
-                                        </div>
+                            <div class="row carousel-row">
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="images/car-img.jpg">
+                                    </div>
+                                    <div class="car-description">
+                                        <h5><a href="#">Ford Ka (2002)</a></h5>
+                                        <p>Компактный городской автомобиль, построенный на базе Ford Fiesta четвертого поколения...</p>
+                                        <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-3">
-                                    <div class="carousel-item">
-                                        <div class="carousel-image">
-                                            <img src="images/car-img.jpg">
-                                        </div>
-                                        <div class="car-description">
-                                            <h5><a href="#">Ford Ka (2002)</a></h5>
-                                            <p>Компактный городской автомобиль, построенный на базе Ford Fiesta четвертого поколения...</p>
-                                            <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
-                                        </div>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="images/car-img.jpg">
+                                    </div>
+                                    <div class="car-description">
+                                        <h5><a href="#">Ford Ka (2002)</a></h5>
+                                        <p>Компактный городской автомобиль, построенный на базе Ford Fiesta четвертого поколения...</p>
+                                        <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-3">
-                                    <div class="carousel-item">
-                                        <div class="carousel-image">
-                                            <img src="images/car-img.jpg">
-                                        </div>
-                                        <div class="car-description">
-                                            <h5><a href="#">Ford Ka (2002)</a></h5>
-                                            <p>Компактный городской автомобиль, построенный на базе Ford Fiesta четвертого поколения...</p>
-                                            <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
-                                        </div>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="images/car-img.jpg">
+                                    </div>
+                                    <div class="car-description">
+                                        <h5><a href="#">Ford Ka (2002)</a></h5>
+                                        <p>Компактный городской автомобиль, построенный на базе Ford Fiesta четвертого поколения...</p>
+                                        <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-3">
-                                    <div class="carousel-item">
-                                        <div class="carousel-image">
-                                            <img src="images/car-img.jpg">
-                                        </div>
-                                        <div class="car-description">
-                                            <h5><a href="#">Ford Ka (2002)</a></h5>
-                                            <p>Компактный городской автомобиль, построенный на базе Ford Fiesta четвертого поколения...</p>
-                                            <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
-                                        </div>
+
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="images/car-img.jpg">
+                                    </div>
+                                    <div class="car-description">
+                                        <h5><a href="#">Ford Ka (2002)</a></h5>
+                                        <p>Компактный городской автомобиль, построенный на базе Ford Fiesta четвертого поколения...</p>
+                                        <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                    </div>
+                    <div class="row justify-content-center mt-3">
+                        <div class="col-12 col-lg-3">
+                            <a href="#" class="show-more">Показать больше <i class="fas fa-chevron-right ml-2"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="private-cars" role="tabpanel" aria-labelledby="private-cars-tab">
@@ -472,14 +542,9 @@
                     <p>Карусель квадроциклы</p>
                 </div>
             </div>
-            <div class="row justify-content-center mt-5">
-                <div class="col-12 col-lg-3">
-                    <a href="#" class="show-more">Показать больше <i class="fas fa-chevron-right ml-2"></i></a>
-                </div>
-            </div>
         </div>
     </div>
-    <div class="how-it-works">
+    <div class="how-it-works hidden-mobile">
         <div class="container">
             <h2 class="text-center mb-5">Как работает портал</h2>
             <div class="row justify-content-center">
@@ -545,7 +610,7 @@
 
 
 
-    <div class="callback">
+    <div class="callback hidden-mobile">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6">
@@ -575,7 +640,7 @@
             <h2>Автоновости</h2>
             <p>Порция свежих новостей на каждый день</p>
             <div class="row">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 mb-3 mb-md-0">
                     <div class="news-item">
                         <div class="news-image">
                             <img src="images/news-image-big.jpg">
@@ -590,7 +655,7 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="row">
-                        <div class="col-12 col-lg-6">
+                        <div class="col-12 col-lg-6 mb-3 mb-md-0">
                             <div class="news-item">
                                 <div class="news-image">
                                     <img src="images/news-image-small-1.jpg">
@@ -639,7 +704,7 @@
                     <h2>ONLINE-заявка на кредит</h2>
                     <p>Заполните анкету в удобное для Вас время, мы примем ее и свяжемся с Вами</p>
                 </div>
-                <div class="col-12 col-lg-3 mt-4">
+                <div class="col-12 col-lg-3 mt-lg-4">
                     <button class="custom-button"><i class="fas fa-pencil-alt"></i> Заполнить анкету</button>
                 </div>
             </div>
@@ -670,7 +735,7 @@
             </div>
         </div>
         <div class="row justify-content-center footer-menu">
-            <div class="col-12 col-lg-2">
+            <div class="col-12 col-lg-2 hidden-mobile">
                 <h3>Продажа</h3>
                 <ul>
                     <li><a href="#">Автомобили компании</a></li>
@@ -680,7 +745,7 @@
                     <li><a href="#">Квадроциклы</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-lg-2">
+            <div class="col-12 col-lg-2 hidden-mobile">
                 <h3>Услуги</h3>
                 <ul>
                     <li><a href="#">Авто в кредит</a></li>
@@ -690,7 +755,7 @@
                     <li><a href="#">Traid-in (обмен авто)</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-lg-2">
+            <div class="col-12 col-lg-2 hidden-mobile">
                 <h3>Полезное</h3>
                 <ul>
                     <li><a href="#">Вопрос-ответ</a></li>
@@ -698,7 +763,7 @@
                     <li><a href="#">Автоновости</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-lg-2">
+            <div class="col-12 col-lg-2 hidden-mobile">
                 <h3>Контакты</h3>
                 <ul>
                     <li><a href="#">г. Минск, ул. Суражская 8a </a></li>
@@ -709,14 +774,14 @@
                 </ul>
             </div>
             <div class="col-12 col-lg-3">
-                <h3>Давайте дружить</h3>
+                <h3 class="hidden-mobile">Давайте дружить</h3>
                 <a href="#" class="mr-3"><i class="fab fa-vk"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <button class="custom-button mt-4"><i class="fas fa-plus"></i>Подать объявление</button>
             </div>
         </div>
     </div>
-    <div class="copyrights">
+    <div class="copyrights hidden-mobile">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6 text-left">
@@ -732,10 +797,36 @@
 
 
 
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <script src="js/bootstrap.min.js"></script>
 <script src="js/js.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.carousel-row').slick({
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            adaptiveHeight: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        dots: true,
+                        arrows: true,
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    })
+</script>
 </body>
 </html>
