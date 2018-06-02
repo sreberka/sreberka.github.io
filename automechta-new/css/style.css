@@ -393,11 +393,13 @@ button {
 .fixed-body,
 .fixed-body body {
     overflow: hidden;
+    height: 100%;
 }
 
 .fixed-body body .wrapper {
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 /**************************** Banner *************************/
 .banner {
