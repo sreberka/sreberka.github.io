@@ -19,6 +19,7 @@ h3,
 h4,
 h5 {
     font-family: HelveticaRoman, sans-serif;
+    font-weight: 600;
 }
 
 p {
@@ -423,6 +424,43 @@ button {
     color: #fff;
 }
 
+.banner form p {
+    color: #000;
+    font-size: 16px;
+    padding: 3px 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.banner form .dropdown-menu {
+    width: 100%;
+}
+
+.dropdown-custom {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    display: none;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid #000;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.dropdown-custom .select-search-block {
+    width: 49%;
+}
+
+.open-dropdown + .dropdown-custom {
+    display: flex;
+}
+
+.read-more-link {
+    display: none;
+}
+
 .search-form {
     padding: 10px;
     margin-top: 20px;
@@ -531,8 +569,24 @@ button {
     background: #f5f5f5;
 }
 
-.category-menu li a:hover .category-img {
+.category-menu li a:hover .company {
+    background-image: url('../images/company-car-icon-hover.png');
+}
 
+.category-menu li a:hover .private {
+    background-image: url('../images/private-car-icon-hover.png');
+}
+
+.category-menu li a:hover .moto {
+    background-image: url('../images/moto-icon-hover.png');
+}
+
+.category-menu li a:hover .scooter {
+    background-image: url('../images/scooter-icon-hover.png');
+}
+
+.category-menu li a:hover .kv-cycle {
+    background-image: url('../images/kv-cycle-icon-hover.png');
 }
 
 /************************* Brands **************************/
@@ -681,11 +735,15 @@ button {
 
 /*********************** how it works ***********************/
 .how-it-works {
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
 .how-it-works .nav-tabs {
     margin-bottom: 0;
+}
+
+.how-it-works .tab-content {
+    margin-top: 50px;
 }
 
 .step-buy {
@@ -693,13 +751,14 @@ button {
 }
 
 .step-image {
-    height: 170px;
-    width: 170px;
-    margin: 50px auto;
+    height: 130px;
+    width: 130px;
+    margin: 0 auto 30px;
     background-color: #f4f4f4;
     border-radius: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 50%;
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -734,22 +793,27 @@ button {
 }
 
 .step-text {
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .step-text p {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /************************** Callback ************************/
 .callback .container {
-    padding: 70px;
+    padding: 50px 30px;
     background: url("../images/callback-bg.jpg") no-repeat center top;
     background-size: 100%;
 }
 
+.callback h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
 .callback p {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .callback ul {
@@ -758,19 +822,24 @@ button {
     columns: 2;
 }
 
+.callback ul li {
+    font-size: 14px;
+}
+
 .callback ul li:before {
     content: '';
     display: inline-block;
     vertical-align: middle;
-    margin: 5px 10px 5px 0;
-    width: 29px;
-    height: 29px;
+    margin: 5px 5px 5px 0;
+    width: 20px;
+    height: 20px;
     background: url("../images/checked-icon.png") no-repeat center;
+    background-size: contain;
 }
 
 .callback form {
-    padding: 20px;
-    margin-top: -6%;
+    padding: 10px;
+    margin-top: 0;
     text-align: center;
     border: 3px solid #db4544;
     background: #f4f4f4;
@@ -778,10 +847,16 @@ button {
 
 .callback form input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
     border: none;
     box-shadow: 1px 1px 3px #d3d3d3;
+}
+
+.callback .custom-button {
+    font-size: 15px;
+    padding: 6px 30px;
 }
 
 .callback form input::-moz-placeholder { color: #000; }
@@ -841,12 +916,12 @@ button {
 }
 
 .calc-block {
-    padding: 30px 0;
+    padding: 20px 0;
     background: #db4544;
 }
 
 .calc-block h4 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -897,7 +972,7 @@ button {
 .footer-menu h3 {
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .footer-menu ul {
@@ -907,11 +982,13 @@ button {
 }
 
 .footer-menu ul li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    font-size: 10px;
 }
 
 .footer-menu button {
     width: 100%;
+    padding: 10px;
 }
 
 .footer-menu .fab {
@@ -952,13 +1029,69 @@ button {
     .carousel-cars .carousel-item {
         margin: 5px;
     }
+
+    .banner {
+        padding: 40px 10px;
+        background-size: cover;
+    }
+    
+    .read-more-link {
+        display: block;
+    }
+
+    .read-more-link i {
+        font-size: 12px;
+    }
+
+    .banner h2 {
+        font-size: 30px;
+    }
+
+    .category-menu ul {
+        justify-content: center;
+    }
+
+    .category-menu li {
+        width: 29%;
+        margin: 2%;
+    }
+
+    .category-img.scooter {
+        background-size: 42%;
+    }
+
+    .brands {
+        columns: 3;
+    }
 }
 
 /* Large tablets, netbooks */
 @media (min-width: 992px) {
+    .header-info-links a {
+        font-size: 12px;
+    }
+
+    .info-header button {
+        font-size: 12px;
+    }
+
+    .first-level-menu {
+        padding: 0;
+    }
+
+    .first-level-menu > li,
+    .first-level-menu li {
+        font-size: 15px;
+    }
+
     .banner {
+        padding: 40px 10px 80px;
         background: url("../images/homepage-main.jpg") no-repeat center;
         background-size: cover;
+    }
+
+    .search-form {
+        margin-top: 0;
     }
 
     .hidden-mobile {
@@ -977,16 +1110,21 @@ button {
         display: flex;
     }
 
-    .dropdown:hover>.dropdown-menu {
-        display: block;
-    }
-
-    .dropdown>.dropdown-toggle:active {
-        pointer-events: none;
+    .category-menu {
+        padding: 0;
     }
 
     .categories {
-        margin-top: -40px;
+        margin-top: -60px;
+    }
+
+    .category-menu li {
+        width: 18%;
+        margin: 1%;
+    }
+
+    .category-menu li a {
+        min-height: 124px;
     }
 
     .info-links ul li {
@@ -997,5 +1135,47 @@ button {
 @media (min-width: 1200px) {
     .container {
         min-width: 1250px;
+    }
+
+    .first-level-menu .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
+
+    .first-level-menu .dropdown>.dropdown-toggle:active {
+        pointer-events: none;
+    }
+
+    .header-info-links a {
+        font-size: 14px;
+    }
+
+    .info-header button {
+        font-size: 14px;
+    }
+
+    .first-level-menu > li,
+    .first-level-menu li {
+        font-size: 18px;
+    }
+
+    .brands {
+        columns: 5;
+    }
+
+    .callback form {
+        padding: 15px;
+    }
+
+    .online-block h2 {
+        font-size: 28px;
+    }
+
+    .online-block p {
+        font-size: 18px;
+    }
+
+    .footer-menu ul li {
+        font-size: 13px;
+        margin-bottom: 10px;
     }
 }

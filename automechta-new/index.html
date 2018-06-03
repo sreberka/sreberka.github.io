@@ -84,16 +84,16 @@
         <div class="info-header hidden-mobile">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-3 social-m">
+                    <div class="col-lg-2 col-xl-3 social-m">
                         <a href="#" class="mr-3"><i class="fab fa-vk"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <div class="col-lg-9 h-100">
-                        <div class="row align-items-center">
+                    <div class="col-lg-10 col-xl-9 h-100">
+                        <div class="row align-items-center header-info-links">
                             <div class="col-lg-3"><a href="#"><i class="fas fa-phone"></i>+375(33)321-55-55</a></div>
                             <div class="col-lg-3"><a href="#"><i class="fas fa-map-marker-alt"></i>г.Минск, ул.Суражская 8а</a></div>
                             <div class="col-lg-3 h-100"><button><i class="fas fa-plus"></i>Подать объявление</button></div>
-                            <div class="col-lg-3ъ"><a href="#" class="mr-2"><i class="far fa-user"></i>Войти</a>|<a href="#" class="ml-2"><i class="fas fa-edit"></i>Регистрация</a></div>
+                            <div class="col-lg-3"><a href="#" class="mr-2"><i class="far fa-user"></i>Войти</a>|<a href="#" class="ml-2"><i class="fas fa-edit"></i>Регистрация</a></div>
                         </div>
                     </div>
                 </div>
@@ -102,10 +102,10 @@
         <nav class="main-menu hidden-mobile">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <a class="site-logo" href="#"><img src="images/logo.png" alt="logo"></a>
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-10">
                         <ul class="first-level-menu">
                             <li class="dropdown">
                                 <a href="#" id="dropdownMenu1" data-toggle="dropdown">
@@ -171,14 +171,14 @@
 
 
     <main>
-        <div class="banner text-center text-md-left">
+        <div class="banner text-center text-lg-left">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row align-items-center justify-content-center">
                     <div class="col-12 col-lg-5">
                         <h2>Помогаем выбрать авто в кредит в Беларуси</h2>
-                        <a href="#" class="hidden-mobile">Читать <i class="fas fa-chevron-right"></i></a>
+                        <a href="#" class="read-more-link">Читать <i class="fas fa-chevron-right"></i></a>
                     </div>
-                    <div class="col-12 col-lg-4 offset-md-3">
+                    <div class="col-12 col-md-8 col-lg-5 offset-lg-2 col-xl-4 offset-xl-3">
                         <form class="search-form">
                             <div class="form-block">
                                 <div class="row mb-2">
@@ -197,24 +197,21 @@
                             </div>
                             <div class="form-block">
                                 <div class="row">
-                                    <div class="col-12 col-lg-6 pr-lg-1 mb-2">
+                                    <div class="col-12 col-md-6 pr-md-1 mb-2">
                                         <div class="select-search-block">
                                             <select>
-                                                <option value="1">Автомобиль</option>
-                                                <option value="2">Мотоцикл</option>
-                                                <option value="3">Скутер</option>
-                                                <option value="4">Квадрацикл</option>
+                                                <option value="1">Марка</option>
+                                                <option value="2">Acura</option>
+                                                <option value="3">Alfa Romeo</option>
+                                                <option value="4">Audi</option>
                                             </select>
                                             <i class="fas fa-chevron-down"></i>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-6 pl-lg-1 mb-2">
+                                    <div class="col-12 col-md-6 pl-md-1 mb-2">
                                         <div class="select-search-block">
                                             <select>
-                                                <option value="1">Автомобиль</option>
-                                                <option value="2">Мотоцикл</option>
-                                                <option value="3">Скутер</option>
-                                                <option value="4">Квадрацикл</option>
+                                                <option value="1">Модель</option>
                                             </select>
                                             <i class="fas fa-chevron-down"></i>
                                         </div>
@@ -223,25 +220,55 @@
                             </div>
                             <div class="form-block">
                                 <div class="row">
-                                    <div class="col-12 col-lg-6 pr-lg-1 mb-2">
+                                    <div class="col-12 col-md-6 pr-md-1 mb-2">
                                         <div class="select-search-block">
-                                            <select>
-                                                <option value="1">Автомобиль</option>
-                                                <option value="2">Мотоцикл</option>
-                                                <option value="3">Скутер</option>
-                                                <option value="4">Квадрацикл</option>
-                                            </select>
+                                            <p class="dropdown-custom-toggle">Год</p>
+                                            <div class="dropdown-custom">
+                                                <div class="select-search-block">
+                                                    <select>
+                                                        <option value="1">От</option>
+                                                        <option value="2">2018</option>
+                                                        <option value="3">2017</option>
+                                                        <option value="4">2016</option>
+                                                    </select>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <div class="select-search-block">
+                                                    <select>
+                                                        <option value="1">До</option>
+                                                        <option value="2">2018</option>
+                                                        <option value="3">2017</option>
+                                                        <option value="4">2016</option>
+                                                    </select>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                            </div>
                                             <i class="fas fa-chevron-down"></i>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-6 pl-lg-1 mb-2">
+                                    <div class="col-12 col-md-6 pl-md-1 mb-2">
                                         <div class="select-search-block">
-                                            <select>
-                                                <option value="1">Автомобиль</option>
-                                                <option value="2">Мотоцикл</option>
-                                                <option value="3">Скутер</option>
-                                                <option value="4">Квадрацикл</option>
-                                            </select>
+                                            <p class="dropdown-custom-toggle">Цена</p>
+                                            <div class="dropdown-custom">
+                                                <div class="select-search-block">
+                                                    <select>
+                                                        <option value="1">От</option>
+                                                        <option value="2">500</option>
+                                                        <option value="3">1000</option>
+                                                        <option value="4">2000</option>
+                                                    </select>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                                <div class="select-search-block">
+                                                    <select>
+                                                        <option value="1">До</option>
+                                                        <option value="2">500</option>
+                                                        <option value="3">1000</option>
+                                                        <option value="4">2000</option>
+                                                    </select>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
+                                            </div>
                                             <i class="fas fa-chevron-down"></i>
                                         </div>
                                     </div>
@@ -304,7 +331,7 @@
         <div class="all-brands">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9 order-2 order-md-1">
+                    <div class="col-lg-9 order-2 order-lg-1">
                         <div class="brands">
                             <div class="brand-item">
                                 <a href="#">
@@ -456,7 +483,7 @@
                         </div>
                         <a class="show-all" href="#">Показать все <i class="fas fa-chevron-right ml-2"></i></a>
                     </div>
-                    <div class="col-lg-3 order-1 order-md-2">
+                    <div class="col-lg-3 order-1 order-lg-2">
                         <div class="adv"></div>
                     </div>
                 </div>
@@ -557,7 +584,7 @@
         </div>
         <div class="how-it-works hidden-mobile">
             <div class="container">
-                <h2 class="text-center mb-5">Как работает портал</h2>
+                <h2 class="text-center mb-3">Как работает портал</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-3">
                         <ul class="nav row nav-tabs " id="myTab2" role="tablist">
@@ -620,7 +647,6 @@
         </div>
 
 
-
         <div class="callback hidden-mobile">
             <div class="container">
                 <div class="row">
@@ -634,7 +660,7 @@
                             <li>Оформление заявки и т.д.</li>
                         </ul>
                     </div>
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 pr-5">
                         <form>
                             <input type="text" placeholder="Имя">
                             <input type="tel" placeholder="Телефон">
@@ -715,7 +741,7 @@
                         <h2>ONLINE-заявка на кредит</h2>
                         <p>Заполните анкету в удобное для Вас время, мы примем ее и свяжемся с Вами</p>
                     </div>
-                    <div class="col-12 col-lg-3 mt-lg-4">
+                    <div class="col-12 col-lg-4 mt-lg-4">
                         <button class="custom-button"><i class="fas fa-pencil-alt"></i> Заполнить анкету</button>
                     </div>
                 </div>
@@ -834,6 +860,14 @@
                         dots: true,
                         arrows: true,
                         slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        dots: true,
+                        arrows: true,
+                        slidesToShow: 2
                     }
                 }
             ]
