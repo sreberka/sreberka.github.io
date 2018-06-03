@@ -428,7 +428,7 @@ button {
     color: #000;
     font-size: 16px;
     padding: 3px 10px;
-    text-align: center;
+    text-align: left;
     margin: 0;
     cursor: pointer;
 }
