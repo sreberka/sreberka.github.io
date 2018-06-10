@@ -329,10 +329,13 @@ button {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
     max-height: 100vh;
 }
 
-.mobile-menu nav {overflow: auto;
+.mobile-menu nav {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu ul {
@@ -703,6 +706,7 @@ button {
 .carousel-cars .nav-tabs:hover {
     overflow-x: auto;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .carousel-cars .nav-tabs .nav-item {
@@ -742,6 +746,7 @@ button {
 
 .carousel-cars .carousel-row:hover {
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .carousel-cars .carousel-item {
@@ -961,6 +966,7 @@ button {
 
 .main-row:hover {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .news-row div[class*="col-"] {
