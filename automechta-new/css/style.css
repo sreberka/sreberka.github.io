@@ -50,7 +50,7 @@ button {
 .custom-button {
     display: inline-block;
     text-align: center;
-    padding: 10px 30px;
+    padding: 6px 30px;
     border: none;
     background: #db4544;
     color: #fff;
@@ -108,11 +108,11 @@ button {
 
 /*-------------------------------hamburger-----------------------------*/
 #hamburger {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     position: absolute;
-    right: 30px;
-    top: 13px;
+    right: 16px;
+    top: 15px;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -128,7 +128,7 @@ button {
 #hamburger span {
     display: block;
     position: absolute;
-    height: 4px;
+    height: 3px;
     border-radius: 9px;
     width: 100%;
     background: #000;
@@ -191,7 +191,7 @@ button {
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    top: 22px;
+    top: 20px;
     left: 5px;
 }
 /************** Info header ***************/
@@ -300,13 +300,13 @@ button {
 
 .mobile-button-add {
     padding: 0;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 37px;
+    height: 37px;
+    line-height: 37px;
     text-align: center;
     position: absolute;
-    top: 5px;
-    right: 85px;
+    top: 9px;
+    right: 69px;
 }
 
 .mobile-button-add i {
@@ -319,7 +319,7 @@ button {
     position: absolute;
     z-index: 2;
     background: #f5f5f5;
-    width: calc(100% - 78px);
+    width: calc(100% - 52px);
     min-height: 100%;
     top: 0;
     left: -100%;
@@ -428,8 +428,7 @@ button {
 }
 /**************************** Banner *************************/
 .banner {
-    /*padding: 50px 50px 100px 50px;*/
-    padding: 30px 10px;
+    padding: 30px 10px 5px;
     background: url("../images/banner-mobile.jpg") no-repeat center top;
     background-size: contain;
 }
@@ -445,8 +444,8 @@ button {
 
 .banner form p {
     color: #000;
-    font-size: 16px;
-    padding: 3px 10px;
+    font-size: 14px;
+    padding: 5px 10px;
     text-align: left;
     margin: 0;
     cursor: pointer;
@@ -483,8 +482,13 @@ button {
 
 .search-form {
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 34px;
     background: rgba(255, 255, 255, 0.9);
+}
+
+.search-form .form-block .select-search-block {
+    margin-bottom: 13px;
+    font-size: 14px;
 }
 
 .select-search-block {
@@ -496,7 +500,7 @@ button {
     position: relative;
     z-index: 1;
     width: 100%;
-    padding: 3px 10px;
+    padding: 5px 10px;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -518,9 +522,8 @@ button {
     transform: translateY(-50%);
 }
 
-.count-search {
+.banner form .count-search {
     font-size: 12px;
-    margin-bottom: 10px;
 }
 
 
@@ -530,10 +533,11 @@ button {
 .category-img {
     display: block;
     margin: 0 auto;
-    height: 72px;
+    height: 60px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 55%;
+    background-size: 44%;
+    filter: brightness(0);
 }
 
 .company {
@@ -556,8 +560,12 @@ button {
     background-image: url('../images/kv-cycle-icon.png');
 }
 
+.ship {
+    background-image: url('../images/ship-icon.png');
+}
+
 .category-menu {
-    padding: 20px;
+    padding: 20px 0 0;
 }
 
 .category-menu ul {
@@ -570,12 +578,12 @@ button {
 
 .category-menu li {
     display: inline-block;
-    width: 46%;
+    width: 48%;
     margin-bottom: 15px;
 }
 
 .category-menu li a {
-    padding: 10px;
+    padding: 15px 18px;
     display: inline-block;
     background: #fff;
     text-align: center;
@@ -589,37 +597,21 @@ button {
     background: #f5f5f5;
 }
 
-.category-menu li a:hover .company {
-    background-image: url('../images/company-car-icon-hover.png');
+.category-menu li a:hover .category-img {
+    filter: none;
 }
 
-.category-menu li a:hover .private {
-    background-image: url('../images/private-car-icon-hover.png');
-}
-
-.category-menu li a:hover .moto {
-    background-image: url('../images/moto-icon-hover.png');
-}
-
-.category-menu li a:hover .scooter {
-    background-image: url('../images/scooter-icon-hover.png');
-}
-
-.category-menu li a:hover .kv-cycle {
-    background-image: url('../images/kv-cycle-icon-hover.png');
-}
 
 /************************* Brands **************************/
 
 
 .brands {
-    padding: 20px;
-    margin-bottom: 10px;
+    padding: 20px 0 13px;
     columns: 2;
 }
 
 .brand-item {
-    margin-bottom: 10px;
+    margin-bottom: 13px;
 }
 
 .brand-item a {
@@ -685,18 +677,45 @@ button {
 
 .adv {
     height: 100%;
-    min-height: 200px;
+    min-height: 135px;
     background: #666;
 }
 
 /*********************** Carousel **************************/
 .carousel-cars {
-    margin-top: 40px;
+    margin-top: 30px;
+    padding-bottom: 22px;
+    background: #f4f4f4;
 }
 
 .carousel-cars .container {
-    background: #f4f4f4;
-    padding-bottom: 40px;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+
+.carousel-cars .nav-tabs {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin: 0 0 19px 0;
+}
+
+.carousel-cars .nav-tabs:hover {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.carousel-cars .nav-tabs .nav-item {
+    width: auto;
+}
+
+.carousel-cars .nav-tabs .nav-item a {
+    font-size: 13px;
+}
+
+.carousel-cars .nav-tabs .nav-link:hover,
+.carousel-cars .nav-tabs .nav-link.active {
+    border-width: 2px;
 }
 
 .carousel-image {
@@ -716,19 +735,45 @@ button {
     width: 100%;
 }
 
+.carousel-cars .carousel-row {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.carousel-cars .carousel-row:hover {
+    overflow: auto;
+}
+
 .carousel-cars .carousel-item {
+    flex: none;
+    display: block;
+    width: 252px;
+    margin-right: 10px;
     background: #fff;
     box-shadow: 0 2px 5px #dddddd;
 }
 
 .carousel-cars .car-description {
-    padding: 30px;
+    padding: 25px;
+    white-space: normal;
+    width: 100%;
+}
+
+.carousel-cars .car-description h5 {
+    font-size: 12px;
+}
+
+.carousel-cars .car-description p {
+    font-size: 11px;
+    line-height: 11px;
+    margin-bottom: 10px;
 }
 
 .price-rb {
     color: #db4544;
     font-weight: 600;
-    margin-right: 20px;
+    margin-right: 12px;
+    font-size: 12px;
 }
 
 .price-dol {
@@ -821,10 +866,13 @@ button {
 }
 
 /************************** Callback ************************/
-.callback .container {
-    padding: 50px 30px;
+.callback {
     background: url("../images/callback-bg.jpg") no-repeat center top;
     background-size: 100%;
+}
+
+.callback .container {
+    padding: 50px 30px;
 }
 
 .callback h2 {
@@ -887,20 +935,59 @@ button {
 .news {
     padding: 20px 0;
 }
+
+.news .container {
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.news h2 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.news h2 + p {
+    font-size: 12px;
+}
+
+.news-row {
+    flex-wrap: nowrap;
+    padding-right: 15px;
+}
+
+.main-row {
+    overflow: hidden;
+}
+
+.main-row:hover {
+    overflow-x: auto;
+}
+
+.news-row div[class*="col-"] {
+    flex: none;
+    width: auto;
+    padding-right: 0;
+}
+
 .news-item {
     height: 100%;
     margin-bottom: 5px;
     box-shadow: 0 0 3px #dddddd;
+    width: 235px;
 }
 
 .news-item h3 {
-    font-size: 17px;
+    font-size: 13px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 3px;
+}
+
+.news-item p {
+    font-size: 10px;
 }
 
 .news-item a {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .news-item a i {
@@ -909,11 +996,11 @@ button {
 
 .news-image img{
     width: 100%;
-    min-height: 210px;
+    min-height: 180px;
 }
 
 .news-description {
-    padding: 20px;
+    padding: 7px;
 }
 
 /*************************** credit-request *********************/
@@ -928,25 +1015,30 @@ button {
 }
 
 .online-block h2 {
-    font-size: 23px;
+    font-size: 16px;
 }
 
 .online-block p {
-    font-size: 13px;
+    font-size: 11px;
+}
+
+.online-block .custom-button {
+    font-size: 12px;
 }
 
 .calc-block {
-    padding: 20px 0;
+    padding: 25px 0;
     background: #db4544;
 }
 
 .calc-block h4 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
+    margin-bottom: 14px;
 }
 
 .calc-block a {
-    padding: 10px 30px;
+    padding: 10px 13px;
     border: none;
     background: #fff;
     color: #db4544;
@@ -963,12 +1055,18 @@ button {
 }
 
 /************************ footer ***************************/
+footer .container {
+    padding: 0 5px;
+    overflow: hidden;
+}
+
 .info-links {
-    padding: 30px 0;
+    padding: 18px 0;
 }
 
 .info-links ul {
     padding: 0;
+    margin-bottom: 10px;
 }
 
 .info-links ul li {
@@ -980,6 +1078,7 @@ button {
     color: #db4544;
     padding: 10px 0;
     font-weight: 600;
+    font-size: 14px;
 }
 
 .info-links ul li a:hover {
@@ -987,13 +1086,17 @@ button {
 }
 
 .footer-menu {
-    padding-bottom: 30px;
+    padding-bottom: 17px;
 }
 
 .footer-menu h3 {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
+}
+
+.footer-menu a {
+    display: inline-block;
 }
 
 .footer-menu ul {
@@ -1007,9 +1110,10 @@ button {
     font-size: 10px;
 }
 
-.footer-menu button {
+.footer-menu .custom-button {
     width: 100%;
     padding: 10px;
+    font-size: 14px;
 }
 
 .footer-menu .fab {
@@ -1039,6 +1143,21 @@ button {
     margin: 0;
 }
 
+.copirights-mobile {
+    padding: 0 7px;
+}
+
+.copirights-mobile a {
+    color: #db4544;
+    font-size: 11px;
+    margin-right: 23px;
+}
+
+.copirights-mobile p {
+    font-size: 11px;
+    margin-top: 14px;
+}
+
 /********************* media queries ***********************/
 /* mobiles */
 @media (min-width: 576px) {
@@ -1047,6 +1166,11 @@ button {
 
 /* tablets */
 @media (min-width: 768px) {
+    .carousel-cars .nav-tabs .nav-link:hover,
+    .carousel-cars .nav-tabs .nav-link.active {
+        border-width: 4px;
+    }
+
     .carousel-cars .carousel-item {
         margin: 5px;
     }
@@ -1140,7 +1264,7 @@ button {
     }
 
     .category-menu li {
-        width: 18%;
+        width: 14%;
         margin: 1%;
     }
 
@@ -1150,6 +1274,68 @@ button {
 
     .info-links ul li {
         display: inline-block;
+    }
+
+    .carousel-cars .carousel-item {
+        flex: auto;
+    }
+
+    .news-item {
+        width: auto;
+    }
+
+    .carousel-cars .nav-tabs .nav-item a {
+        font-size: 15px;
+    }
+
+    .carousel-cars .car-description h5 {
+        font-size: 14px;
+    }
+
+    .carousel-cars .car-description p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .how-it-works h2 {
+        font-size: 25px;
+    }
+
+    .news h2 {
+        font-size: 25px;
+    }
+
+    .news h2 + p {
+        font-size: 14px;
+    }
+
+    .news-description {
+        padding: 10px;
+    }
+
+    .news-item h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .news-item p {
+        font-size: 13px;
+    }
+
+    .online-block h2 {
+        font-size: 23px;
+    }
+
+    .online-block p {
+        font-size: 14px;
+    }
+
+    .online-block .custom-button {
+        font-size: 14px;
+    }
+
+    .calc-block h4 {
+        margin-bottom: 0;
     }
 }
 /* desktop */

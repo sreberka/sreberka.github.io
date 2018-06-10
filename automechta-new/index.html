@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name = "format-detection" content = "telephone=no" />
     <title>Automechta</title>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="css/slick-theme.css">
+    <!--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>-->
+    <!--<link rel="stylesheet" href="css/slick-theme.css">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
@@ -178,10 +178,10 @@
                         <h2>Помогаем выбрать авто в кредит в Беларуси</h2>
                         <a href="#" class="read-more-link">Читать <i class="fas fa-chevron-right"></i></a>
                     </div>
-                    <div class="col-12 col-md-8 col-lg-5 offset-lg-2 col-xl-4 offset-xl-3">
+                    <div class="col-12 col-md-8 col-lg-5 offset-lg-2 col-xl-4 offset-xl-3 p-0">
                         <form class="search-form">
                             <div class="form-block">
-                                <div class="row mb-2">
+                                <div class="row">
                                     <div class="col-lg-12">
                                         <div class="select-search-block">
                                             <select>
@@ -197,7 +197,7 @@
                             </div>
                             <div class="form-block">
                                 <div class="row">
-                                    <div class="col-12 col-md-6 pr-md-1 mb-2">
+                                    <div class="col-12 col-md-6 pr-md-1">
                                         <div class="select-search-block">
                                             <select>
                                                 <option value="1">Марка</option>
@@ -208,7 +208,7 @@
                                             <i class="fas fa-chevron-down"></i>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 pl-md-1 mb-2">
+                                    <div class="col-12 col-md-6 pl-md-1">
                                         <div class="select-search-block">
                                             <select>
                                                 <option value="1">Модель</option>
@@ -220,7 +220,7 @@
                             </div>
                             <div class="form-block">
                                 <div class="row">
-                                    <div class="col-12 col-md-6 pr-md-1 mb-2">
+                                    <div class="col-12 col-md-6 pr-md-1">
                                         <div class="select-search-block">
                                             <p class="dropdown-custom-toggle">Год</p>
                                             <div class="dropdown-custom">
@@ -246,7 +246,7 @@
                                             <i class="fas fa-chevron-down"></i>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 pl-md-1 mb-2">
+                                    <div class="col-12 col-md-6 pl-md-1">
                                         <div class="select-search-block">
                                             <p class="dropdown-custom-toggle">Цена</p>
                                             <div class="dropdown-custom">
@@ -288,7 +288,7 @@
         <div class="categories">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-lg-10 offset-lg-1">
+                    <div class="col-12 col-lg-12">
                         <nav class="category-menu">
                             <ul>
                                 <li>
@@ -319,6 +319,12 @@
                                     <a href="#">
                                         <span class="category-img kv-cycle"></span>
                                         <span class="category-name">Квадроциклы</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="category-img ship"></span>
+                                        <span class="category-name">Водный транспорт</span>
                                     </a>
                                 </li>
                             </ul>
@@ -495,7 +501,7 @@
             <div class="container">
                 <ul class="nav nav-tabs row justify-content-between" id="myTab" role="tablist">
                     <li class="nav-item col-lg-3 p-0">
-                        <a class="nav-link active" id="company-cars-tab" data-toggle="tab" href="#company-cars" role="tab" aria-controls="company-cars" aria-selected="true">Автомобили компании</a>
+                        <a class="nav-link active" id="company-cars-tab" data-toggle="tab" href="#company-cars" role="tab" aria-controls="company-cars" aria-selected="true">Авто компании</a>
                     </li>
                     <li class="nav-item col-lg-2 p-0">
                         <a class="nav-link" id="private-cars-tab" data-toggle="tab" href="#private-cars" role="tab" aria-controls="private-cars" aria-selected="false">Частные авто</a>
@@ -512,7 +518,7 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="company-cars" role="tabpanel" aria-labelledby="company-cars-tab">
-                        <div class="carousel slide" data-ride="carousel" data-interval="false">
+                        <div class="carousel">
                             <div class="carousel-inner">
                                 <div class="row carousel-row">
                                     <div class="carousel-item">
@@ -676,23 +682,23 @@
             <div class="container">
                 <h2>Автоновости</h2>
                 <p>Порция свежих новостей на каждый день</p>
-                <div class="row">
-                    <div class="col-12 col-lg-6 mb-3 mb-md-0">
+                <div class="row news-row main-row">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
                         <div class="news-item">
                             <div class="news-image">
                                 <img src="images/news-image-big.jpg">
                             </div>
                             <div class="news-description">
-                                <h3>Китайцы создали свой Bugatti Chiron. Машину продают за 5000 дол</h3>
+                                <h3>Китайцы создали свой Bugatti</h3>
                                 <p>В Bugatti по-прежнему не могут решиться вывести Chiron на китай
                                     В Bugatti по-прежнему не могут решиться вывести Chiron на китай</p>
                                 <a href="#">Подробнее <i class="fas fa-chevron-right ml-2"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="row">
-                            <div class="col-12 col-lg-6 mb-3 mb-md-0">
+                    <div class="col-lg-6">
+                        <div class="row news-row">
+                            <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                                 <div class="news-item">
                                     <div class="news-image">
                                         <img src="images/news-image-small-1.jpg">
@@ -707,7 +713,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6">
+                            <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                                 <div class="news-item">
                                     <div class="news-image">
                                         <img src="images/news-image-small-2.jpg">
@@ -724,33 +730,44 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mt-4">
+                        <div class="row mt-4 hidden-mobile">
                             <div class="col-12">
                                 <a href="#" class="show-all">Читать все <i class="fas fa-chevron-right ml-2"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="row hidden-desktop">
+                    <div class="col-12">
+                        <a href="#" class="show-all">Еще <i class="fas fa-chevron-right ml-2"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="credit-request">
-            <div class="container text-center">
-                <div class="row justify-content-center online-block">
-                    <div class="col-12">
-                        <h2>ONLINE-заявка на кредит</h2>
-                        <p>Заполните анкету в удобное для Вас время, мы примем ее и свяжемся с Вами</p>
-                    </div>
-                    <div class="col-12 col-lg-4 mt-lg-4">
-                        <a href="#" class="custom-button"><i class="fas fa-pencil-alt"></i> Заполнить анкету</a>
+            <div class="online-block">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-12">
+                            <h2>ONLINE-заявка на кредит</h2>
+                            <p>Заполните анкету в удобное для Вас время, мы примем ее и свяжемся с Вами</p>
+                        </div>
+                        <div class="col-12 col-lg-4 mt-lg-4">
+                            <a href="#" class="custom-button"><i class="fas fa-pencil-alt"></i> Заполнить анкету</a>
+                        </div>
                     </div>
                 </div>
-                <div class="row calc-block align-items-center">
-                    <div class="col-12 col-lg-7 text-center text-lg-right pr-lg-4">
-                        <h4>Рассчитать ежемесячный платеж в 4 клика</h4>
-                    </div>
-                    <div class="col-12 col-lg-5 text-center text-lg-left">
-                        <a href="#"><i class="fas fa-calculator mr-2"></i>Кредитный калькулятор</a>
+            </div>
+            <div class="calc-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-7 text-center text-lg-right pr-lg-4">
+                            <h4>Рассчитать ежемесячный платеж в 4 клика</h4>
+                        </div>
+                        <div class="col-12 col-lg-5 text-center text-lg-left">
+                            <a href="#"><i class="fas fa-calculator mr-2"></i>Кредитный калькулятор</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -828,6 +845,13 @@
                 </div>
             </div>
         </div>
+        <div class="copirights-mobile hidden-desktop">
+            <div class="container">
+                <a href="#">Полная версия</a>
+                <a href="#">Сообщить об ошибке</a>
+                <p>© 2013-2018 Автомобильный портал «АвтоМечта»</p>
+            </div>
+        </div>
     </footer>
 
 </div>
@@ -838,41 +862,41 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+<!--<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+<!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/js.js"></script>
 <script>
-    $(document).ready(function () {
-        $('.carousel-row').slick({
-            dots: false,
-            arrows: false,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 4,
-            adaptiveHeight: true,
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        dots: true,
-                        arrows: true,
-                        slidesToShow: 1
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        dots: true,
-                        arrows: true,
-                        slidesToShow: 2
-                    }
-                }
-            ]
-        });
-    })
+//    $(document).ready(function () {
+//        $('.carousel-row').slick({
+//            dots: false,
+//            arrows: false,
+//            infinite: true,
+//            speed: 300,
+//            slidesToShow: 4,
+//            adaptiveHeight: true,
+//            responsive: [
+//                {
+//                    breakpoint: 768,
+//                    settings: {
+//                        dots: true,
+//                        arrows: true,
+//                        slidesToShow: 1
+//                    }
+//                },
+//                {
+//                    breakpoint: 992,
+//                    settings: {
+//                        dots: true,
+//                        arrows: true,
+//                        slidesToShow: 2
+//                    }
+//                }
+//            ]
+//        });
+//    })
 </script>
 </body>
 </html>
