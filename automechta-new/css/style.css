@@ -1289,6 +1289,10 @@ footer .container {
         flex: auto;
     }
 
+    .carousel-cars .nav-tabs {
+        overflow-x: hidden;
+    }
+
     .news-item {
         width: auto;
     }
