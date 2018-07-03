@@ -8,4 +8,14 @@ $(document).ready(function () {
     $('.dropdown-custom-toggle').click(function () {
         $(this).toggleClass('open-dropdown');
     });
+
+    $('#open-filter').click(function () {
+        $('#filter').addClass('open-filter');
+        $('html, body').css('overflow', 'hidden');
+    });
+
+    $('#close-filter').click(function () {
+        $('#filter').removeClass('open-filter');
+        $('html, body').css('overflow', 'auto');
+    });
 });

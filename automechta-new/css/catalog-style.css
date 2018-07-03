@@ -3,6 +3,10 @@
     padding: 7px 0 3px;
 }
 
+.brands.brands-catalog .brand-img {
+    display: none;
+}
+
 .brands.brands-catalog .brand-item {
     margin-bottom: 0;
 }
@@ -40,6 +44,10 @@
     width: 100%;
     padding: 12px 30px;
     font-size: 18px;
+}
+
+.search-submit .custom-button {
+    width: 100%;
 }
 
 .sorter span,
@@ -195,12 +203,12 @@
 
 .favorite .star:hover {
     background: #fff;
+    box-shadow: 0 0 2px #d7d7d7;
 }
 
 .favorite .star:hover .fa-star {
     font-weight: 900;
     color: #db4544;
-    box-shadow: 0 0 2px #d7d7d7;
 }
 
 .favorite .dollar {
@@ -214,6 +222,7 @@
 .favorite .dollar:hover {
     color: #db4544;
     background: #fff;
+    box-shadow: 0 0 2px #d7d7d7;
 }
 
 .add-to-favorite {
@@ -264,9 +273,39 @@
     margin: 0 3px;
 }
 
+#filter {
+    display: none;
+}
+
+#filter.open-filter {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#filter.open-filter .form-filter {
+    height: 100%;
+}
+
+#close-filter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+
 .form-filter {
     margin-top: 0;
     background: #f5f5f5;
+}
+
+.form-filter h2 {
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
 .form-filter .select-search-block select {
@@ -382,8 +421,276 @@
     opacity: 1;
 }
 
+/************************* media queries ****************************/
+
 @media (min-width: 992px) {
     #filter {
         display: block!important;
+    }
+
+    .company-services {
+        margin-top: 60px;
+    }
+
+    .company-services h2 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+    .service-image {
+        height: 220px;
+        background-color: gray;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .service-description {
+        background: #f5f5f5;
+        padding: 14px;
+    }
+
+    .service-description h3 {
+        font-size: 16px;
+    }
+
+    .service-description a {
+        font-size: 14px;
+    }
+
+    .service-description i {
+        font-size: 9px;
+    }
+
+    .search-submit .custom-button {
+        width: auto;
+    }
+
+    .online-request {
+        background: url("../images/request-mob.jpg") no-repeat center;
+        background-size: cover;
+        color: #fff;
+        margin-top: 32px;
+        padding: 20px;
+    }
+
+    .online-request h2 {
+        font-size: 26px;
+        margin-bottom: 0;
+    }
+
+    .online-request p {
+        line-height: 18px;
+    }
+
+    .online-request .custom-button {
+        margin-top: 12px;
+        font-size: 19px;
+        padding: 6px 5px;
+    }
+
+    .download-income {
+        text-align: center;
+        padding: 15px;
+        width: 100%;
+        display: inline-block;
+        border: 3px solid #db4544;
+        margin-top: 35px;
+        margin-bottom: 30px;
+        font-size: 19px;
+    }
+}
+
+/* desktop */
+@media (min-width: 1200px) {
+    .brands.brands-catalog .brand-img {
+        display: inline-block;
+    }
+
+    .brands.brands-catalog {
+        padding: 30px 0;
+    }
+
+    .brand-item a span {
+        font-size: 16px;
+    }
+
+    .brands.brands-catalog .brand-img {
+        margin-right: 10px;
+    }
+
+    .brands.brands-catalog .brand-item a .brand-amount {
+        font-size: 14px;
+        margin-left: 6px;
+    }
+
+    .brands.brands-catalog .brand-item {
+        margin-bottom: 8px;
+    }
+
+    .catalog-show-all {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .carousel-cars.catalog-cars .nav-tabs .nav-item {
+        margin-right: 0;
+    }
+
+    .carousel-cars.catalog-cars .nav-tabs .nav-item a {
+        font-size: 22px;
+        padding: 20px;
+    }
+
+    .carousel-cars.catalog-cars .nav-tabs .nav-link:hover,
+    .carousel-cars.catalog-cars .nav-tabs .nav-link.active {
+        border-width: 6px;
+    }
+
+    .carousel-cars.catalog-cars .nav-tabs {
+        margin-bottom: 34px;
+    }
+
+    .form-filter {
+        padding-bottom: 35px;
+    }
+
+    .form-filter h2 {
+        font-size: 23px;
+        margin: 17px 0;
+    }
+
+    .search-form .form-block .select-search-block {
+        margin-bottom: 32px;
+    }
+
+    .form-filter .select-search-block select {
+        padding: 7px 17px;
+        font-size: 16px;
+    }
+
+    .form-filter .select-search-block i {
+        font-size: 15px;
+    }
+
+    .form-filter label {
+        font-size: 15px;
+        margin-bottom: 7px;
+    }
+
+    .form-filter input[type="checkbox"] + label {
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    .form-filter input[type="checkbox"] + label:before {
+        width: 17px;
+        height: 17px;
+        font-size: 16px;
+        line-height: 15px;
+        margin-right: 8px;
+    }
+
+    .form-filter input[type="radio"] + label {
+        font-size: 15px;
+        padding: 4px 11px;
+        margin-right: 11px;
+    }
+
+    .form-filter .clear-filter {
+        margin-top: 0;
+        font-size: 14px;
+    }
+
+    .search-submit .custom-button {
+        font-size: 19px;
+        padding: 9px 40px;
+    }
+
+    .sorter {
+        padding: 10px 0;
+    }
+
+    .sorter span,
+    .sorter a {
+        font-size: 14px;
+    }
+
+    .sorter span {
+        margin-right: 18px;
+    }
+
+    .sorter a {
+        margin-right: 44px;
+    }
+
+    .catalog-item-img {
+        width: 235px;
+    }
+
+    .catalog-item-description {
+        padding-left: 15px;
+    }
+
+    .description-header h2 {
+        font-size: 23px;
+    }
+
+    .description-header span {
+        font-size: 14px;
+        margin-left: 17px;
+    }
+
+    .description-text {
+        margin-top: 9px;
+    }
+
+    .description-text p {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .description-price .price-rb {
+        font-size: 20px;
+        margin-right: 14px;
+    }
+
+    .description-price .price-dol {
+        font-size: 18px;
+    }
+
+    .favorite .add-to-favorite {
+        font-size: 23px;
+    }
+
+    .add-tooltip {
+        min-width: 130px;
+        font-size: 16px;
+        top: 5px;
+        font-weight: 600;
+    }
+
+    .pagination {
+        width: 45%;
+        margin-top: 65px;
+    }
+
+    .pagination a {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .pagination .page-link {
+        padding: 8px 14px;
+        font-size: 18px;
+    }
+
+    .pagination ul li {
+        margin: 0 9px;
+    }
+
+    .carousel-cars.catalog-cars {
+        margin-bottom: 20px;
     }
 }
