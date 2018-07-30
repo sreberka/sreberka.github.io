@@ -290,7 +290,7 @@
     position: fixed;
     z-index: 100;
     left: 0;
-    bottom: 9px;
+    bottom: 12px;
     width: 100%;
 }
 .fixed-contacts button {
