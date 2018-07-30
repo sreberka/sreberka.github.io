@@ -18,4 +18,13 @@ $(document).ready(function () {
         $('#filter').removeClass('open-filter');
         $('html, body').css('overflow', 'auto');
     });
+
+    $('#call-to-client').click(function () {
+        $('.modal-overlay').addClass('open-modal');
+        $('html, body').css('overflow', 'hidden');
+    });
+    $('#close').click(function () {
+        $('.modal-overlay').removeClass('open-modal');
+        $('html, body').css('overflow', 'auto');
+    })
 });

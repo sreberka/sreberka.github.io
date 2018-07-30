@@ -1,0 +1,349 @@
+/******************** car styles ****************/
+.car-image {
+
+}
+.car-image img {
+    width: 100%;
+}
+.publication-info-mobile {
+    font-size: 9px;
+    margin-top: 15px;
+}
+.publication-info-mobile span {
+    margin-right: 3%;
+}
+.publication-info-mobile a i {
+    font-size: 14px;
+}
+.publication-info-mobile a {
+    display: inline-block;
+    padding: 5px;
+}
+.add-car-to-fav {
+    font-size: 11px;
+}
+.add-car-to-fav span {
+    margin-right: 0;
+}
+.add-car-to-fav:hover {
+    background: #f5f5f5;
+}
+.add-car-to-fav:hover i {
+    font-weight: 600;
+}
+.car-info {
+    margin-top: 25px;
+}
+.car-info h2 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+.car-info span {
+    font-size: 14px;
+}
+.car-info strong {
+    font-size: 14px;
+}
+.car-price .price-rb {
+    font-size: 17px;
+}
+.car-price .price-dol {
+    font-size: 15px;
+}
+.car-price {
+    margin-bottom: 20px;
+}
+.location {
+    margin-top: 20px;
+}
+.car-info .location span {
+    font-size: 15px;
+}
+.location i {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.seller-phone {
+    margin-top: 10px;
+    margin-bottom: 17px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #db4544;
+    background: transparent;
+    cursor: pointer;
+}
+.seller-phone:hover {
+    background: #f5f5f5;
+}
+.seller-phone i {
+    color: #000!important;
+}
+.credit-consultation {
+    width: 100%;
+    padding: 12px;
+}
+.online-request {
+    margin-top: 16px;
+    padding: 27px 20px;
+    color: #fff;
+    text-align: center;
+    background: url("../images/request-mob.jpg") no-repeat center;
+    background-size: cover;
+}
+.online-request h2 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+.online-request .custom-button {
+    margin-top: 12px;
+    padding: 13px 50px;
+    font-size: 14px;
+}
+.car-info-tabs .nav-tabs {
+    margin-bottom: 10px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+.car-info-tabs .nav-link {
+    padding: 0.5rem;
+}
+.car-info-tab-content p {
+    font-size: 12px;
+}
+.options h2 {
+    font-size: 14px;
+}
+.options ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+.options ul li {
+    font-size: 12px;
+}
+.options ul li:before {
+    content: url("../images/options-mark.png");
+    margin-right: 5px;
+    display: inline-block;
+}
+.credit-calculator {
+    border: 2px solid #db4544;
+    background: #f5f5f5;
+    padding: 15px;
+    margin-top: 11px;
+    margin-bottom: 15px;
+}
+.credit-calculator label,
+.credit-calculator input,
+.credit-calculator select {
+    display: block;
+    width: 100%;
+}
+.credit-calculator label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    padding-top: 11px;
+}
+.credit-calculator input,
+.credit-calculator select {
+    font-size: 14px;
+    padding: 13px 15px;
+    background: #fff;
+    border: 1px solid #cccccc;
+}
+.credit-calculator select {
+    background: #fff url("../images/select-arrow.png") no-repeat 95% center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.credit-calculator h2 {
+    font-size: 20px;
+}
+.credit-calculator p {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 9px;
+    font-size: 16px;
+}
+.credit-calculator .custom-button {
+    width: 100%;
+    font-weight: normal;
+    padding: 13px;
+    font-size: 14px;
+}
+.credit-calculator .custom-button i {
+    font-size: 10px;
+}
+.download-income-card {
+    width: 100%;
+    font-size: 13px;
+    padding: 15px 0;
+}
+.about-credit {
+    margin-top: 33px;
+    background: #f5f5f5;
+}
+
+.header-about-credit {
+    background: #db4544;
+    color: #fff;
+    padding: 13px 0;
+    font-size: 14px;
+    margin: 0;
+}
+.header-about-credit strong {
+    font-size: 19px;
+}
+.about-credit ul {
+    padding: 10px 16px;
+    list-style-type: none;
+    margin-bottom: 6px;
+}
+.about-credit ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.about-credit ul li:before {
+    content: '\2713';
+    display: inline-block;
+    margin-right: 16px;
+    color: #00a651;
+    font-weight: 600;
+}
+.about-credit p {
+    padding: 0 16px 5px;
+    margin-bottom: 20px;
+}
+.about-credit p strong {
+    font-size: 19px;
+}
+.popular-videos {
+    margin-top: 12px;
+    overflow: hidden;
+}
+.popular-videos h2 {
+    font-size: 14px;
+}
+.videos-container,
+.enc-container {
+    flex-wrap: nowrap;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.video-item {
+    flex: none;
+    width: 240px;
+    margin-right: 10px;
+}
+.video-item iframe {
+    width: 100%;
+}
+.video-description {
+    font-size: 13px;
+}
+.encyclopedia {
+    margin-top: 25px;
+}
+.encyclopedia h2 {
+    font-size: 14px;
+}
+.enc-block {
+    width: 90px;
+    margin-right: 10px;
+}
+.enc-image {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    position: relative;
+}
+.enc-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.enc-block p {
+    font-size: 10px;
+}
+.show-all-mod {
+    font-size: 12px;
+    text-decoration: underline;
+}
+.show-all-mod i {
+    font-size: 8px;
+}
+/***************** relative product ****************/
+.relative-products {
+    margin-top: 20px;
+}
+.relative-products h2 {
+    font-size: 21px;
+}
+.fixed-contacts {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    bottom: 9px;
+    width: 100%;
+}
+.fixed-contacts button {
+    padding: 14px;
+    color: #fff;
+    background: #00a651;
+    border: 0;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+}
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 999;
+}
+.modal-contact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    background: #fff;
+    padding: 15px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.modal-contact #close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.modal-contact span {
+    display: block;
+    font-size: 12px;
+}
+.modal-contact h2 {
+    font-size: 21px;
+    margin-bottom: 31px;
+}
+.modal-contact p {
+    font-size: 16px;
+    font-weight: 600;
+}
+.open-modal {
+    display: block;
+}

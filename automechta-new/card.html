@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "format-detection" content = "telephone=no" />
+    <title>Automechta</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/catalog-style.css">
+    <link type="text/css" rel="stylesheet" href="css/card-style.css">
+</head>
+<body>
+<div class="mobile-menu">
+    <nav>
+        <ul>
+            <li><i class="far fa-user"></i><a href="#">Войти</a></li>
+            <li class="mb-4"><i class="fas fa-edit"></i><a href="#">Регистрация</a></li>
+            <li><i class="fas fa-car"></i><a href="#">Мои объявления</a></li>
+            <li><i class="far fa-star"></i><a href="#">Избранное</a></li>
+            <li><i class="far fa-envelope"></i><a href="#">Сообщение</a></li>
+        </ul>
+        <ul class="">
+            <li class="dropdown">
+                <a href="#" id="dropdownMenu4" data-toggle="dropdown">
+                    Авто
+                    <i class="fas fa-chevron-down ml-1"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                    <li class="dropdown-item"><a href="#">Автомобили компании</a></li>
+                    <li class="dropdown-item"><a href="#">Частные объявления</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="dropdownMenu5" data-toggle="dropdown">
+                    Мото
+                    <i class="fas fa-chevron-down ml-1"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
+                    <li class="dropdown-item"><a href="#">Мотоциклы</a></li>
+                    <li class="dropdown-item"><a href="#">Скутеры</a></li>
+                    <li class="dropdown-item"><a href="#">Квадроциклы</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="dropdownMenu6" data-toggle="dropdown">
+                    Услуги
+                    <i class="fas fa-chevron-down ml-1"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu6">
+                    <li class="dropdown-item"><a href="#">Авто в кредит</a></li>
+                    <li class="dropdown-item"><a href="#">Счет-справка </a></li>
+                    <li class="dropdown-item"><a href="#">Срочный выкуп авто</a></li>
+                    <li class="dropdown-item"><a href="#">Приём авто на комиссию</a></li>
+                    <li class="dropdown-item"><a href="#">Trade-In(Обмен авто)</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Энциклопедия</a></li>
+            <li><a href="#">Автоновости</a></li>
+            <li><a href="#">Вопрос-ответ</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <ul>
+            <li><a href="#"><i class="fas fa-calculator"></i>Кредитный калькулятор</a></li>
+            <li><a href="#"><i class="fas fa-phone"></i>Заказать обратный звонок</a></li>
+            <li><a href="#"><i class="fas fa-question"></i>Как работает портал</a></li>
+        </ul>
+        <div class="social-mobile">
+            <a href="#" class="mr-3"><i class="fab fa-vk"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="custom-button mt-4"><i class="fas fa-plus"></i>Подать объявление</a>
+
+            <a class="full-version" href="#">Полная версия</a>
+            <p>© 2013-2018 Автомобильный портал «АвтоМечта»</p>
+        </div>
+    </nav>
+</div>
+
+<div class="fixed-contacts hidden-desktop">
+    <div class="row m-0">
+        <div class="col-10">
+            <button id="call-to-client"><i class="fas fa-phone mr-2"></i>Позвонить</button>
+        </div>
+        <div class="col-2 pl-0">
+            <button><i class="fas fa-comment"></i></button>
+        </div>
+    </div>
+</div>
+<div class="modal-overlay">
+    <div class="modal-contact">
+        <h2>Контактные данные</h2>
+        <p><i class="far fa-user mr-2"></i>Михаил<span>Минск, Беларусь</span></p>
+        <p class="m-0"><img class="mr-2" src="images/velcom.png">+375(29)337-77-77<span>c 9:00 до 20:00</span></p>
+        <i id="close" class="fas fa-times"></i>
+    </div>
+</div>
+
+<div class="wrapper">
+    <header>
+        <div class="info-header hidden-mobile">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-xl-3 social-m">
+                        <a href="#" class="mr-3"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="col-lg-10 col-xl-9 h-100">
+                        <div class="row align-items-center header-info-links">
+                            <div class="col-lg-3"><a href="#"><i class="fas fa-phone"></i>+375(33)321-55-55</a></div>
+                            <div class="col-lg-3"><a href="#"><i class="fas fa-map-marker-alt"></i>г.Минск, ул.Суражская 8а</a></div>
+                            <div class="col-lg-3 h-100"><a class="button-add" href="#"><i class="fas fa-plus"></i>Подать объявление</a></div>
+                            <div class="col-lg-3"><a href="#" class="mr-2"><i class="far fa-user"></i>Войти</a>|<a href="#" class="ml-2"><i class="fas fa-edit"></i>Регистрация</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-menu hidden-mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <a class="site-logo" href="#"><img src="images/logo.svg" alt="logo"></a>
+                    </div>
+                    <div class="col-lg-10">
+                        <ul class="first-level-menu">
+                            <li class="dropdown">
+                                <a href="#" id="dropdownMenu1" data-toggle="dropdown">
+                                    Авто
+                                    <i class="fas fa-chevron-down ml-1"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li class="dropdown-item"><a href="#">Автомобили компании</a></li>
+                                    <li class="dropdown-item"><a href="#">Частные объявления</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" id="dropdownMenu2" data-toggle="dropdown">
+                                    Мото
+                                    <i class="fas fa-chevron-down ml-1"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li class="dropdown-item"><a href="#">Мотоциклы</a></li>
+                                    <li class="dropdown-item"><a href="#">Скутеры</a></li>
+                                    <li class="dropdown-item"><a href="#">Квадроциклы</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" id="dropdownMenu3" data-toggle="dropdown">
+                                    Услуги
+                                    <i class="fas fa-chevron-down ml-1"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                                    <li class="dropdown-item"><a href="#">Авто в кредит</a></li>
+                                    <li class="dropdown-item"><a href="#">Счет-справка </a></li>
+                                    <li class="dropdown-item"><a href="#">Срочный выкуп авто</a></li>
+                                    <li class="dropdown-item"><a href="#">Приём авто на комиссию</a></li>
+                                    <li class="dropdown-item"><a href="#">Trade-In(Обмен авто)</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Энциклопедия</a></li>
+                            <li><a href="#">Автоновости</a></li>
+                            <li><a href="#">Вопрос-ответ</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--mobile header-->
+        <div class="mobile-header hidden-desktop">
+            <div class="row">
+                <div class="col-6">
+                    <a href="#" class="logo-mobile"><img src="images/logo.svg"></a>
+                </div>
+                <div class="col-6">
+                    <a href="#" class="custom-button mobile-button-add"><i class="fas fa-plus"></i></a>
+                    <div id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="/">Главная<i class="fas fa-chevron-right ml-1 ml-lg-2"></i></a></li>
+                <li><a href="/">Каталог<i class="fas fa-chevron-right ml-1 ml-lg-2"></i></a></li>
+                <li><span class="no-link ml-lg-2">Jaguar S-type</span></li>
+            </ul>
+        </div>
+    </div>
+    <main>
+
+        <div class="car-card">
+            <div class="container">
+                <div class="row publication-info hidden-mobile">
+                    <div class="col-lg-6">
+
+                    </div>
+                    <div class="col-lg-6">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-3 pr-lg-0">
+                        <div class="card-carousel hidden-desktop">
+                            <div class="car-image">
+                                <img src="images/car-image.jpg">
+                            </div>
+                            <div class="car-image">
+                                <img src="images/car-image.jpg">
+                            </div>
+                            <div class="car-image">
+                                <img src="images/car-image.jpg">
+                            </div>
+                        </div>
+                        <div class="row publication-info-mobile align-items-center hidden-desktop">
+                            <div class="col-6">
+                                <span>№7004</span>
+                                <span>от 22.10.2017г</span>
+                                <span><i class="fas fa-eye mr-1"></i>250</span>
+                            </div>
+                            <div class="col-6 row justify-content-end">
+                                <a href="#" class="add-car-to-fav">
+                                    <i class="far fa-star"></i>
+                                    <span class="">В избранное</span>
+                                </a>
+                                <a href="#"><i class="fas fa-ban"></i></a>
+                            </div>
+                        </div>
+                        <div class="row car-info">
+                            <div class="col-12 car-name">
+                                <h2><a href="#">Jaguar S-Type, 2003</a></h2>
+                            </div>
+                            <div class="col-12 car-price">
+                                <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-6"><span>Год выпуска</span></div>
+                                    <div class="col-6"><strong>2003</strong></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"><span>Пробег (тыс.км)</span></div>
+                                    <div class="col-6"><strong>194 тыс.км</strong></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"><span>Объeм (см<sup>3</sup>)</span></div>
+                                    <div class="col-6"><strong>2 500 см<sup>3</sup></strong></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"><span>Тип двигателя</span></div>
+                                    <div class="col-6"><strong>бензин</strong></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"><span>Трансмиссия</span></div>
+                                    <div class="col-6"><strong>автоматическая</strong></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"><span>Привод</span></div>
+                                    <div class="col-6"><strong>задний</strong></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"><span>Кузов</span></div>
+                                    <div class="col-6"><strong>седан</strong></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"><span>Цвет</span></div>
+                                    <div class="col-6"><strong>серый</strong></div>
+                                </div>
+                            </div>
+                            <div class="col-12 location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Минск, Беларусь</span>
+                            </div>
+                            <div class="col-12">
+                                <button class="seller-phone hidden-desktop"><i class="fas fa-phone mr-2"></i>Телефон продавца</button>
+                            </div>
+                        </div>
+                        <a href="#" class="custom-button hidden-desktop credit-consultation">Консультация по кредиту</a>
+                        <div class="online-request">
+                            <h2>ONLINE-заявка на кредит</h2>
+                            <p>Заполните анкету в удобное для Вас время, мы примем ее и свяжемся с Вами</p>
+                            <a href="#" class="custom-button"><i class="fas fa-pencil-alt mr-2"></i>Заполнить заявку</a>
+                        </div>
+                        <div class="row car-info-tabs hidden-desktop">
+                            <div class="col-lg-3">
+                                <ul class="nav row nav-tabs " id="myTab" role="tablist">
+                                    <li class="nav-item col-6 p-0">
+                                        <a class="nav-link active text-center" id="seller-comment-tab" data-toggle="tab" href="#seller-comment" role="tab" aria-controls="seller-comment" aria-selected="true">Комментарии продавца</a>
+                                    </li>
+                                    <li class="nav-item col-6 p-0">
+                                        <a class="nav-link text-center" id="credit-info-tab" data-toggle="tab" href="#credit-info" role="tab" aria-controls="credit-info" aria-selected="false">Информация о кредите</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-content car-info-tab-content hidden-desktop" id="myTabContent">
+                            <div class="tab-pane fade show active" id="seller-comment" role="tabpanel" aria-labelledby="seller-comment-tab">
+                                <p>
+                                    Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                    Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                    Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                    Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                    Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                    Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                    Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                    Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="credit-info" role="tabpanel" aria-labelledby="credit-info-tab">
+                            </div>
+                        </div>
+                        <div class="options">
+                            <h2>Дополнительные характеристики</h2>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul>
+                                        <li>обогрев зеркал</li>
+                                        <li>сигнализация</li>
+                                        <li>литые диски</li>
+                                        <li>кожаный салон</li>
+                                        <li>антипробуксовочная система</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul>
+                                        <li>ксенон</li>
+                                        <li>противотуманные фары</li>
+                                        <li>CD-проигрыватель</li>
+                                        <li>климат-контроль</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="credit-calculator">
+                            <h2>Кредитный калькулятор</h2>
+                            <label>Цена, BYN</label>
+                            <input type="text" placeholder="5000">
+                            <label>Первоначальный взнос, BYN</label>
+                            <input type="text" placeholder="0">
+                            <label>Ставка, %</label>
+                            <select>
+                                <option>Приорбанк, 15% </option>
+                                <option>Приорбанк, 15% </option>
+                                <option>Приорбанк, 15% </option>
+                            </select>
+                            <label>Срок кредита</label>
+                            <select>
+                                <option>5 лет</option>
+                                <option>5 лет</option>
+                                <option>5 лет</option>
+                            </select>
+                            <p><strong>346 BYN</strong>/месяц</p>
+                            <button type="submit" class="custom-button">Рассчитать платежи <i class="fas fa-chevron-right ml-2"></i></button>
+                        </form>
+                        <button class="custom-button download-income-card"><i class="fas fa-download mr-2"></i>Справка о доходах</button>
+                        <div class="about-credit">
+                            <div class="row header-about-credit">
+                                <div class="col-4">
+                                    <strong>Кредит</strong>
+                                </div>
+                                <div class="col-8 text-right">
+                                    <span>от 3 месяцев до 5 лет</span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>с досрочным погашением</li>
+                                <li>без справки о доходах</li>
+                                <li>без первоначального взноса и поручителей</li>
+                                <li>без привязки к курсу валют</li>
+                            </ul>
+                            <p>*Если сумма кредита превышает 5000 руб. потребуется справка о доходах за 3 месяца.</p>
+                            <p><strong>Cтарый автомобиль в зачёт!</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        <div class="car-info hidden-mobile">
+                            <div class="car-image">
+                                <img src="images/car-image.jpg">
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3">
+                                    <ul class="nav row nav-tabs " id="myTab2" role="tablist">
+                                        <li class="nav-item col-6 p-0">
+                                            <a class="nav-link active text-center" id="seller-comment2-tab" data-toggle="tab" href="#seller-comment2" role="tab" aria-controls="seller-comment2" aria-selected="true">Комментарии продавца</a>
+                                        </li>
+                                        <li class="nav-item col-6 p-0">
+                                            <a class="nav-link text-center" id="credit-info2-tab" data-toggle="tab" href="#credit-info2" role="tab" aria-controls="credit-info2" aria-selected="false">Информация о кредите</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-content" id="myTabContent2">
+                                <div class="tab-pane fade show active" id="seller-comment2" role="tabpanel" aria-labelledby="seller-comment2-tab">
+                                    <p>
+                                        Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                        Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                        Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                        Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                        Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                        Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                        Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                        Автомобиль в отличном состоянии. Рестайлинг. Эксплуатация с 2004 года.
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade" id="credit-info2" role="tabpanel" aria-labelledby="credit-info2-tab">
+                                </div>
+                            </div>
+                            <div class="options">
+                                <h2>Дополнительные характеристики</h2>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>обогрев зеркал</li>
+                                            <li>сигнализация</li>
+                                            <li>литые диски</li>
+                                            <li>кожаный салон</li>
+                                            <li>антипробуксовочная система</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>ксенон</li>
+                                            <li>противотуманные фары</li>
+                                            <li>CD-проигрыватель</li>
+                                            <li>климат-контроль</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="seller-info">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <i class="far fa-user"></i><span>Михаил</span>
+                                    </div>
+                                    <div class="col-2">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Минск, Беларусь</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <i class="fas fa-phone mr-2"></i>
+                                        <a href="tel:375333234567">+375(33)3234567</a>
+                                    </div>
+                                    <div class="col-2">
+                                        <button><i class="fas fa-comment mr-2"></i>Написать</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popular-videos">
+                            <h2>Популярные видео о модели</h2>
+                            <div class="row videos-container m-0">
+                                <div class="video-item">
+                                    <div class="car-video">
+                                        <iframe src="https://www.youtube.com/embed/FgMfWUqWIz4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    </div>
+                                    <a href="https://youtube.com/watch?v=FgMfWUqWIz4" class="video-description" target="_blank">Обзор Jaguar XF</a>
+                                </div>
+                                <div class="video-item">
+                                    <div class="car-video">
+                                        <iframe src="https://www.youtube.com/embed/FgMfWUqWIz4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    </div>
+                                    <a href="https://youtube.com/watch?v=FgMfWUqWIz4" class="video-description" target="_blank">Обзор Jaguar XF</a>
+                                </div>
+                                <div class="video-item">
+                                    <div class="car-video">
+                                        <iframe src="https://www.youtube.com/embed/FgMfWUqWIz4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    </div>
+                                    <a href="https://youtube.com/watch?v=FgMfWUqWIz4" class="video-description" target="_blank">Обзор Jaguar XF</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="encyclopedia">
+                            <h2>Энциклопедия Jaguar S-Type</h2>
+                            <div class="row enc-container m-0">
+                                <a class="enc-block" href="#">
+                                    <div class="enc-image">
+                                        <img src="images/enc-img.jpg">
+                                    </div>
+                                    <p>2.5 AT (200 л.с.)</p>
+                                </a>
+                                <a class="enc-block" href="#">
+                                    <div class="enc-image">
+                                        <img src="images/enc-img.jpg">
+                                    </div>
+                                    <p>2.5 AT (200 л.с.)</p>
+                                </a>
+                                <a class="enc-block" href="#">
+                                    <div class="enc-image">
+                                        <img src="images/enc-img.jpg">
+                                    </div>
+                                    <p>2.5 AT (200 л.с.)</p>
+                                </a>
+                                <a class="enc-block" href="#">
+                                    <div class="enc-image">
+                                        <img src="images/enc-img.jpg">
+                                    </div>
+                                    <p>2.5 AT (200 л.с.)</p>
+                                </a>
+                                <a class="enc-block" href="#">
+                                    <div class="enc-image">
+                                        <img src="images/enc-img.jpg">
+                                    </div>
+                                    <p>2.5 AT (200 л.с.)</p>
+                                </a>
+                            </div>
+                            <a href="#" class="show-all-mod">Показать все модификации <i class="fas fa-chevron-right"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative-products">
+            <div class="container">
+                <h2>Похожие объявления</h2>
+                <div class="catalog-cars-container">
+                    <div class="catalog-item">
+                        <div class="catalog-item-img">
+                            <a href="#"><img src="images/car-img.jpg"></a>
+                        </div>
+                        <div class="catalog-item-description">
+                            <div class="description-header">
+                                <h2><a href="#">Wolksvagen</a></h2><span>Обмен</span><span>Торг</span>
+                            </div>
+                            <div class="description-text">
+                                <p>
+                                    Простой и не прихотливый автомобиль. Сочетает в себе компактность
+                                    Простой и не прихотливый автомобиль. Сочетает в себе компактность
+                                </p>
+                            </div>
+                            <div class="description-params hidden-mobile">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p>Привод: <strong>задний</strong></p>
+                                        <p>Трансмиссия: <strong>механика</strong></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>Двигатель: <strong>бензин</strong></p>
+                                        <p>Объем: <strong>1400см<sup>3</sup></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description-price">
+                                <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
+                            </div>
+                        </div>
+                        <div class="favorite">
+                            <a href="#" class="star add-to-favorite">
+                                <i class="far fa-star"></i>
+                                <span class="add-tooltip">В избранное</span>
+                            </a>
+                            <a href="#" class="dollar add-to-favorite">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span class="add-tooltip">Рассчитать</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-item-img">
+                            <a href="#"><img src="images/car-img.jpg"></a>
+                        </div>
+                        <div class="catalog-item-description">
+                            <div class="description-header">
+                                <h2><a href="#">Wolksvagen</a></h2><span>Обмен</span><span>Торг</span>
+                            </div>
+                            <div class="description-text">
+                                <p>
+                                    Простой и не прихотливый автомобиль. Сочетает в себе компактность
+                                    Простой и не прихотливый автомобиль. Сочетает в себе компактность
+                                </p>
+                            </div>
+                            <div class="description-params hidden-mobile">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p>Привод: <strong>задний</strong></p>
+                                        <p>Трансмиссия: <strong>механика</strong></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>Двигатель: <strong>бензин</strong></p>
+                                        <p>Объем: <strong>1400см<sup>3</sup></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description-price">
+                                <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
+                            </div>
+                        </div>
+                        <div class="favorite">
+                            <a href="#" class="star add-to-favorite">
+                                <i class="far fa-star"></i>
+                                <span class="add-tooltip">В избранное</span>
+                            </a>
+                            <a href="#" class="dollar add-to-favorite">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span class="add-tooltip">Рассчитать</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-item-img">
+                            <a href="#"><img src="images/car-img.jpg"></a>
+                        </div>
+                        <div class="catalog-item-description">
+                            <div class="description-header">
+                                <h2><a href="#">Wolksvagen</a></h2><span>Обмен</span><span>Торг</span>
+                            </div>
+                            <div class="description-text">
+                                <p>
+                                    Простой и не прихотливый автомобиль. Сочетает в себе компактность
+                                    Простой и не прихотливый автомобиль. Сочетает в себе компактность
+                                </p>
+                            </div>
+                            <div class="description-params hidden-mobile">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p>Привод: <strong>задний</strong></p>
+                                        <p>Трансмиссия: <strong>механика</strong></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>Двигатель: <strong>бензин</strong></p>
+                                        <p>Объем: <strong>1400см<sup>3</sup></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description-price">
+                                <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
+                            </div>
+                        </div>
+                        <div class="favorite">
+                            <a href="#" class="star add-to-favorite">
+                                <i class="far fa-star"></i>
+                                <span class="add-tooltip">В избранное</span>
+                            </a>
+                            <a href="#" class="dollar add-to-favorite">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span class="add-tooltip">Рассчитать</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-11">
+                    <nav class="info-links">
+                        <ul>
+                            <li class="mr-lg-5"><a href="#">О проекте</a></li>
+                            <li class="mr-lg-5"><a href="#">Помощь</a></li>
+                            <li class="mr-lg-5"><a href="#">Правила подачи объявления</a></li>
+                            <li class="mr-lg-5"><a href="#">Реклама на сайте</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row justify-content-center footer-menu">
+                <div class="col-12 col-lg-2 hidden-mobile">
+                    <h3>Продажа</h3>
+                    <ul>
+                        <li><a href="#">Автомобили компании</a></li>
+                        <li><a href="#">Частные объявления</a></li>
+                        <li><a href="#">Мотоциклы</a></li>
+                        <li><a href="#">Скутеры</a></li>
+                        <li><a href="#">Квадроциклы</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 hidden-mobile">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="#">Авто в кредит</a></li>
+                        <li><a href="#">Счет-справка</a></li>
+                        <li><a href="#">Срочный выкуп авто</a></li>
+                        <li><a href="#">Прием авто на комиссию</a></li>
+                        <li><a href="#">Traid-in (обмен авто)</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 hidden-mobile">
+                    <h3>Полезное</h3>
+                    <ul>
+                        <li><a href="#">Вопрос-ответ</a></li>
+                        <li><a href="#">Энциклопедия</a></li>
+                        <li><a href="#">Автоновости</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 hidden-mobile">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><a href="#">г. Минск, ул. Суражская 8a </a></li>
+                        <li><a href="#">+375 (33) 321-55-55</a></li>
+                        <li><a href="#">+375 (44) 518-55-55</a></li>
+                        <li><a href="#">+375 (25) 718-55-55</a></li>
+                        <li><a href="#">automechta.by@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <h3 class="hidden-mobile">Давайте дружить</h3>
+                    <a href="#" class="mr-3"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="custom-button mt-4"><i class="fas fa-plus"></i>Подать объявление</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyrights hidden-mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 text-left">
+                        <p>© 2013-2018 Автомобильный портал «АвтоМечта»</p>
+                    </div>
+                    <div class="col-12 col-lg-6 text-right"><p>Все права защищены</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="copirights-mobile hidden-desktop">
+            <div class="container">
+                <a href="#">Полная версия</a>
+                <a href="#">Сообщить об ошибке</a>
+                <p>© 2013-2018 Автомобильный портал «АвтоМечта»</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/js.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.card-carousel').slick();
+    });
+</script>
+
+</body>
+</html>
