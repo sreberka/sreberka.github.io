@@ -109,7 +109,7 @@
     padding: 0.5rem;
 }
 .car-info-tab-content p {
-    font-size: 12px;
+    font-size: 13px;
 }
 .options h2 {
     font-size: 14px;
@@ -131,7 +131,7 @@
     background: #f5f5f5;
     padding: 15px;
     margin-top: 11px;
-    margin-bottom: 15px;
+    margin-bottom: 33px;
 }
 .credit-calculator label,
 .credit-calculator input,
@@ -286,6 +286,15 @@
 .relative-products h2 {
     font-size: 21px;
 }
+.description-text p {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0;
+}
+footer .container {
+    padding: 0 15px;
+}
+/****************** fixed buttons ******************/
 .fixed-contacts {
     position: fixed;
     z-index: 100;
@@ -346,4 +355,19 @@
 }
 .open-modal {
     display: block;
+}
+
+/***************** media queries ********************/
+@media screen and (max-width: 450px) {
+    .description-header {
+        flex-wrap: wrap;
+    }
+    .description-header h2 {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .description-header span {
+        margin-left: 0;
+        margin-right: 8px;
+    }
 }
