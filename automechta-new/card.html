@@ -201,16 +201,42 @@
 
         <div class="car-card">
             <div class="container">
-                <div class="row publication-info hidden-mobile">
-                    <div class="col-lg-6">
-
+                <div class="row publication-info hidden-mobile align-items-center">
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col-1">
+                                <span>№7014</span>
+                            </div>
+                            <div class="col-4">
+                                <span>Опубликовано 22 ноября 2017 г.</span>
+                            </div>
+                            <div class="col-3 p-0">
+                                <span>Обновлено 20 марта 2018 г.</span>
+                            </div>
+                            <div class="col-3 p-0">
+                                <span><i class="fas fa-eye mr-1"></i>250 просмотра</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-
+                    <div class="col-lg-5 text-right">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <a href="#" class="add-car-to-fav">
+                                    <i class="far fa-star"></i>
+                                    <span class="">В избранное</span>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#">
+                                    <i class="fas fa-ban"></i>
+                                    <span>Пожаловаться на объявление</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-lg-3 pr-lg-0">
+                    <div class="col-12 col-lg-4 pr-lg-0">
                         <div class="card-carousel hidden-desktop">
                             <div class="car-image">
                                 <img src="images/car-image.jpg">
@@ -245,39 +271,39 @@
                             </div>
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-6"><span>Год выпуска</span></div>
-                                    <div class="col-6"><strong>2003</strong></div>
+                                    <div class="col-5"><span>Год выпуска</span></div>
+                                    <div class="col-7"><strong>2003</strong></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6"><span>Пробег (тыс.км)</span></div>
-                                    <div class="col-6"><strong>194 тыс.км</strong></div>
+                                    <div class="col-5"><span>Пробег (тыс.км)</span></div>
+                                    <div class="col-7"><strong>194 тыс.км</strong></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6"><span>Объeм (см<sup>3</sup>)</span></div>
-                                    <div class="col-6"><strong>2 500 см<sup>3</sup></strong></div>
+                                    <div class="col-5"><span>Объeм (см<sup>3</sup>)</span></div>
+                                    <div class="col-7"><strong>2 500 см<sup>3</sup></strong></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6"><span>Тип двигателя</span></div>
-                                    <div class="col-6"><strong>бензин</strong></div>
+                                    <div class="col-5"><span>Тип двигателя</span></div>
+                                    <div class="col-7"><strong>бензин</strong></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6"><span>Трансмиссия</span></div>
-                                    <div class="col-6"><strong>автоматическая</strong></div>
+                                    <div class="col-5"><span>Трансмиссия</span></div>
+                                    <div class="col-7"><strong>автоматическая</strong></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6"><span>Привод</span></div>
-                                    <div class="col-6"><strong>задний</strong></div>
+                                    <div class="col-5"><span>Привод</span></div>
+                                    <div class="col-7"><strong>задний</strong></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6"><span>Кузов</span></div>
-                                    <div class="col-6"><strong>седан</strong></div>
+                                    <div class="col-5"><span>Кузов</span></div>
+                                    <div class="col-7"><strong>седан</strong></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6"><span>Цвет</span></div>
-                                    <div class="col-6"><strong>серый</strong></div>
+                                    <div class="col-5"><span>Цвет</span></div>
+                                    <div class="col-7"><strong>серый</strong></div>
                                 </div>
                             </div>
-                            <div class="col-12 location">
+                            <div class="col-12 location hidden-desktop">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Минск, Беларусь</span>
                             </div>
@@ -319,7 +345,7 @@
                             <div class="tab-pane fade" id="credit-info" role="tabpanel" aria-labelledby="credit-info-tab">
                             </div>
                         </div>
-                        <div class="options">
+                        <div class="options hidden-desktop">
                             <h2>Дополнительные характеристики</h2>
                             <div class="row">
                                 <div class="col-6">
@@ -341,48 +367,68 @@
                                 </div>
                             </div>
                         </div>
-                        <form class="credit-calculator">
-                            <h2>Кредитный калькулятор</h2>
-                            <label>Цена, BYN</label>
-                            <input type="text" placeholder="5000">
-                            <label>Первоначальный взнос, BYN</label>
-                            <input type="text" placeholder="0">
-                            <label>Ставка, %</label>
-                            <select>
-                                <option>Приорбанк, 15% </option>
-                                <option>Приорбанк, 15% </option>
-                                <option>Приорбанк, 15% </option>
-                            </select>
-                            <label>Срок кредита</label>
-                            <select>
-                                <option>5 лет</option>
-                                <option>5 лет</option>
-                                <option>5 лет</option>
-                            </select>
-                            <p><strong>346 BYN</strong>/месяц</p>
-                            <button type="submit" class="custom-button">Рассчитать платежи <i class="fas fa-chevron-right ml-2"></i></button>
-                        </form>
-                        <button class="custom-button download-income-card"><i class="fas fa-download mr-2"></i>Справка о доходах</button>
-                        <div class="about-credit">
-                            <div class="row header-about-credit">
-                                <div class="col-4">
-                                    <strong>Кредит</strong>
+                        <div class="row">
+                            <div class="col-12 order-lg-1">
+                                <form class="credit-calculator">
+                                    <h2>Кредитный калькулятор</h2>
+                                    <label>Цена, BYN</label>
+                                    <input type="text" placeholder="5000">
+                                    <label>Первоначальный взнос, BYN</label>
+                                    <input type="text" placeholder="0">
+                                    <label>Ставка, %</label>
+                                    <select>
+                                        <option>Приорбанк, 15% </option>
+                                        <option>Приорбанк, 15% </option>
+                                        <option>Приорбанк, 15% </option>
+                                    </select>
+                                    <label>Срок кредита</label>
+                                    <select>
+                                        <option>5 лет</option>
+                                        <option>5 лет</option>
+                                        <option>5 лет</option>
+                                    </select>
+                                    <p><strong>346 BYN</strong>/месяц</p>
+                                    <button type="submit" class="custom-button">Рассчитать платежи <i class="fas fa-chevron-right ml-2"></i></button>
+                                </form>
+                                <button class="custom-button download-income-card"><i class="fas fa-download mr-2"></i>Справка о доходах</button>
+                            </div>
+                            <div class="col-12 order-lg-0">
+                                <div class="about-credit">
+                                    <div class="row header-about-credit align-items-center">
+                                        <div class="col-4">
+                                            <strong>Кредит</strong>
+                                        </div>
+                                        <div class="col-8 text-right">
+                                            <span>от 3 месяцев до 5 лет</span>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>с досрочным погашением</li>
+                                        <li>без справки о доходах</li>
+                                        <li>без первоначального взноса и поручителей</li>
+                                        <li>без привязки к курсу валют</li>
+                                    </ul>
+                                    <p>*Если сумма кредита превышает 5000 руб. потребуется справка о доходах за 3 месяца.</p>
+                                    <p><strong>Cтарый автомобиль в зачёт!</strong></p>
+
+                                    <div class="credit-cuns hidden-mobile">
+                                        <h2>Консультация по кредиту</h2>
+                                        <a href="tel:375333215555"><img src="images/velcom-icon.png">+375 (33) 321-55-55</a>
+                                        <a href="tel:375445185555"><img src="images/mts-icon.png">+375 (44) 518-55-55</a>
+                                        <a href="tel:375257185555"><img src="images/life-icon.png"> +375 (25) 718-55-55</a>
+                                        <p class="time-work">Пн - вс: 10:00 - 18:00
+                                            <br>Ежедневно</p>
+                                    </div>
                                 </div>
-                                <div class="col-8 text-right">
-                                    <span>от 3 месяцев до 5 лет</span>
+                                <div class="buying-types hidden-mobile">
+                                    <h5>Варианты покупки</h5>
+                                    <a class="custom-button" href="#"><i class="fas fa-sync-alt mr-1"></i>Обмен</a>
+                                    <a class="custom-button" href="#"><i class="fas fa-dollar-sign mr-1"></i>Кредит</a>
                                 </div>
                             </div>
-                            <ul>
-                                <li>с досрочным погашением</li>
-                                <li>без справки о доходах</li>
-                                <li>без первоначального взноса и поручителей</li>
-                                <li>без привязки к курсу валют</li>
-                            </ul>
-                            <p>*Если сумма кредита превышает 5000 руб. потребуется справка о доходах за 3 месяца.</p>
-                            <p><strong>Cтарый автомобиль в зачёт!</strong></p>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-9">
+                    <div class="col-12 col-lg-8">
                         <div class="car-info hidden-mobile">
                             <div class="car-image">
                                 <img src="images/car-image.jpg">

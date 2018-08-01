@@ -371,3 +371,156 @@ footer .container {
         margin-right: 8px;
     }
 }
+
+@media (min-width: 992px) {
+    .hidden-mobile.row {
+        display: flex;
+    }
+    .publication-info {
+        margin-top: 52px;
+    }
+    .publication-info a {
+        padding: 5px 10px;
+        display: inline-block;
+    }
+    .publication-info a:hover {
+        background: #f5f5f5;
+    }
+    .publication-info a i {
+        font-size: 16px;
+    }
+    .publication-info a span {
+        font-size: 14px;
+    }
+    .publication-info span {
+        font-size: 12px;
+    }
+    .car-info {
+        margin-top: 17px;
+    }
+    .car-info h2 {
+        font-size: 27px;
+    }
+    .car-price {
+        margin-top: 15px;
+        margin-bottom: 9px;
+    }
+    .car-price .price-rb {
+        font-size: 22px;
+        margin-right: 35px;
+    }
+    .car-price .price-dol {
+        font-size: 18px;
+    }
+    .car-info span {
+        font-size: 16px;
+        display: inline-block;
+        margin-bottom: 11px;
+    }
+    .car-info strong {
+        font-size: 16px;
+    }
+    .online-request {
+        text-align: left;
+    }
+    .header-about-credit {
+        padding: 25px 0;
+    }
+    .header-about-credit strong {
+        font-size: 26px;
+    }
+    .header-about-credit span {
+        font-size: 17px;
+    }
+    .about-credit ul {
+        padding: 22px 16px 11px;
+    }
+    .about-credit ul li {
+        font-size: 16px;
+    }
+    .about-credit p {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    .about-credit p strong {
+        font-size: 22px;
+    }
+    .credit-cuns {
+        border-top: 1px solid #999999;
+        margin: 20px 16px;
+        padding-top: 26px;
+    }
+    .credit-cuns h2 {
+        font-size: 25px;
+        margin-bottom: 21px;
+    }
+    .credit-cuns a {
+        display: block;
+        font-size: 23px;
+        position: relative;
+        padding-left: 40px;
+    }
+    .credit-cuns img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        -webkit-transform: translate(0, -50%);
+        -moz-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        -o-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+    }
+    .credit-cuns .time-work {
+        padding: 0;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        padding-bottom: 20px;
+    }
+    .buying-types {
+        margin-top: 33px;
+        margin-bottom: 22px;
+    }
+    .buying-types h5 {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    .buying-types .custom-button {
+        margin-right: 30px;
+        border: 1px solid #db4544;
+        background: transparent;
+        color: #000;
+    }
+    .buying-types .custom-button:hover {
+        background: #db4544;
+        color: #fff;
+    }
+    .credit-calculator {
+        padding: 24px 15px;
+    }
+    .credit-calculator h2 {
+        font-size: 25px;
+    }
+    .credit-calculator label {
+        font-size: 17px;
+        margin-bottom: 9px;
+        padding-top: 23px;
+    }
+    .credit-calculator input,
+    .credit-calculator select {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+    .credit-calculator p {
+        font-size: 19px;
+    }
+    .credit-calculator .custom-button {
+        margin: 0 auto;
+        display: block;
+        width: auto;
+    }
+    .download-income-card {
+        font-size: 18px;
+        padding: 23px 0;
+    }
+}
