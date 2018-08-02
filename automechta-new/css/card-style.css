@@ -133,9 +133,13 @@
     margin-top: 11px;
     margin-bottom: 33px;
 }
+[role=button] {
+    cursor: pointer;
+}
 .credit-calculator label,
 .credit-calculator input,
-.credit-calculator select {
+.credit-calculator select,
+.complay-form select {
     display: block;
     width: 100%;
 }
@@ -145,17 +149,37 @@
     padding-top: 11px;
 }
 .credit-calculator input,
-.credit-calculator select {
+.credit-calculator select,
+.complay-form select,
+.complay-form textarea {
     font-size: 14px;
     padding: 13px 15px;
     background: #fff;
     border: 1px solid #cccccc;
 }
-.credit-calculator select {
+.credit-calculator select,
+.complay-form select {
     background: #fff url("../images/select-arrow.png") no-repeat 95% center;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+.complay-form {
+    padding: 10px;
+    border: 1px solid #db4544;
+    background: #f5f5f5;
+    z-index: 999;
+    display: none;
+}
+.complay-form .custom-button {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+.complay-form textarea {
+    resize: none;
+    width: 100%;
+    margin-top: 10px;
 }
 .credit-calculator h2 {
     font-size: 20px;
@@ -234,7 +258,6 @@
 .video-item {
     flex: none;
     width: 240px;
-    margin-right: 10px;
 }
 .video-item iframe {
     width: 100%;
@@ -522,5 +545,185 @@ footer .container {
     .download-income-card {
         font-size: 18px;
         padding: 23px 0;
+    }
+    .fotorama__nav--thumbs {
+        text-align: left;
+    }
+    .fotorama__thumb-border {
+        border-color: #db4544;
+    }
+    .car-info .nav-tabs .nav-link {
+        font-size: 15px;
+    }
+    .car-info .nav-tabs {
+        padding-left: 16px;
+        margin-bottom: 26px;
+    }
+    .car-info .nav-tabs .nav-link:hover,
+    .car-info .nav-tabs .nav-link:focus,
+    .car-info .nav-tabs .nav-link:active,
+    .car-info .nav-tabs .nav-link.active {
+        border-width: 3px;
+    }
+    .car-info .tab-content {
+        font-size: 16px;
+    }
+    .options {
+        margin-top: 50px;
+    }
+    .car-info .options h2 {
+        font-size: 19px;
+        margin-bottom: 22px;
+    }
+    .options ul li {
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    .options ul li:before {
+        content: url("../images/options-mark-desktop.png");
+        margin-right: 10px;
+    }
+    .seller-info {
+        margin-top: 40px;
+        padding: 16px;
+        background: #f5f5f5;
+    }
+    .seller-info a {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .seller-info span {
+        margin-bottom: 0;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .seller-info .custom-button {
+        background: transparent;
+        border: 2px solid #db4544;
+        color: #000;
+        padding: 12px 30px;
+    }
+    .seller-info .custom-button:hover {
+        background: #db4544;
+        color: #fff;
+    }
+    .seller-info .custom-button:hover i {
+        color: #fff!important;
+    }
+    .seller-info .custom-button i {
+        color: #000!important;
+    }
+    .popular-videos {
+        margin-top: 62px;
+    }
+    .popular-videos h2 {
+        font-size: 20px;
+    }
+    .video-item {
+        flex: inherit;
+        width: auto;
+    }
+    .video-description {
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .encyclopedia {
+        margin-top: 60px;
+    }
+    .enc-block {
+        width: auto;
+        margin-right: 15px;
+    }
+    .enc-image {
+        width: 152px;
+        height: 152px;
+    }
+    .encyclopedia h2 {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+    .enc-block p {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 11px;
+    }
+    .show-all-mod {
+        font-size: 16px;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: 21px;
+    }
+    .show-all-mod i {
+        font-size: 12px;
+    }
+    .relative-products {
+        margin-top: 60px;
+    }
+    .relative-products h2 {
+        font-size: 24px;
+        margin-bottom: 19px;
+    }
+    .relative-products .catalog-cars-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .relative-products .catalog-item {
+        display: block;
+        width: 24%;
+        box-shadow: 0 0 3px #e0e0e0;
+    }
+    .relative-products .catalog-item-img {
+        width: auto;
+        max-height: 192px;
+        overflow: hidden;
+    }
+    .relative-products .catalog-item-img img {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    .relative-products .description-header span {
+        display: none;
+    }
+    .relative-products .description-text {
+        max-height: 85px;
+        overflow: hidden;
+    }
+    .relative-products .description-text p {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .relative-products .catalog-item-description {
+        padding-top: 25px;
+    }
+    .relative-products .description-header h2 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .relative-products .description-price .price-rb {
+        font-size: 14px;
+        margin-right: 5px;
+    }
+    .relative-products .description-price .price-dol {
+        font-size: 12px;
+    }
+    .relative-products .favorite .add-to-favorite {
+        font-size: 17px;
+    }
+    .relative-products .add-tooltip {
+        font-size: 13px;
+        min-width: 120px;
+    }
+    .complay-form {
+        position: absolute;
+        top: 100%;
+        right: 15px;
     }
 }

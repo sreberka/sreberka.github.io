@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="css/catalog-style.css">
@@ -227,10 +228,21 @@
                                 </a>
                             </div>
                             <div class="col-6">
-                                <a href="#">
+                                <a role="button" id="complay">
                                     <i class="fas fa-ban"></i>
                                     <span>Пожаловаться на объявление</span>
                                 </a>
+                                <form class="complay-form">
+                                    <select>
+                                        <option value="not_actual">Объявление не актуально</option>
+                                        <option value="wrong_number">Номер указан не верно</option>
+                                        <option value="wrong_address">Адрес указан не верно</option>
+                                        <option value="duplication">Дублирование объявлений</option>
+                                        <option value="other">Иное</option>
+                                    </select>
+                                    <textarea name="complaint_text" rows="6" placeholder="Введите текст жалобы"></textarea>
+                                    <button class="custom-button" type="submit">Отправить</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -259,8 +271,19 @@
                                     <i class="far fa-star"></i>
                                     <span class="">В избранное</span>
                                 </a>
-                                <a href="#"><i class="fas fa-ban"></i></a>
+                                <a role="button" id="complay-mob"><i class="fas fa-ban"></i></a>
                             </div>
+                            <form class="complay-form complay-form-mobile col-12">
+                                <select>
+                                    <option value="not_actual">Объявление не актуально</option>
+                                    <option value="wrong_number">Номер указан не верно</option>
+                                    <option value="wrong_address">Адрес указан не верно</option>
+                                    <option value="duplication">Дублирование объявлений</option>
+                                    <option value="other">Иное</option>
+                                </select>
+                                <textarea name="complaint_text" rows="6" placeholder="Введите текст жалобы"></textarea>
+                                <button class="custom-button" type="submit">Отправить</button>
+                            </form>
                         </div>
                         <div class="row car-info">
                             <div class="col-12 car-name">
@@ -430,17 +453,22 @@
                     </div>
                     <div class="col-12 col-lg-8">
                         <div class="car-info hidden-mobile">
-                            <div class="car-image">
+                            <div class="fotorama" data-nav="thumbs" data-thumbheight="152" data-thumbwidth="152">
+                                <img src="images/car-image.jpg">
+                                <img src="images/car-image.jpg">
+                                <img src="images/car-image.jpg">
+                                <img src="images/car-image.jpg">
+                                <img src="images/car-image.jpg">
                                 <img src="images/car-image.jpg">
                             </div>
-                            <div class="row justify-content-center">
-                                <div class="col-lg-3">
-                                    <ul class="nav row nav-tabs " id="myTab2" role="tablist">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <ul class="nav row nav-tabs mt-3" id="myTab2" role="tablist">
                                         <li class="nav-item col-6 p-0">
-                                            <a class="nav-link active text-center" id="seller-comment2-tab" data-toggle="tab" href="#seller-comment2" role="tab" aria-controls="seller-comment2" aria-selected="true">Комментарии продавца</a>
+                                            <a class="nav-link active" id="seller-comment2-tab" data-toggle="tab" href="#seller-comment2" role="tab" aria-controls="seller-comment2" aria-selected="true">Комментарии продавца</a>
                                         </li>
                                         <li class="nav-item col-6 p-0">
-                                            <a class="nav-link text-center" id="credit-info2-tab" data-toggle="tab" href="#credit-info2" role="tab" aria-controls="credit-info2" aria-selected="false">Информация о кредите</a>
+                                            <a class="nav-link" id="credit-info2-tab" data-toggle="tab" href="#credit-info2" role="tab" aria-controls="credit-info2" aria-selected="false">Информация о кредите</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -464,7 +492,7 @@
                             <div class="options">
                                 <h2>Дополнительные характеристики</h2>
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-5">
                                         <ul>
                                             <li>обогрев зеркал</li>
                                             <li>сигнализация</li>
@@ -484,11 +512,11 @@
                                 </div>
                             </div>
                             <div class="seller-info">
-                                <div class="row">
-                                    <div class="col-1">
-                                        <i class="far fa-user"></i><span>Михаил</span>
-                                    </div>
+                                <div class="row align-items-center">
                                     <div class="col-2">
+                                        <i class="far fa-user mr-2"></i><span>Михаил</span>
+                                    </div>
+                                    <div class="col-3">
                                         <i class="fas fa-map-marker-alt"></i>
                                         <span>Минск, Беларусь</span>
                                     </div>
@@ -496,28 +524,28 @@
                                         <i class="fas fa-phone mr-2"></i>
                                         <a href="tel:375333234567">+375(33)3234567</a>
                                     </div>
-                                    <div class="col-2">
-                                        <button><i class="fas fa-comment mr-2"></i>Написать</button>
+                                    <div class="col-4 text-right">
+                                        <button class="custom-button"><i class="fas fa-comment mr-2"></i>Написать</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="popular-videos">
                             <h2>Популярные видео о модели</h2>
-                            <div class="row videos-container m-0">
-                                <div class="video-item">
+                            <div class="row videos-container">
+                                <div class="video-item col-lg-4">
                                     <div class="car-video">
                                         <iframe src="https://www.youtube.com/embed/FgMfWUqWIz4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                     </div>
                                     <a href="https://youtube.com/watch?v=FgMfWUqWIz4" class="video-description" target="_blank">Обзор Jaguar XF</a>
                                 </div>
-                                <div class="video-item">
+                                <div class="video-item col-lg-4">
                                     <div class="car-video">
                                         <iframe src="https://www.youtube.com/embed/FgMfWUqWIz4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                     </div>
                                     <a href="https://youtube.com/watch?v=FgMfWUqWIz4" class="video-description" target="_blank">Обзор Jaguar XF</a>
                                 </div>
-                                <div class="video-item">
+                                <div class="video-item col-lg-4">
                                     <div class="car-video">
                                         <iframe src="https://www.youtube.com/embed/FgMfWUqWIz4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                     </div>
@@ -584,17 +612,34 @@
                                     Простой и не прихотливый автомобиль. Сочетает в себе компактность
                                 </p>
                             </div>
-                            <div class="description-params hidden-mobile">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <p>Привод: <strong>задний</strong></p>
-                                        <p>Трансмиссия: <strong>механика</strong></p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>Двигатель: <strong>бензин</strong></p>
-                                        <p>Объем: <strong>1400см<sup>3</sup></strong></p>
-                                    </div>
-                                </div>
+                            <div class="description-price">
+                                <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
+                            </div>
+                        </div>
+                        <div class="favorite">
+                            <a href="#" class="star add-to-favorite">
+                                <i class="far fa-star"></i>
+                                <span class="add-tooltip">В избранное</span>
+                            </a>
+                            <a href="#" class="dollar add-to-favorite">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span class="add-tooltip">Рассчитать</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-item-img">
+                            <a href="#"><img src="images/car-img.jpg"></a>
+                        </div>
+                        <div class="catalog-item-description">
+                            <div class="description-header">
+                                <h2><a href="#">Wolksvagen</a></h2><span>Обмен</span><span>Торг</span>
+                            </div>
+                            <div class="description-text">
+                                <p>
+                                    Простой и не прихотливый автомобиль. Сочетает в себе компактность
+                                    Простой и не прихотливый автомобиль. Сочетает в себе компактность
+                                </p>
                             </div>
                             <div class="description-price">
                                 <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
@@ -625,18 +670,6 @@
                                     Простой и не прихотливый автомобиль. Сочетает в себе компактность
                                 </p>
                             </div>
-                            <div class="description-params hidden-mobile">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <p>Привод: <strong>задний</strong></p>
-                                        <p>Трансмиссия: <strong>механика</strong></p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>Двигатель: <strong>бензин</strong></p>
-                                        <p>Объем: <strong>1400см<sup>3</sup></strong></p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="description-price">
                                 <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
                             </div>
@@ -665,18 +698,6 @@
                                     Простой и не прихотливый автомобиль. Сочетает в себе компактность
                                     Простой и не прихотливый автомобиль. Сочетает в себе компактность
                                 </p>
-                            </div>
-                            <div class="description-params hidden-mobile">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <p>Привод: <strong>задний</strong></p>
-                                        <p>Трансмиссия: <strong>механика</strong></p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>Двигатель: <strong>бензин</strong></p>
-                                        <p>Объем: <strong>1400см<sup>3</sup></strong></p>
-                                    </div>
-                                </div>
                             </div>
                             <div class="description-price">
                                 <span class="price-rb">4725 BYN</span><span class="price-dol">2250$</span>
@@ -785,6 +806,8 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

@@ -26,5 +26,11 @@ $(document).ready(function () {
     $('#close').click(function () {
         $('.modal-overlay').removeClass('open-modal');
         $('html, body').css('overflow', 'auto');
-    })
+    });
+    $('#complay').click(function () {
+        $('.complay-form').slideToggle();
+    });
+    $('#complay-mob').click(function () {
+        $('.complay-form-mobile').slideToggle();
+    });
 });
