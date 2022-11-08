@@ -16,7 +16,7 @@
     "react-router": "^4.2.0",
     "reselect": "^3.0.1",
     "styled-jsx": "^0.5.7",
-    "webpack": "^2.5.1",
+    "webpack": "^5.74.0",
     "webpack-dev-server": "^2.4.5"
   },
   "name": "Hometask-react-2",
